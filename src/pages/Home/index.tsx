@@ -1,3 +1,9 @@
+import { HomeContainer } from "./styles";
+
 export const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <HomeContainer>
+      <h1>Home</h1>
+    </HomeContainer>
+  );
 };
