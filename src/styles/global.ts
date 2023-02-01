@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     :focus{
         outline: 0;
     }
+
+    body, input, textarea, button {
+        font-family: 'Roboto', sans-serif;
+    }
 `;
