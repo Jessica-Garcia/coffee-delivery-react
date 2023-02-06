@@ -1,27 +1,35 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  border: solid red 2px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  //justify-content: space-between;
   max-width: 90rem;
+  height: 6.5rem;
   margin: 0 auto;
   padding: 2rem;
   background: ${(props) => props.theme.background};
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   left: 0;
+`;
 
+export const HeaderContent = styled.div`
+  display: flex;
+  width: 85%;
+
+  justify-content: space-between;
   span {
-    margin-left: 10rem;
     width: 5.621875rem;
+    //border: solid blueviolet 2px;
   }
 `;
 
 export const LocationAndCartContainer = styled.div`
-  margin-right: 10rem;
-  border: solid blue 2px;
+  // margin-right: 10rem;
+  // border: solid blue 2px;
   display: flex;
   width: 12.0625rem;
   gap: 0.75rem;
