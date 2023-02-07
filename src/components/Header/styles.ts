@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
-  //justify-content: space-between;
   max-width: 90rem;
   height: 6.5rem;
   margin: 0 auto;
@@ -22,45 +21,50 @@ export const HeaderContent = styled.div`
 
   justify-content: space-between;
   span {
-    width: 5.621875rem;
-    //border: solid blueviolet 2px;
+    height: 3rem;
+    display: flex;
+    img {
+      max-width: 5.621875rem;
+      width: 7.8vw;
+    }
   }
 `;
 
 export const LocationAndCartContainer = styled.div`
-  // margin-right: 10rem;
-  // border: solid blue 2px;
   display: flex;
-  width: 12.0625rem;
+  max-width: 12.0625rem;
+
   gap: 0.75rem;
   align-items: center;
+  overflow: hidden;
 `;
 
 export const ButtonLocationContainer = styled.button`
-  width: 8.9375rem;
+  width: 24vw;
+  max-width: 8.9375rem;
   height: 2.375rem;
   padding: 0.5rem;
   display: flex;
   gap: 0.25rem;
   align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 6px;
   background-color: ${(props) => props.theme["purple-light"]};
   color: ${(props) => props.theme["purple-dark"]};
-  font-size: 0.875rem;
-  line-height: 1.1375rem;
+  font-size: clamp(0.7rem, 1.1vw, 0.875rem);
 `;
 
 export const ButtonCartContainer = styled.button`
-  width: 2.375rem;
-  height: 2.375rem;
-  //padding: 0.5rem;
+  width: 20vw;
+  height: 5vh;
+  max-width: 2.375rem;
+  min-height: 2.375rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 6px;
   color: ${(props) => props.theme["yellow-light"]};
-  font-size: 0.875rem;
-  line-height: 1.1375rem;
+  font-size: clamp(0.8rem, 1.1vw, 0.875rem);
 `;

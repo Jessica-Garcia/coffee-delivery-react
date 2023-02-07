@@ -17,21 +17,11 @@ export const Header = () => {
         </span>
         <LocationAndCartContainer>
           <ButtonLocationContainer>
-            <MapPin
-              weight="fill"
-              width={18}
-              height={18}
-              color={defaultTheme.purple}
-            />
+            <MapPin weight="fill" color={defaultTheme.purple} />
             Porto Alegre, RS
           </ButtonLocationContainer>
           <ButtonCartContainer>
-            <ShoppingCart
-              weight="fill"
-              width={18}
-              height={18}
-              color={defaultTheme["yellow-dark"]}
-            />
+            <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
           </ButtonCartContainer>
         </LocationAndCartContainer>
       </HeaderContent>
