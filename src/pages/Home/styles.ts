@@ -8,7 +8,7 @@ export const HomeContainer = styled.main`
   display: flex;
   justify-content: center;
   position: absolute;
-  padding: 2rem;
+  padding: 0 1.8rem;
   top: 6.5rem;
   left: 0;
   right: 0;
@@ -19,12 +19,10 @@ export const HomeContainer = styled.main`
 export const BannerContent = styled.section`
   width: 85%;
   display: flex;
-  height: 34rem;
-  justify-content: space-between;
+  max-height: 34rem;
   gap: 3.5rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
-
-export const TextContent = styled.article``;
 
 export const ImgContent = styled.article`
   margin-top: 5.75rem;
@@ -38,17 +36,16 @@ export const ImgContent = styled.article`
 `;
 
 export const TitleAndSubtitleContent = styled.article`
-  margin-top: 5.875rem;
-
   div {
     font-family: "Baloo 2", cursive;
     font-weight: 800;
     max-width: 36.75rem;
-    width: 100%;
     max-height: 7.75rem;
     height: 100%;
-    font-size: clamp(1.2rem, 2vw, 3rem);
+    font-size: clamp(1rem, 2.3vw, 3rem);
     display: flex;
+    margin-top: 5.875rem;
+    line-height: 130%;
   }
   span {
     margin-top: 1rem;
@@ -60,7 +57,7 @@ export const TitleAndSubtitleContent = styled.article`
     width: 100%;
     max-height: 3.25rem;
     height: 100%;
-    font-size: clamp(0.75rem, 1.1vw, 1.25rem);
+    font-size: clamp(0.78rem, 1.1vw, 1.25rem);
   }
 `;
 
@@ -82,7 +79,7 @@ export const InfoContent = styled.article`
       align-items: center;
       gap: 0.75rem;
       justify-content: flex-start;
-      font-size: clamp(0.6rem, 1vw, 0.9rem);
+      font-size: clamp(0.68rem, 1vw, 0.9rem);
     }
   }
 `;

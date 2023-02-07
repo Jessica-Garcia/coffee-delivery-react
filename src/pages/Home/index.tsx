@@ -6,7 +6,6 @@ import {
   Icons,
   ImgContent,
   InfoContent,
-  TextContent,
   TitleAndSubtitleContent,
 } from "./styles";
 
@@ -14,7 +13,7 @@ export const Home = () => {
   return (
     <HomeContainer>
       <BannerContent>
-        <TextContent>
+        <article>
           <TitleAndSubtitleContent>
             <div>Encontre o café perfeito para qualquer hora do dia</div>
             <span>
@@ -52,7 +51,7 @@ export const Home = () => {
               </span>
             </div>
           </InfoContent>
-        </TextContent>
+        </article>
         <ImgContent>
           <img src={bannerImage} alt="" />
         </ImgContent>
