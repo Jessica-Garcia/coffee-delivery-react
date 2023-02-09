@@ -1,0 +1,136 @@
+{
+    "products":[
+        {
+            "id": 1,
+            "image":"/src/assets/products/expresso.svg",
+            "name": "Expresso Tradicional",
+            "type": [
+                "Tradicional"
+            ],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 2,
+            "image":"/src/assets/products/americano.svg",
+            "name": "Expresso Americano",
+            "type": ["Tradicional"],
+            "description": "Expresso diluído, menos intenso que o tradicional",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 3,
+            "image":"/src/assets/products/expresso-cremoso.svg",
+            "name": "Expresso cremoso",
+            "type": "Tradicional",
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 4,
+            "image":"/src/assets/products/cafe-gelado.svg",
+            "name": "Expresso Gelado",
+            "type": [
+                "Tradicional",
+                "Gelado"
+            ],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 5,
+            "image":"/src/assets/products/cafe-com-leite.svg",
+            "name": "Café com leite",
+            "type": ["Tradicional", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 6,
+            "image":"/src/assets/products/latte.svg",
+            "name": "Expresso Tradicional",
+            "type": ["Tradicional", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 7,
+            "image":"/src/assets/products/capuccino.svg",
+            "name": "Capuccino",
+            "type": ["Tradicional", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 8,
+            "image":"/src/assets/products/macchiato.svg",
+            "name": "Macchiato",
+            "type": ["Tradicional", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 9,
+            "image":"/src/assets/products/mocaccino.svg",
+            "name": "Mocaccino",
+            "type": ["Tradicional", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 10,
+            "image":"/src/assets/products/chocolate-quente.svg",
+            "name": "Chocolate Quente",
+            "type": ["Especial", "Com leite"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 11,
+            "image":"/src/assets/products/cubano.svg",
+            "name": "Cubano",
+            "type": ["Especial", "Alcoólico", "Gelado"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 12,
+            "image":"/src/assets/products/havaiano.svg",
+            "name": "Havaiano",
+            "type": ["Especial"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        },
+        {
+            "id": 13,
+            "image":"/src/assets/products/arabe.svg",
+            "name": "Arabe",
+            "type": ["Especial"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        }
+        ,
+        {
+            "id": 13,
+            "image":"/src/assets/products/irlandês.svg",
+            "name": "Irlandês",
+            "type": ["Especial", "Alcoólico"],
+            "description": "O tradicional café feito com água quente e grãos moídos",
+            "price": 9.90,
+            "quantity": 1
+        }
+    ]
+}
