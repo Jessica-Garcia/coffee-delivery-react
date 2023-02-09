@@ -1,4 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { Product } from "../../@types/Product";
 import bannerImage from "../../assets/section-image.svg";
 import {
   BannerContent,
@@ -6,10 +8,34 @@ import {
   Icons,
   ImgContent,
   InfoContent,
+  ProductDescription,
+  ProductImg,
+  ProductInfo,
+  ProductName,
+  ProductPrice,
+  ProductQuantity,
+  ProductsContainer,
+  ProductsContent,
+  ProductType,
+  PurchaseInfo,
+  ShoppingCartButton,
+  Title,
   TitleAndSubtitleContent,
 } from "./styles";
 
 export const Home = () => {
+  const [products, setproducts] = useState<Product[]>([]);
+
+  const loadProducts = async () => {
+    const response = await fetch("http://localhost:3333/products");
+    const data = await response.json();
+    data && setproducts(data);
+  };
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
   return (
     <HomeContainer>
       <BannerContent>
@@ -56,6 +82,34 @@ export const Home = () => {
           <img src={bannerImage} alt="" />
         </ImgContent>
       </BannerContent>
+      <ProductsContainer>
+        <Title>Nossos cafés</Title>
+        <div>
+          <ProductsContent>
+            {products.map((product) => {
+              return (
+                <ProductInfo key={product.id}>
+                  <ProductImg src={product.image} alt="" />
+                  <ProductType>{product.type}</ProductType>
+                  <ProductName>{product.name}</ProductName>
+                  <ProductDescription>{product.description}</ProductDescription>
+                  <PurchaseInfo>
+                    <ProductPrice>{product.price}</ProductPrice>
+                    <ProductQuantity>
+                      <button>-</button>
+                      <span>{product.quantity}</span>
+                      <button>+</button>
+                    </ProductQuantity>
+                    <ShoppingCartButton>
+                      <ShoppingCart />
+                    </ShoppingCartButton>
+                  </PurchaseInfo>
+                </ProductInfo>
+              );
+            })}
+          </ProductsContent>
+        </div>
+      </ProductsContainer>
     </HomeContainer>
   );
 };
