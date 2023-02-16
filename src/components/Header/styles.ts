@@ -23,6 +23,11 @@ export const HeaderContent = styled.div`
   div {
     height: 3rem;
     display: flex;
+
+    a {
+      text-decoration: none;
+    }
+
     img {
       max-width: 5.621875rem;
       width: 7.8vw;
