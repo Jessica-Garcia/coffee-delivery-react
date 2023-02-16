@@ -12,18 +12,21 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <span>
+        <div>
           <img src={logo} alt="" />
-        </span>
+        </div>
         <LocationAndCartContainer>
           <ButtonLocationContainer>
             <MapPin weight="fill" color={defaultTheme.purple} />
             Porto Alegre, RS
           </ButtonLocationContainer>
           <ButtonCartContainer>
-            <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
+            <div>
+              <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
+            </div>
           </ButtonCartContainer>
         </LocationAndCartContainer>
+        <span>3</span>
       </HeaderContent>
     </HeaderContainer>
   );

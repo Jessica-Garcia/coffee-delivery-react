@@ -1,9 +1,12 @@
+export interface Type {
+  id: number;
+  type: string;
+}
 export interface Product {
   id: number;
   image: string;
   name: string;
-  type: [];
-  // type: "TRADICIONAL" | "GELADO" | "COM LEITE" | "ESPECIAL" | "ALCOÓLICO";
+  productTypes: Type[];
   description: String;
   price: number;
   quantity: number;

@@ -1,7 +1,15 @@
-import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import {
+  Coffee,
+  Minus,
+  Package,
+  Plus,
+  ShoppingCart,
+  Timer,
+} from "phosphor-react";
 import { useEffect, useState } from "react";
 import { Product } from "../../@types/Product";
 import bannerImage from "../../assets/section-image.svg";
+import { api } from "../../lib/axios";
 import {
   BannerContent,
   HomeContainer,
@@ -27,8 +35,7 @@ export const Home = () => {
   const [products, setproducts] = useState<Product[]>([]);
 
   const loadProducts = async () => {
-    const response = await fetch("http://localhost:3333/products");
-    const data = await response.json();
+    const { data } = await api.get("products");
     data && setproducts(data);
   };
 
@@ -90,18 +97,28 @@ export const Home = () => {
               return (
                 <ProductInfo key={product.id}>
                   <ProductImg src={product.image} alt="" />
-                  <ProductType>{product.type}</ProductType>
+                  <div>
+                    {product.productTypes.map((type) => {
+                      return (
+                        <ProductType key={type.id}>{type.type}</ProductType>
+                      );
+                    })}
+                  </div>
                   <ProductName>{product.name}</ProductName>
                   <ProductDescription>{product.description}</ProductDescription>
                   <PurchaseInfo>
                     <ProductPrice>{product.price}</ProductPrice>
                     <ProductQuantity>
-                      <button>-</button>
+                      <button>
+                        <Minus weight="bold" />
+                      </button>
                       <span>{product.quantity}</span>
-                      <button>+</button>
+                      <button>
+                        <Plus weight="bold" />
+                      </button>
                     </ProductQuantity>
                     <ShoppingCartButton>
-                      <ShoppingCart />
+                      <ShoppingCart weight="fill" size={20} />
                     </ShoppingCartButton>
                   </PurchaseInfo>
                 </ProductInfo>
