@@ -17,4 +17,16 @@ export const defaultTheme = {
   "base-button": "#E6E5E5",
   "base-input": "#EDEDED",
   "base-card": "#F3F2F2",
+
+  "large-Max-Width": 560,
+  "medium-Max-Width": 337.3,
+  "diff-Max-Width": 260,
+  "smallest-Max-Width": 61.3,
+
+  "default-Width": 50,
+  "default-Max-Width": 180,
+  "large-Width": 100,
+  "medium-Width": 90,
+  "diff-Width": 276,
+  "smallest-Width": 50,
 };

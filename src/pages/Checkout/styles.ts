@@ -20,6 +20,7 @@ export const CheckoutContainer = styled.main`
 
 export const CheckoutContent = styled.section`
   width: 85%;
+  height: 100%;
   display: flex;
   border: solid blue 5px;
   justify-content: space-between;
@@ -31,6 +32,7 @@ export const CheckoutContent = styled.section`
 
 export const CompleteOrderContainer = styled.section`
   border: solid lightblue 5px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -39,7 +41,7 @@ export const CompleteOrderContainer = styled.section`
   width: 100%;
 
   max-width: 640px;
-  height: 591px;
+  height: 100%;
   span {
     font-family: "Baloo 2", cursive;
     width: 170px;
@@ -67,12 +69,12 @@ export const CompleteOrderContent = styled.article`
   gap: 12px;
   width: 100%;
   max-width: 640px;
-  height: 591px;
+  height: max-content;
   background: #f3f2f2;
   border-radius: 6px;
 `;
 
-export const TitleFormContainer = styled.div`
+export const TitleContainer = styled.div`
   border: solid black 5px;
   display: flex;
   flex-direction: column;
@@ -80,7 +82,7 @@ export const TitleFormContainer = styled.div`
   gap: 8px;
 `;
 
-export const TitleForm = styled.div`
+export const Title = styled.div`
   border: solid darkgreen 5px;
   max-width: 530px;
   width: 100%;
@@ -100,7 +102,7 @@ export const TitleForm = styled.div`
   color: #403937;
 `;
 
-export const SubTitleForm = styled.div`
+export const SubTitle = styled.div`
   border: solid darkgoldenrod 5px;
 
   max-width: 530px;
@@ -118,6 +120,48 @@ export const SubTitleForm = styled.div`
 
 export const FormContainer = styled.form`
   border: solid blueviolet 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 200px, 276px));
+  grid-template-rows: repeat(4, 42px);
+  gap: 16px;
+  width: 100%; */
+  // 200px, 348px, 276px, 60px
+`;
+
+const INPUT_SIZE = {
+  defaultWidth: "default-Width",
+  defaultMaxWidth: "default-Max-Width",
+  largeMaxWidth: "large-Max-Width",
+  mediumMaxWidth: "medium-Max-Width",
+  diffMaxWidth: "diff-Max-Width",
+  smallestMaxWidth: "smallest-Max-Width",
+  largeWidth: "large-Width",
+  // mediumWidth: "medium-Width",
+  diffWidth: "diff-Width",
+  smallestWidth: "smallest-Width",
+} as const;
+
+interface FormInputSizeProps {
+  inputSize: keyof typeof INPUT_SIZE;
+}
+
+interface FormInputMaxSizeProps {
+  inputMaxSize: keyof typeof INPUT_SIZE;
+}
+
+export const FormInput = styled.input<
+  FormInputSizeProps & FormInputMaxSizeProps
+>`
+  border: solid red 2px;
+
+  width: ${(props) => props.theme[INPUT_SIZE[props.inputSize]]}%;
+  max-width: ${(props) => props.theme[INPUT_SIZE[props.inputMaxSize]]}px;
+  height: 42px;
 `;
 
 export const PaymentTypeContainer = styled.div`
