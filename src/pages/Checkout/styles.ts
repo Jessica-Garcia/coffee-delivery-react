@@ -15,14 +15,14 @@ export const CheckoutContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
-  border: solid red 5px;
+  //border: solid red 5px;
 `;
 
 export const CheckoutContent = styled.section`
   width: 85%;
   height: 100%;
   display: flex;
-  border: solid blue 5px;
+  // border: solid blue 5px;
   justify-content: space-between;
   gap: 3.5rem;
   /* position: absolute;
@@ -31,7 +31,7 @@ export const CheckoutContent = styled.section`
 `;
 
 export const CompleteOrderContainer = styled.section`
-  border: solid lightblue 5px;
+  // border: solid lightblue 5px;
 
   display: flex;
   flex-direction: column;
@@ -61,21 +61,21 @@ export const CompleteOrderContainer = styled.section`
 `;
 
 export const CompleteOrderContent = styled.article`
-  border: solid yellow 5px;
+  // border: solid yellow 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 40px;
+  background: #f3f2f2;
   gap: 12px;
   width: 100%;
   max-width: 640px;
   height: max-content;
-  background: #f3f2f2;
   border-radius: 6px;
 `;
 
 export const TitleContainer = styled.div`
-  border: solid black 5px;
+  // border: solid black 5px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -83,10 +83,10 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  border: solid darkgreen 5px;
+  // border: solid darkgreen 5px;
   max-width: 530px;
   width: 100%;
-  height: 21px;
+  height: max-content;
 
   font-family: "Roboto";
   font-style: normal;
@@ -103,10 +103,10 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  border: solid darkgoldenrod 5px;
+  // border: solid darkgoldenrod 5px;
 
   max-width: 530px;
-  height: 21px;
+  height: max-content;
   margin-bottom: 32px;
   font-family: "Roboto";
   font-style: normal;
@@ -116,21 +116,18 @@ export const SubTitle = styled.div`
   display: flex;
   align-items: center;
   color: #574f4d;
+  padding-left: 24px;
 `;
 
 export const FormContainer = styled.form`
-  border: solid blueviolet 5px;
+  //border: solid blueviolet 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
   max-width: 560px;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 200px, 276px));
-  grid-template-rows: repeat(4, 42px);
-  gap: 16px;
-  width: 100%; */
-  // 200px, 348px, 276px, 60px
+  padding-bottom: 30px;
+  border-bottom: solid 5px ${(props) => props.theme.background};
 `;
 
 const INPUT_SIZE = {
@@ -157,54 +154,185 @@ interface FormInputMaxSizeProps {
 export const FormInput = styled.input<
   FormInputSizeProps & FormInputMaxSizeProps
 >`
-  border: solid red 2px;
+  //border: solid red 2px;
 
   width: ${(props) => props.theme[INPUT_SIZE[props.inputSize]]}%;
   max-width: ${(props) => props.theme[INPUT_SIZE[props.inputMaxSize]]}px;
   height: 42px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+  background: #eeeded;
+
+  border: 1px solid #e6e5e5;
+  border-radius: 4px;
+
+  &:focus {
+    background: #eeeded;
+    border: 1px solid #c47f17;
+  }
 `;
 
 export const PaymentTypeContainer = styled.div`
-  border: solid blue 5px;
+  // border: solid blue 5px;
+  padding-top: 30px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  //padding: 40px;
+  gap: 32px;
+
+  max-width: 640px;
+  min-height: 207px;
+  width: 100%;
+  /* Base/Card */
+
+  background: #f3f2f2;
+  border-radius: 6px;
+`;
+
+export const PaymentTypes = styled.div`
+  // border: solid yellowgreen 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  height: max-content;
+`;
+
+export const Type = styled.button`
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  gap: 5px;
+  max-width: 178.67px;
+  width: 30%;
+  flex-grow: 1;
+  max-height: 51px;
+  height: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(8px, 0.55vw, 9px);
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #574f4d;
+  background: #e6e5e5;
+  border-radius: 6px;
+
+  &:hover {
+    background: #d7d5d5;
+    transition: background 0.3s;
+  }
+
+  &:focus {
+    background: #ebe5f9;
+    border: 1px solid #8047f8;
+  }
 `;
 
 export const SelectedProductsContainer = styled.section`
   border: solid pink 5px;
+  max-width: 448px;
+  width: 80%;
+  height: 100%;
+  //max-height: 498px;
+  span {
+  }
+`;
+export const SectionType = styled.span`
+  font-family: "Baloo 2", cursive;
+  width: 170px;
+  height: 23px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  color: ${(props) => props.theme["base-subtitle"]};
+`;
+
+export const SelectedProductsContent = styled.article`
+  border: solid green 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-self: flex-end;
   gap: 24px;
-  max-width: 448px;
-  width: 80%;
+  max-height: max-content;
   height: 498px;
   background: #f3f2f2;
   border-radius: 6px 44px;
-  span {
-    font-family: "Baloo 2", cursive;
-    width: 170px;
-    height: 23px;
-
-    font-style: normal;
-    font-weight: 700;
-    font-size: clamp(14px, 1.5vw, 18px);
-
-    line-height: 130%;
-
-    display: flex;
-    align-items: center;
-
-    color: ${(props) => props.theme["base-subtitle"]};
-  }
-`;
-export const SelectedProductsContent = styled.article`
-  border: solid green 5px;
+  padding: 40px;
 `;
 
 export const ProductsContainer = styled.div`
   border: solid blueviolet 5px;
+  width: 100%;
 `;
 
+export const Product = styled.div`
+  border: solid pink 5px;
+  display: flex;
+`;
+
+export const ProductInfo = styled.div`
+  border: solid black 5px;
+  width: 80%;
+  display: flex;
+`;
+
+export const ProductPrice = styled.div`
+  border: solid red 5px;
+  width: 30%;
+`;
+
+export const ProductImg = styled.img`
+  border: solid green 5px;
+
+  max-width: 64px;
+  width: 30%;
+`;
+
+export const ProductOptionsContainer = styled.div`
+  border: solid red 5px;
+`;
+
+export const ProductOptions = styled.div`
+  border: solid yellowgreen 5px;
+  display: flex;
+`;
+
+export const ProductName = styled.div`
+  border: solid blueviolet 5px;
+`;
+
+export const ProductQuantity = styled.div`
+  border: solid yellow 5px;
+`;
+
+export const RemoveButton = styled.button`
+  border: solid yellow 5px;
+`;
 export const TotalContainer = styled.div`
   border: solid yellowgreen 5px;
+`;
+
+export const TotalContent = styled.div`
+  border: solid darkcyan 5px;
+`;
+
+export const Totalbutton = styled.button`
+  border: solid darkblue 5px;
 `;

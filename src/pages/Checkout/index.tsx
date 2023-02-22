@@ -1,4 +1,16 @@
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Minus,
+  Money,
+  Plus,
+  Trash,
+} from "phosphor-react";
+
+import expresso from "../../assets/products/expresso.svg";
+
 import {
   CheckoutContainer,
   CheckoutContent,
@@ -7,12 +19,25 @@ import {
   FormContainer,
   FormInput,
   PaymentTypeContainer,
+  PaymentTypes,
+  Product,
+  ProductImg,
+  ProductInfo,
+  ProductName,
+  ProductOptions,
+  ProductOptionsContainer,
+  ProductPrice,
+  ProductQuantity,
   ProductsContainer,
+  RemoveButton,
+  SectionType,
   SelectedProductsContainer,
   SelectedProductsContent,
   SubTitle,
   Title,
   TitleContainer,
+  TotalContainer,
+  Type,
 } from "./styles";
 
 export const Checkout = () => {
@@ -20,7 +45,7 @@ export const Checkout = () => {
     <CheckoutContainer>
       <CheckoutContent>
         <CompleteOrderContainer>
-          <span>Complete seu pedido</span>
+          <SectionType>Complete seu pedido</SectionType>
           <CompleteOrderContent>
             <TitleContainer>
               <Title>
@@ -35,10 +60,10 @@ export const Checkout = () => {
               <FormInput
                 inputSize="defaultWidth"
                 inputMaxSize="defaultMaxWidth"
-                autoComplete="off"
                 placeholder="CEP"
                 required
                 type="text"
+                autoComplete="off"
               />
               <FormInput
                 inputSize="largeWidth"
@@ -46,6 +71,7 @@ export const Checkout = () => {
                 type="text"
                 required
                 placeholder="Rua"
+                autoComplete="off"
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -53,6 +79,7 @@ export const Checkout = () => {
                 type="number"
                 placeholder="Número"
                 required
+                autoComplete="off"
               />
               <FormInput
                 inputSize="largeWidth"
@@ -60,6 +87,7 @@ export const Checkout = () => {
                 type="text"
                 placeholder="complemento (opcional)"
                 required={false}
+                autoComplete="off"
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -67,6 +95,7 @@ export const Checkout = () => {
                 type="text"
                 placeholder="Bairro"
                 required
+                autoComplete="off"
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -74,6 +103,7 @@ export const Checkout = () => {
                 type="text"
                 placeholder="Cidade"
                 required
+                autoComplete="off"
               />
               <FormInput
                 inputSize="smallestWidth"
@@ -81,6 +111,7 @@ export const Checkout = () => {
                 type="text"
                 placeholder="UF"
                 required
+                autoComplete="off"
               />
             </FormContainer>
             <PaymentTypeContainer>
@@ -94,13 +125,74 @@ export const Checkout = () => {
                   pagar
                 </SubTitle>
               </TitleContainer>
+              <PaymentTypes>
+                <Type>
+                  <CreditCard size={16} /> CARTÃO CRÉDITO
+                </Type>
+                <Type>
+                  <Bank size={16} /> CARTÃO DÉBITO
+                </Type>
+                <Type>
+                  <Money size={16} /> DINHEIRO
+                </Type>
+              </PaymentTypes>
             </PaymentTypeContainer>
           </CompleteOrderContent>
         </CompleteOrderContainer>
         <SelectedProductsContainer>
-          <span>Cafés selecionados</span>
+          <SectionType>Cafés selecionados</SectionType>
           <SelectedProductsContent>
-            <ProductsContainer></ProductsContainer>
+            <ProductsContainer>
+              <Product>
+                <ProductInfo>
+                  <ProductImg src={expresso} />
+                  <ProductOptionsContainer>
+                    <ProductName>Expresso Tradicional</ProductName>
+                    <ProductOptions>
+                      <ProductQuantity>
+                        <button>
+                          <Minus weight="bold" />
+                        </button>
+                        <span>1</span>
+                        <button>
+                          <Plus weight="bold" />
+                        </button>
+                      </ProductQuantity>
+                      <RemoveButton>
+                        <Trash />
+                        REMOVER
+                      </RemoveButton>
+                    </ProductOptions>
+                  </ProductOptionsContainer>
+                </ProductInfo>
+                <ProductPrice>R$ 9,90</ProductPrice>
+              </Product>
+              <Product>
+                <ProductInfo>
+                  <ProductImg src={expresso} />
+                  <ProductOptionsContainer>
+                    <ProductName>Expresso Tradicional</ProductName>
+                    <ProductOptions>
+                      <ProductQuantity>
+                        <button>
+                          <Minus weight="bold" />
+                        </button>
+                        <span>1</span>
+                        <button>
+                          <Plus weight="bold" />
+                        </button>
+                      </ProductQuantity>
+                      <RemoveButton>
+                        <Trash />
+                        REMOVER
+                      </RemoveButton>
+                    </ProductOptions>
+                  </ProductOptionsContainer>
+                </ProductInfo>
+                <ProductPrice>R$ 9,90</ProductPrice>
+              </Product>
+            </ProductsContainer>
+            <TotalContainer></TotalContainer>
           </SelectedProductsContent>
         </SelectedProductsContainer>
       </CheckoutContent>
