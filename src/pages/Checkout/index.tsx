@@ -36,8 +36,10 @@ import {
   SubTitle,
   Title,
   TitleContainer,
+  Totalbutton,
   TotalContainer,
   Type,
+  Values,
 } from "./styles";
 
 export const Checkout = () => {
@@ -127,13 +129,13 @@ export const Checkout = () => {
               </TitleContainer>
               <PaymentTypes>
                 <Type>
-                  <CreditCard size={16} /> CARTÃO CRÉDITO
+                  <CreditCard size={16} color="#8047F8" /> CARTÃO CRÉDITO
                 </Type>
                 <Type>
-                  <Bank size={16} /> CARTÃO DÉBITO
+                  <Bank size={16} color="#8047F8" /> CARTÃO DÉBITO
                 </Type>
                 <Type>
-                  <Money size={16} /> DINHEIRO
+                  <Money size={16} color="#8047F8" /> DINHEIRO
                 </Type>
               </PaymentTypes>
             </PaymentTypeContainer>
@@ -151,21 +153,24 @@ export const Checkout = () => {
                     <ProductOptions>
                       <ProductQuantity>
                         <button>
-                          <Minus weight="bold" />
+                          <Minus size={10} weight="bold" />
                         </button>
                         <span>1</span>
                         <button>
-                          <Plus weight="bold" />
+                          <Plus size={10} weight="bold" />
                         </button>
                       </ProductQuantity>
                       <RemoveButton>
-                        <Trash />
+                        <Trash size={16} color="#8047f8" />
                         REMOVER
                       </RemoveButton>
                     </ProductOptions>
                   </ProductOptionsContainer>
                 </ProductInfo>
-                <ProductPrice>R$ 9,90</ProductPrice>
+
+                <ProductPrice>
+                  <span>R$ 9,90</span>
+                </ProductPrice>
               </Product>
               <Product>
                 <ProductInfo>
@@ -175,24 +180,41 @@ export const Checkout = () => {
                     <ProductOptions>
                       <ProductQuantity>
                         <button>
-                          <Minus weight="bold" />
+                          <Minus size={10} weight="bold" />
                         </button>
                         <span>1</span>
                         <button>
-                          <Plus weight="bold" />
+                          <Plus size={10} weight="bold" />
                         </button>
                       </ProductQuantity>
                       <RemoveButton>
-                        <Trash />
+                        <Trash color="#8047f8" size={16} />
                         REMOVER
                       </RemoveButton>
                     </ProductOptions>
                   </ProductOptionsContainer>
                 </ProductInfo>
-                <ProductPrice>R$ 9,90</ProductPrice>
+                <ProductPrice>
+                  <span>R$ 9,90</span>
+                </ProductPrice>
               </Product>
             </ProductsContainer>
-            <TotalContainer></TotalContainer>
+            <TotalContainer>
+              <Values>
+                <span>Total de itens</span>
+                <span>R$ 29,70</span>
+              </Values>
+              <Values>
+                <span>Entrega</span>
+                <span>R$ 3,50</span>
+              </Values>
+
+              <Values>
+                <strong>Total</strong>
+                <strong>R$ 33,20</strong>
+              </Values>
+            </TotalContainer>
+            <Totalbutton href="/success">Confirmar Pedido</Totalbutton>
           </SelectedProductsContent>
         </SelectedProductsContainer>
       </CheckoutContent>

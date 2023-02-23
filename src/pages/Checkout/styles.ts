@@ -23,8 +23,8 @@ export const CheckoutContent = styled.section`
   height: 100%;
   display: flex;
   // border: solid blue 5px;
-  justify-content: space-between;
-  gap: 3.5rem;
+  //justify-content: space-between;
+  gap: 32px;
   /* position: absolute;
   top: 0;
   bottom: 0; */
@@ -38,7 +38,7 @@ export const CompleteOrderContainer = styled.section`
   align-items: flex-start;
   padding: 0px;
   gap: 12px;
-  width: 100%;
+  width: 90%;
 
   max-width: 640px;
   height: 100%;
@@ -92,7 +92,7 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  font-size: clamp(12px, 1.45vw, 16px);
+  font-size: clamp(12px, 1.3vw, 16px);
 
   line-height: 130%;
   gap: 8px;
@@ -169,10 +169,15 @@ export const FormInput = styled.input<
 
   border: 1px solid #e6e5e5;
   border-radius: 4px;
+  font-size: clamp(10px, 1.2vw, 14px);
 
   &:focus {
     background: #eeeded;
     border: 1px solid #c47f17;
+  }
+
+  &::placeholder {
+    font-size: clamp(10px, 1.1vw, 14px);
   }
 `;
 
@@ -183,14 +188,10 @@ export const PaymentTypeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  //padding: 40px;
-  gap: 32px;
-
+  //gap: 32px;
   max-width: 640px;
   min-height: 207px;
   width: 100%;
-  /* Base/Card */
-
   background: #f3f2f2;
   border-radius: 6px;
 `;
@@ -200,10 +201,8 @@ export const PaymentTypes = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-
   align-items: center;
   gap: 12px;
-
   width: 100%;
   height: max-content;
 `;
@@ -223,7 +222,7 @@ export const Type = styled.button`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(8px, 0.55vw, 9px);
+  font-size: clamp(9px, 0.57vw, 10px);
   line-height: 160%;
   text-transform: uppercase;
   color: #574f4d;
@@ -242,13 +241,10 @@ export const Type = styled.button`
 `;
 
 export const SelectedProductsContainer = styled.section`
-  border: solid pink 5px;
+  //border: solid pink 5px;
   max-width: 448px;
   width: 80%;
   height: 100%;
-  //max-height: 498px;
-  span {
-  }
 `;
 export const SectionType = styled.span`
   font-family: "Baloo 2", cursive;
@@ -264,75 +260,188 @@ export const SectionType = styled.span`
 `;
 
 export const SelectedProductsContent = styled.article`
-  border: solid green 5px;
+  // border: solid green 5px;
   display: flex;
+  margin-top: 12px;
   flex-direction: column;
   align-items: flex-start;
   justify-self: flex-end;
   gap: 24px;
-  max-height: max-content;
-  height: 498px;
+  height: max-content;
   background: #f3f2f2;
   border-radius: 6px 44px;
   padding: 40px;
+  padding-top: 28px;
 `;
 
 export const ProductsContainer = styled.div`
-  border: solid blueviolet 5px;
+  //border: solid blueviolet 5px;
   width: 100%;
 `;
 
 export const Product = styled.div`
-  border: solid pink 5px;
+  // border: solid pink 5px;
   display: flex;
+  width: 100%;
+  border-bottom: 1px solid #e6e5e5;
+  padding-bottom: 16px;
+  margin-top: 16px;
 `;
 
 export const ProductInfo = styled.div`
-  border: solid black 5px;
+  // border: solid black 5px;
   width: 80%;
   display: flex;
+  gap: 20px;
 `;
 
 export const ProductPrice = styled.div`
-  border: solid red 5px;
-  width: 30%;
+  //border: solid red 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 20%;
+  span {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(12px, 1.3vw, 16px);
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #574f4d;
+  }
 `;
 
 export const ProductImg = styled.img`
-  border: solid green 5px;
-
+  // border: solid darkorange 5px;
+  display: flex;
+  align-self: flex-start;
   max-width: 64px;
   width: 30%;
 `;
 
 export const ProductOptionsContainer = styled.div`
-  border: solid red 5px;
+  //border: solid darkmagenta 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
 `;
 
 export const ProductOptions = styled.div`
-  border: solid yellowgreen 5px;
+  //border: solid yellowgreen 5px;
   display: flex;
+  gap: 8px;
 `;
 
 export const ProductName = styled.div`
-  border: solid blueviolet 5px;
+  //border: solid darkblue 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(10px, 1.2vw, 16px);
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  color: #403937;
 `;
 
 export const ProductQuantity = styled.div`
-  border: solid yellow 5px;
+  //border: solid yellow 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  gap: 3px;
+  max-width: 72px;
+  height: 32px;
+  background: #e6e5e5;
+  border-radius: 6px;
+
+  button {
+    border: 0;
+    background: #e6e5e5;
+    color: #8047f8;
+    padding: 1px 3px;
+    &:hover {
+      background: #d7d5d5;
+    }
+  }
+
+  span {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: clamp(10px, 1.05vw, 14px);
+    line-height: 130%;
+    text-align: center;
+    color: #272221;
+  }
 `;
 
 export const RemoveButton = styled.button`
-  border: solid yellow 5px;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 8px;
+  gap: 4px;
+  font-size: clamp(8px, 1vw, 10px);
+  max-width: 91px;
+  max-height: 32px;
+  background: #e6e5e5;
+  border-radius: 6px;
+  width: 100%;
+
+  &:hover {
+    background: #d7d5d5;
+  }
 `;
 export const TotalContainer = styled.div`
-  border: solid yellowgreen 5px;
+  //  border: solid yellowgreen 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
 `;
 
-export const TotalContent = styled.div`
-  border: solid darkcyan 5px;
+export const Values = styled.div`
+  // border: solid darkcyan 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(10px, 1.2vw, 14px);
 `;
 
-export const Totalbutton = styled.button`
-  border: solid darkblue 5px;
+export const Totalbutton = styled.a`
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 4px;
+  max-width: 387px;
+  width: 100%;
+  height: 46px;
+  background: #dbac2c;
+  border-radius: 6px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(10px, 1.2vw, 14px);
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-stretch: 100;
+
+  text-decoration: none;
+
+  &:hover {
+    background: #c47f17;
+  }
 `;
