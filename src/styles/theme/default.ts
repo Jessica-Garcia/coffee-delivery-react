@@ -25,7 +25,7 @@ export const defaultTheme = {
 
   "default-Width": 50,
   "default-Max-Width": 180,
-  "large-Width": 100,
+  "large-Width": 95,
   "medium-Width": 90,
   "diff-Width": 276,
   "smallest-Width": 50,

@@ -367,6 +367,7 @@ export const ProductQuantity = styled.div`
     padding: 1px 3px;
     &:hover {
       background: #d7d5d5;
+      cursor: pointer;
     }
   }
 
@@ -397,6 +398,7 @@ export const RemoveButton = styled.button`
 
   &:hover {
     background: #d7d5d5;
+    cursor: pointer;
   }
 `;
 export const TotalContainer = styled.div`
