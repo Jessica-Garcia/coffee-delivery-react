@@ -1,47 +1,51 @@
 import {
   Coffee,
+  Key,
   Minus,
   Package,
   Plus,
   ShoppingCart,
   Timer,
 } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { Product } from "../../@types/Product";
 import bannerImage from "../../assets/section-image.svg";
+import { ProductInfos } from "../../components/Product";
+import { ProductsContext } from "../../contexts/ProductsContext";
 import { api } from "../../lib/axios";
+import expresso from "../../assets/products/expresso.svg";
 import {
   BannerContent,
   HomeContainer,
   Icons,
   ImgContent,
   InfoContent,
-  ProductDescription,
-  ProductImg,
-  ProductInfo,
-  ProductName,
-  ProductPrice,
-  ProductQuantity,
   ProductsContainer,
   ProductsContent,
-  ProductType,
-  PurchaseInfo,
-  ShoppingCartButton,
   Title,
   TitleAndSubtitleContent,
 } from "./styles";
 
 export const Home = () => {
-  const [products, setproducts] = useState<Product[]>([]);
+  const {
+    products,
+    productsQuantity,
+    setProducts,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useContext(ProductsContext);
 
-  const loadProducts = async () => {
-    const { data } = await api.get("products");
-    data && setproducts(data);
-  };
+  /* const [products, setProducts] = useState<Product[]>([]);
+
+  const loadProducts = useCallback(async () => {
+    const { data } = await api.get<Product[]>("products");
+    console.log(data);
+    data && setProducts(data);
+  }, [setProducts]);
 
   useEffect(() => {
     loadProducts();
-  }, []);
+  }, [loadProducts]); */
 
   return (
     <HomeContainer>
@@ -95,33 +99,17 @@ export const Home = () => {
           <ProductsContent>
             {products.map((product) => {
               return (
-                <ProductInfo key={product.id}>
-                  <ProductImg src={product.image} alt="" />
-                  <div>
-                    {product.productTypes.map((type) => {
-                      return (
-                        <ProductType key={type.id}>{type.type}</ProductType>
-                      );
-                    })}
-                  </div>
-                  <ProductName>{product.name}</ProductName>
-                  <ProductDescription>{product.description}</ProductDescription>
-                  <PurchaseInfo>
-                    <ProductPrice>{product.price}</ProductPrice>
-                    <ProductQuantity>
-                      <button>
-                        <Minus weight="bold" />
-                      </button>
-                      <span>{product.quantity}</span>
-                      <button>
-                        <Plus weight="bold" />
-                      </button>
-                    </ProductQuantity>
-                    <ShoppingCartButton>
-                      <ShoppingCart weight="fill" size={20} />
-                    </ShoppingCartButton>
-                  </PurchaseInfo>
-                </ProductInfo>
+                <ProductInfos
+                  key={product.id}
+                  image={product.image}
+                  name={product.name}
+                  description={product.description}
+                  price={product.price}
+                  productTypes={product.productTypes}
+                  increaseQuantity={increaseQuantity}
+                  decreaseQuantity={decreaseQuantity}
+                  quantity={productsQuantity}
+                />
               );
             })}
           </ProductsContent>
