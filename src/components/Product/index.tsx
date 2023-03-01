@@ -1,6 +1,9 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { ReactNode, useCallback, useContext, useState } from "react";
-import { ProductsContext } from "../../contexts/ProductsContext";
+import {
+  ProductsContext,
+  ProductsProvider,
+} from "../../contexts/ProductsContext";
 import {
   ProductDescription,
   ProductImg,
@@ -13,6 +16,7 @@ import {
 } from "./styles";
 import { ProductQuantity } from "../ProductQuantity";
 import { Product, Type } from "../../@types/Product";
+import { ProductQuantityContainer } from "../ProductQuantity/styles";
 
 interface ProductsInfoProps {
   image: string;
@@ -20,9 +24,9 @@ interface ProductsInfoProps {
   productTypes: Type[];
   description: string;
   price: number;
-  decreaseQuantity: () => void;
-  increaseQuantity: () => void;
-  quantity: number | undefined;
+  /* decrease: () => void;
+  increase: () => void;
+  quantity: number | undefined; */
 }
 
 export const ProductInfos = ({
@@ -31,23 +35,23 @@ export const ProductInfos = ({
   productTypes,
   description,
   price,
-  quantity,
-  decreaseQuantity,
-  increaseQuantity,
-}: ProductsInfoProps) => {
+}: /* quantity,
+  decrease,
+  increase, */
+ProductsInfoProps) => {
   /* const { productsQuantity, increaseQuantity, decreaseQuantity } =
-    useContext(ProductsContext);
+    useContext(ProductsContext); */
 
-   const [productsQuantity, setProductsQuantity] = useState<number>(0);
+  // const [productsQuantity, setProductsQuantity] = useState<number>(0);
 
-  const handleIncreaseQuantity = () => {
-    increaseQuantity();
+  /* const handleIncreaseQuantity = () => {
+    increaseQuantity(id);
   };
 
-  const handleDecreaseQuantity = () => {
-    decreaseQuantity();
-  };
- */
+  const handleDecreaseQuantity = (id) => {
+    decreaseQuantity(id);
+  }; */
+
   return (
     <ProductInfo>
       <ProductImg src={image} alt="" />
@@ -60,8 +64,19 @@ export const ProductInfos = ({
       <ProductDescription>{description}</ProductDescription>
       <PurchaseInfo>
         <ProductPrice>{price}</ProductPrice>
+        <ProductsProvider>
+          <ProductQuantity />
+        </ProductsProvider>
 
-        <ProductQuantity />
+        {/*  <ProductQuantityContainer>
+          <button onClick={decrease}>
+            <Minus weight="bold" />
+          </button>
+          <span>{quantity}</span>
+          <button onClick={increase}>
+            <Plus weight="bold" />
+          </button>
+        </ProductQuantityContainer> */}
 
         <ShoppingCartButton href="/checkout">
           <ShoppingCart weight="fill" size={20} />

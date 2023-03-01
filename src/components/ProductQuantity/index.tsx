@@ -1,5 +1,5 @@
 import { Minus, Plus } from "phosphor-react";
-import { useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { ProductQuantityContainer } from "./styles";
 
@@ -9,25 +9,28 @@ export interface ProductQuantityProps {
   quantity: number | undefined;
 }
 
-export const ProductQuantity = ({
+export const ProductQuantity = (/* {
   decrease,
   increase,
   quantity,
-}: ProductQuantityProps) => {
-  /* const {
-    products,
+}: ProductQuantityProps */) => {
+  const {
     productsQuantity,
-    setProducts,
     increaseQuantity,
     decreaseQuantity,
-  } = useContext(ProductsContext); */
+    increaseQuantitySum,
+    decreaseQuantitySum,
+    setProductsQuantitySum,
+    productsQuantitySum,
+  } = useContext(ProductsContext);
+
   return (
     <ProductQuantityContainer>
-      <button onClick={decrease}>
+      <button onClick={decreaseQuantity}>
         <Minus weight="bold" />
       </button>
-      <span>{quantity}</span>
-      <button onClick={increase}>
+      <span>{productsQuantity}</span>
+      <button onClick={increaseQuantity}>
         <Plus weight="bold" />
       </button>
     </ProductQuantityContainer>

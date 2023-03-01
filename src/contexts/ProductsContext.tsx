@@ -14,51 +14,49 @@ interface ProductsProviderProps {
 
 interface ProductsContextType {
   productsQuantity: number | undefined;
-  products: Product[];
-  product: Product;
-  // productInfos: Product | undefined;
+  productsQuantitySum: number;
   increaseQuantity: () => void;
   decreaseQuantity: () => void;
-  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-  setProduct: React.Dispatch<React.SetStateAction<Product>>;
+  increaseQuantitySum: () => void;
+  decreaseQuantitySum: () => void;
+  setProductsQuantitySum: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const ProductsContext = createContext({} as ProductsContextType);
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [product, setProduct] = useState<Product>({} as Product);
-
   const [productsQuantity, setProductsQuantity] = useState<number>(0);
+  const [productsQuantitySum, setProductsQuantitySum] = useState<number>(0);
 
-  const increaseQuantity = useCallback(() => {
+  const increaseQuantity = () => {
     setProductsQuantity((currentValue) => currentValue + 1);
-  }, []);
+  };
 
-  const decreaseQuantity = useCallback(() => {
+  const decreaseQuantity = () => {
     productsQuantity > 0 &&
       setProductsQuantity((currentValue) => currentValue - 1);
-  }, [productsQuantity]);
+  };
 
-  const loadProducts = useCallback(async () => {
-    const { data } = await api.get("products");
-    data && setProducts(data);
-  }, [setProducts]);
+  const increaseQuantitySum = () => {
+    /* setProductsQuantitySum(); */
+    console.log(productsQuantitySum);
+  };
 
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
+  const decreaseQuantitySum = () => {
+    /*  productsQuantitySum > 0 && setProductsQuantitySum(); */
+    console.log(productsQuantitySum);
+  };
 
   return (
     <ProductsContext.Provider
       value={{
-        products,
-        product,
         productsQuantity,
-        setProducts,
-        setProduct,
+        productsQuantitySum,
         increaseQuantity,
         decreaseQuantity,
+        increaseQuantitySum,
+        decreaseQuantitySum,
+        setProductsQuantitySum,
       }}
     >
       {children}

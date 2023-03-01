@@ -8,9 +8,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <ProductsProvider>
-          <Router />
-        </ProductsProvider>
+        <Router />
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
