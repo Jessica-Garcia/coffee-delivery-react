@@ -8,55 +8,78 @@ import React, {
 import { Product } from "../@types/Product";
 import { api } from "../lib/axios";
 
+interface ShoppingCartItem {
+  product: Product;
+  quantity: number;
+}
 interface ProductsProviderProps {
   children: ReactNode;
 }
 
 interface ProductsContextType {
-  productsQuantity: number | undefined;
-  productsQuantitySum: number;
-  increaseQuantity: () => void;
-  decreaseQuantity: () => void;
-  increaseQuantitySum: () => void;
-  decreaseQuantitySum: () => void;
-  setProductsQuantitySum: React.Dispatch<React.SetStateAction<number>>;
+  products: Product[];
+  shoppingCart: ShoppingCartItem[];
+  itemQuantity: number;
+  addToShoppingCart: (id: number) => void;
+  removeFromShoppingCart: (id: number) => void;
+  clearShoppingCart: () => void;
 }
 
 export const ProductsContext = createContext({} as ProductsContextType);
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
-  const [productsQuantity, setProductsQuantity] = useState<number>(0);
-  const [productsQuantitySum, setProductsQuantitySum] = useState<number>(0);
+  const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [itemQuantity, setItemQuantity] = useState<number>(0);
 
-  const increaseQuantity = () => {
-    setProductsQuantity((currentValue) => currentValue + 1);
+  const addToShoppingCart = async (id: number) => {
+    const productItem = products.find((item) => item.id === id);
+    const itemCart = shoppingCart.find((item) => item.product === productItem);
+
+    if (!itemCart) {
+      const { data } = await api.post<ShoppingCartItem>("cart", {
+        product: { ...productItem },
+        quantity: 1,
+      });
+    } else {
+      const { data } = await api.put<ShoppingCartItem>(`cart/${id}`, {
+        product: { ...productItem },
+        quantity: (itemCart.quantity += 1),
+      });
+    }
   };
 
-  const decreaseQuantity = () => {
-    productsQuantity > 0 &&
-      setProductsQuantity((currentValue) => currentValue - 1);
-  };
+  const removeFromShoppingCart = (id: number) => {};
 
-  const increaseQuantitySum = () => {
-    /* setProductsQuantitySum(); */
-    console.log(productsQuantitySum);
-  };
+  const clearShoppingCart = () => {};
 
-  const decreaseQuantitySum = () => {
-    /*  productsQuantitySum > 0 && setProductsQuantitySum(); */
-    console.log(productsQuantitySum);
-  };
+  const loadProducts = useCallback(async () => {
+    const { data } = await api.get<Product[]>("products");
+    data && setProducts(data);
+  }, [setProducts]);
+
+  useEffect(() => {
+    loadProducts();
+  }, [loadProducts]);
+
+  const loadCartProducts = useCallback(async () => {
+    const { data } = await api.get<ShoppingCartItem[]>("cart");
+    data && setShoppingCart(data);
+  }, [setShoppingCart]);
+
+  useEffect(() => {
+    loadCartProducts();
+  }, [loadCartProducts]);
 
   return (
     <ProductsContext.Provider
       value={{
-        productsQuantity,
-        productsQuantitySum,
-        increaseQuantity,
-        decreaseQuantity,
-        increaseQuantitySum,
-        decreaseQuantitySum,
-        setProductsQuantitySum,
+        shoppingCart,
+        itemQuantity,
+        products,
+        addToShoppingCart,
+        removeFromShoppingCart,
+        clearShoppingCart,
       }}
     >
       {children}

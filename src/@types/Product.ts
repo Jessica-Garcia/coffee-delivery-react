@@ -3,11 +3,11 @@ export interface Type {
   name: string;
 }
 export interface Product {
-  id?: number;
+  id: number;
   image: string;
   name: string;
   productTypes: Type[];
   description: string;
   price: number;
-  quantity?: number;
+  // quantity?: number;
 }

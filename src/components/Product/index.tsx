@@ -13,10 +13,10 @@ import {
   PurchaseInfo,
   ShoppingCartButton,
   ProductType,
+  ProductQuantity,
 } from "./styles";
-import { ProductQuantity } from "../ProductQuantity";
 import { Product, Type } from "../../@types/Product";
-import { ProductQuantityContainer } from "../ProductQuantity/styles";
+// import { ProductQuantityContainer } from "../ProductQuantity/styles";
 
 interface ProductsInfoProps {
   image: string;
@@ -24,9 +24,8 @@ interface ProductsInfoProps {
   productTypes: Type[];
   description: string;
   price: number;
-  /* decrease: () => void;
-  increase: () => void;
-  quantity: number | undefined; */
+  id: number;
+  // quantity: number;
 }
 
 export const ProductInfos = ({
@@ -35,22 +34,18 @@ export const ProductInfos = ({
   productTypes,
   description,
   price,
-}: /* quantity,
-  decrease,
-  increase, */
-ProductsInfoProps) => {
-  /* const { productsQuantity, increaseQuantity, decreaseQuantity } =
-    useContext(ProductsContext); */
+  id,
+}: ProductsInfoProps) => {
+  const { itemQuantity, addToShoppingCart, removeFromShoppingCart } =
+    useContext(ProductsContext);
 
-  // const [productsQuantity, setProductsQuantity] = useState<number>(0);
-
-  /* const handleIncreaseQuantity = () => {
-    increaseQuantity(id);
+  const handleAddToShoppingCart = () => {
+    addToShoppingCart(id);
   };
 
-  const handleDecreaseQuantity = (id) => {
-    decreaseQuantity(id);
-  }; */
+  const handleRemoveFromShoppingCart = () => {
+    removeFromShoppingCart(id);
+  };
 
   return (
     <ProductInfo>
@@ -64,19 +59,16 @@ ProductsInfoProps) => {
       <ProductDescription>{description}</ProductDescription>
       <PurchaseInfo>
         <ProductPrice>{price}</ProductPrice>
-        <ProductsProvider>
-          <ProductQuantity />
-        </ProductsProvider>
 
-        {/*  <ProductQuantityContainer>
-          <button onClick={decrease}>
+        <ProductQuantity>
+          <button onClick={handleRemoveFromShoppingCart}>
             <Minus weight="bold" />
           </button>
-          <span>{quantity}</span>
-          <button onClick={increase}>
+          <span>{itemQuantity}</span>
+          <button onClick={handleAddToShoppingCart}>
             <Plus weight="bold" />
           </button>
-        </ProductQuantityContainer> */}
+        </ProductQuantity>
 
         <ShoppingCartButton href="/checkout">
           <ShoppingCart weight="fill" size={20} />

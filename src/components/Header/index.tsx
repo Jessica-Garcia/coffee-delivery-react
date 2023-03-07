@@ -7,7 +7,6 @@ import {
   ProductsProvider,
 } from "../../contexts/ProductsContext";
 import { defaultTheme } from "../../styles/theme/default";
-import { ProductsQuantitySum } from "../ProductsQuantitySum";
 import {
   ButtonCartContainer,
   ButtonLocationContainer,
@@ -42,10 +41,7 @@ export const Header = () => {
             </div>
           </ButtonCartContainer>
         </LocationAndCartContainer>
-        <ProductsProvider>
-          <ProductsQuantitySum />
-        </ProductsProvider>
-        {/* <span>{0}</span> */}
+        <span>{0}</span>
       </HeaderContent>
     </HeaderContainer>
   );

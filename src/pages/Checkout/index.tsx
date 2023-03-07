@@ -8,8 +8,10 @@ import {
   Plus,
   Trash,
 } from "phosphor-react";
+import { useContext, useState } from "react";
 
 import expresso from "../../assets/products/expresso.svg";
+import { ProductsContext } from "../../contexts/ProductsContext";
 
 import {
   CheckoutContainer,
@@ -43,6 +45,8 @@ import {
 } from "./styles";
 
 export const Checkout = () => {
+  const { shoppingCart } = useContext(ProductsContext);
+
   return (
     <CheckoutContainer>
       <CheckoutContent>
@@ -145,64 +149,46 @@ export const Checkout = () => {
           <SectionType>Cafés selecionados</SectionType>
           <SelectedProductsContent>
             <ProductsContainer>
-              <Product>
-                <ProductInfo>
-                  <ProductImg src={expresso} />
-                  <ProductOptionsContainer>
-                    <ProductName>Expresso Tradicional</ProductName>
-                    <ProductOptions>
-                      <ProductQuantity>
-                        <button>
-                          <Minus size={10} weight="bold" />
-                        </button>
-                        <span>1</span>
-                        <button>
-                          <Plus size={10} weight="bold" />
-                        </button>
-                      </ProductQuantity>
-                      <RemoveButton>
-                        <Trash size={16} color="#8047f8" />
-                        REMOVER
-                      </RemoveButton>
-                    </ProductOptions>
-                  </ProductOptionsContainer>
-                </ProductInfo>
+              {shoppingCart.length < 1 ? (
+                <h1>Carrinho Vazio</h1>
+              ) : (
+                shoppingCart.map((item) => {
+                  return (
+                    <Product key={item.product.id}>
+                      <ProductInfo>
+                        <ProductImg src={item.product.image} />
+                        <ProductOptionsContainer>
+                          <ProductName>{item.product.name}</ProductName>
+                          <ProductOptions>
+                            <ProductQuantity>
+                              <button>
+                                <Minus size={10} weight="bold" />
+                              </button>
+                              <span>{item.quantity}</span>
+                              <button>
+                                <Plus size={10} weight="bold" />
+                              </button>
+                            </ProductQuantity>
+                            <RemoveButton>
+                              <Trash size={16} color="#8047f8" />
+                              REMOVER
+                            </RemoveButton>
+                          </ProductOptions>
+                        </ProductOptionsContainer>
+                      </ProductInfo>
 
-                <ProductPrice>
-                  <span>R$ 9,90</span>
-                </ProductPrice>
-              </Product>
-              <Product>
-                <ProductInfo>
-                  <ProductImg src={expresso} />
-                  <ProductOptionsContainer>
-                    <ProductName>Expresso Tradicional</ProductName>
-                    <ProductOptions>
-                      <ProductQuantity>
-                        <button>
-                          <Minus size={10} weight="bold" />
-                        </button>
-                        <span>1</span>
-                        <button>
-                          <Plus size={10} weight="bold" />
-                        </button>
-                      </ProductQuantity>
-                      <RemoveButton>
-                        <Trash color="#8047f8" size={16} />
-                        REMOVER
-                      </RemoveButton>
-                    </ProductOptions>
-                  </ProductOptionsContainer>
-                </ProductInfo>
-                <ProductPrice>
-                  <span>R$ 9,90</span>
-                </ProductPrice>
-              </Product>
+                      <ProductPrice>
+                        <span>R$ {item.product.price}</span>
+                      </ProductPrice>
+                    </Product>
+                  );
+                })
+              )}
             </ProductsContainer>
             <TotalContainer>
               <Values>
                 <span>Total de itens</span>
-                <span>R$ 29,70</span>
+                <span>{0}</span>
               </Values>
               <Values>
                 <span>Entrega</span>

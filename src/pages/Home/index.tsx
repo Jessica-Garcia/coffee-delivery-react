@@ -27,15 +27,9 @@ import {
 } from "./styles";
 
 export const Home = () => {
-  /* const {
-    products,
-     productsQuantity,
-    setProducts,
-    increaseQuantity,
-    decreaseQuantity,
-  } = useContext(ProductsContext); */
+  const { products, itemQuantity } = useContext(ProductsContext);
 
-  const [products, setProducts] = useState<Product[]>([]);
+  /* const [products, setProducts] = useState<Product[]>([]);
 
   const loadProducts = useCallback(async () => {
     const { data } = await api.get<Product[]>("products");
@@ -44,7 +38,7 @@ export const Home = () => {
 
   useEffect(() => {
     loadProducts();
-  }, [loadProducts]);
+  }, [loadProducts]); */
 
   return (
     <HomeContainer>
@@ -105,9 +99,7 @@ export const Home = () => {
                   description={product.description}
                   price={product.price}
                   productTypes={product.productTypes}
-                  /* increase={increaseQuantity}
-                  decrease={decreaseQuantity}
-                  quantity={productsQuantity} */
+                  id={product.id}
                 />
               );
             })}
