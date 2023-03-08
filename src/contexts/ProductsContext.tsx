@@ -9,6 +9,7 @@ import { Product } from "../@types/Product";
 import { api } from "../lib/axios";
 
 interface ShoppingCartItem {
+  id: number;
   product: Product;
   quantity: number;
 }
@@ -23,6 +24,7 @@ interface ProductsContextType {
   addToShoppingCart: (id: number) => void;
   removeFromShoppingCart: (id: number) => void;
   clearShoppingCart: () => void;
+  setItemQuantity: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const ProductsContext = createContext({} as ProductsContextType);
@@ -34,22 +36,32 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
 
   const addToShoppingCart = async (id: number) => {
     const productItem = products.find((item) => item.id === id);
-    const itemCart = shoppingCart.find((item) => item.product === productItem);
-
-    if (!itemCart) {
-      const { data } = await api.post<ShoppingCartItem>("cart", {
+    const productInShoppingCart = shoppingCart.find(
+      (item) => item.id === productItem?.id
+    );
+    if (!productInShoppingCart) {
+      await api.post<ShoppingCartItem>("cart", {
+        id: productItem?.id,
         product: { ...productItem },
         quantity: 1,
       });
     } else {
-      const { data } = await api.put<ShoppingCartItem>(`cart/${id}`, {
-        product: { ...productItem },
-        quantity: (itemCart.quantity += 1),
+      await api.put<ShoppingCartItem>(`cart/${productInShoppingCart.id}`, {
+        ...productInShoppingCart,
+        quantity: (productInShoppingCart.quantity += 1),
       });
     }
+
+    loadCartProducts();
   };
 
-  const removeFromShoppingCart = (id: number) => {};
+  /* const updateProductQuantity = async (idProductInShoppingCart: number) => {
+
+  }; */
+
+  const removeFromShoppingCart = (id: number) => {
+    // const itemForRemove = shoppingCart.find((item) => item === id);
+  };
 
   const clearShoppingCart = () => {};
 
@@ -80,6 +92,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         addToShoppingCart,
         removeFromShoppingCart,
         clearShoppingCart,
+        setItemQuantity,
       }}
     >
       {children}

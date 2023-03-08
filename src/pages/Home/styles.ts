@@ -4,7 +4,7 @@ export const HomeContainer = styled.main`
   background: ${(props) => props.theme.background};
   max-width: 90rem;
   margin: 0 auto;
-  height: 143.3125rem;
+  min-height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -45,8 +45,8 @@ import {
 } from "./styles";
 
 export const Checkout = () => {
-  const { shoppingCart } = useContext(ProductsContext);
-
+  const { shoppingCart, addToShoppingCart, removeFromShoppingCart } =
+    useContext(ProductsContext);
   return (
     <CheckoutContainer>
       <CheckoutContent>
@@ -154,18 +154,22 @@ export const Checkout = () => {
               ) : (
                 shoppingCart.map((item) => {
                   return (
-                    <Product key={item.product.id}>
+                    <Product key={item.id}>
                       <ProductInfo>
                         <ProductImg src={item.product.image} />
                         <ProductOptionsContainer>
                           <ProductName>{item.product.name}</ProductName>
                           <ProductOptions>
                             <ProductQuantity>
-                              <button>
+                              <button
+                                onClick={() => removeFromShoppingCart(item.id)}
+                              >
                                 <Minus size={10} weight="bold" />
                               </button>
                               <span>{item.quantity}</span>
-                              <button>
+                              <button
+                                onClick={() => addToShoppingCart(item.id)}
+                              >
                                 <Plus size={10} weight="bold" />
                               </button>
                             </ProductQuantity>
