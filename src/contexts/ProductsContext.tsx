@@ -22,7 +22,8 @@ interface ProductsContextType {
   shoppingCart: ShoppingCartItem[];
   itemQuantity: number;
   addToShoppingCart: (id: number) => void;
-  removeFromShoppingCart: (id: number) => void;
+  removeItemFromShoppingCart: (id: number) => void;
+  removeAllItemsFromShoppingCart: (item: ShoppingCartItem) => void;
   clearShoppingCart: () => void;
   setItemQuantity: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -55,12 +56,27 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     loadCartProducts();
   };
 
-  /* const updateProductQuantity = async (idProductInShoppingCart: number) => {
+  const removeItemFromShoppingCart = async (id: number) => {
+    const itemCartForRemove = shoppingCart.find((item) => item.id === id);
 
-  }; */
+    if (!itemCartForRemove) {
+      return;
+    }
 
-  const removeFromShoppingCart = (id: number) => {
-    // const itemForRemove = shoppingCart.find((item) => item === id);
+    if (itemCartForRemove && itemCartForRemove.quantity > 1) {
+      await api.put<ShoppingCartItem>(`cart/${itemCartForRemove.id}`, {
+        ...itemCartForRemove,
+        quantity: (itemCartForRemove.quantity -= 1),
+      });
+    } else {
+      await api.delete<ShoppingCartItem>(`cart/${itemCartForRemove?.id}`);
+    }
+    loadCartProducts();
+  };
+
+  const removeAllItemsFromShoppingCart = async (item: ShoppingCartItem) => {
+    await api.delete<ShoppingCartItem>(`cart/${item.id}`);
+    loadCartProducts();
   };
 
   const clearShoppingCart = () => {};
@@ -90,7 +106,8 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         itemQuantity,
         products,
         addToShoppingCart,
-        removeFromShoppingCart,
+        removeItemFromShoppingCart,
+        removeAllItemsFromShoppingCart,
         clearShoppingCart,
         setItemQuantity,
       }}

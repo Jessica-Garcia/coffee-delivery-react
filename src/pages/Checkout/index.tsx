@@ -45,8 +45,12 @@ import {
 } from "./styles";
 
 export const Checkout = () => {
-  const { shoppingCart, addToShoppingCart, removeFromShoppingCart } =
-    useContext(ProductsContext);
+  const {
+    shoppingCart,
+    addToShoppingCart,
+    removeItemFromShoppingCart,
+    removeAllItemsFromShoppingCart,
+  } = useContext(ProductsContext);
   return (
     <CheckoutContainer>
       <CheckoutContent>
@@ -162,7 +166,9 @@ export const Checkout = () => {
                           <ProductOptions>
                             <ProductQuantity>
                               <button
-                                onClick={() => removeFromShoppingCart(item.id)}
+                                onClick={() =>
+                                  removeItemFromShoppingCart(item.id)
+                                }
                               >
                                 <Minus size={10} weight="bold" />
                               </button>
@@ -173,7 +179,11 @@ export const Checkout = () => {
                                 <Plus size={10} weight="bold" />
                               </button>
                             </ProductQuantity>
-                            <RemoveButton>
+                            <RemoveButton
+                              onClick={() =>
+                                removeAllItemsFromShoppingCart(item)
+                              }
+                            >
                               <Trash size={16} color="#8047f8" />
                               REMOVER
                             </RemoveButton>

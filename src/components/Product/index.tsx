@@ -41,7 +41,7 @@ export const ProductInfos = ({
     itemQuantity,
     setItemQuantity,
     addToShoppingCart,
-    removeFromShoppingCart,
+    removeItemFromShoppingCart,
   } = useContext(ProductsContext);
 
   const handleAddToShoppingCart = () => {
@@ -56,8 +56,8 @@ export const ProductInfos = ({
     return 0;
   };
 
-  const handleRemoveFromShoppingCart = () => {
-    removeFromShoppingCart(id);
+  const handleRemoveItemFromShoppingCart = () => {
+    removeItemFromShoppingCart(id);
   };
 
   return (
@@ -74,7 +74,7 @@ export const ProductInfos = ({
         <ProductPrice>{price}</ProductPrice>
 
         <ProductQuantity>
-          <button onClick={handleRemoveFromShoppingCart}>
+          <button onClick={handleRemoveItemFromShoppingCart}>
             <Minus weight="bold" />
           </button>
           <span>{loadItemQuantityInShoppingCart(id)}</span>
