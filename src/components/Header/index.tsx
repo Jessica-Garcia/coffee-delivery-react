@@ -1,6 +1,11 @@
 import { ShoppingCart, MapPin } from "phosphor-react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import {
+  ProductsContext,
+  ProductsProvider,
+} from "../../contexts/ProductsContext";
 import { defaultTheme } from "../../styles/theme/default";
 import {
   ButtonCartContainer,
@@ -10,6 +15,8 @@ import {
   LocationAndCartContainer,
 } from "./styles";
 export const Header = () => {
+  const { amountItemsInHeaderCart } = useContext(ProductsContext);
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -34,7 +41,7 @@ export const Header = () => {
             </div>
           </ButtonCartContainer>
         </LocationAndCartContainer>
-        <span>3</span>
+        <span>{amountItemsInHeaderCart()}</span>
       </HeaderContent>
     </HeaderContainer>
   );

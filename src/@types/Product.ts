@@ -1,13 +1,13 @@
 export interface Type {
   id: number;
-  type: string;
+  name: string;
 }
 export interface Product {
   id: number;
   image: string;
   name: string;
   productTypes: Type[];
-  description: String;
+  description: string;
   price: number;
-  quantity: number;
+  // quantity?: number;
 }
