@@ -10,7 +10,6 @@ import {
 } from "phosphor-react";
 import { useContext, useState } from "react";
 
-import expresso from "../../assets/products/expresso.svg";
 import { ProductsContext } from "../../contexts/ProductsContext";
 
 import {
@@ -50,7 +49,11 @@ export const Checkout = () => {
     addToShoppingCart,
     removeItemFromShoppingCart,
     removeAllItemsFromShoppingCart,
+    getSubTotal,
   } = useContext(ProductsContext);
+
+  const deliveryValue = 10;
+
   return (
     <CheckoutContainer>
       <CheckoutContent>
@@ -192,7 +195,7 @@ export const Checkout = () => {
                       </ProductInfo>
 
                       <ProductPrice>
-                        <span>R$ {item.product.price}</span>
+                        <span>R$ {item.product.price * item.quantity}</span>
                       </ProductPrice>
                     </Product>
                   );
@@ -201,17 +204,17 @@ export const Checkout = () => {
             </ProductsContainer>
             <TotalContainer>
               <Values>
-                <span>Total de itens</span>
-                <span>{0}</span>
+                <span>Subtotal</span>
+                <span>{getSubTotal()}</span>
               </Values>
               <Values>
                 <span>Entrega</span>
-                <span>R$ 3,50</span>
+                <span>{deliveryValue}</span>
               </Values>
 
               <Values>
                 <strong>Total</strong>
-                <strong>R$ 33,20</strong>
+                <strong>{getSubTotal() + deliveryValue}</strong>
               </Values>
             </TotalContainer>
             <Totalbutton href="/success">Confirmar Pedido</Totalbutton>

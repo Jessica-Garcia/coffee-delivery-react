@@ -23,8 +23,9 @@ interface ProductsContextType {
   itemQuantity: number;
   addToShoppingCart: (id: number) => void;
   removeItemFromShoppingCart: (id: number) => void;
+  amountItemsInHeaderCart: () => number;
   removeAllItemsFromShoppingCart: (item: ShoppingCartItem) => void;
-  clearShoppingCart: () => void;
+  getSubTotal: () => number;
   setItemQuantity: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -79,7 +80,19 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     loadCartProducts();
   };
 
-  const clearShoppingCart = () => {};
+  const amountItemsInHeaderCart = () => {
+    const amountItems = shoppingCart.reduce((acc, itemCart) => {
+      return (acc += itemCart.quantity);
+    }, 0);
+    return amountItems;
+  };
+
+  const getSubTotal = () => {
+    const subTotal = shoppingCart.reduce((acc, itemCart) => {
+      return (acc += itemCart.quantity * itemCart.product.price);
+    }, 0);
+    return subTotal;
+  };
 
   const loadProducts = useCallback(async () => {
     const { data } = await api.get<Product[]>("products");
@@ -108,8 +121,9 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         addToShoppingCart,
         removeItemFromShoppingCart,
         removeAllItemsFromShoppingCart,
-        clearShoppingCart,
+        amountItemsInHeaderCart,
         setItemQuantity,
+        getSubTotal,
       }}
     >
       {children}

@@ -15,7 +15,7 @@ import {
   LocationAndCartContainer,
 } from "./styles";
 export const Header = () => {
-  // const { productsQuantity } = useContext(ProductsContext);
+  const { amountItemsInHeaderCart } = useContext(ProductsContext);
 
   return (
     <HeaderContainer>
@@ -41,7 +41,7 @@ export const Header = () => {
             </div>
           </ButtonCartContainer>
         </LocationAndCartContainer>
-        <span>{0}</span>
+        <span>{amountItemsInHeaderCart()}</span>
       </HeaderContent>
     </HeaderContainer>
   );
