@@ -12,8 +12,11 @@ import {
 
 import ImageSuccessPage from "../../assets/image-success-page.svg";
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { useContext } from "react";
+import { ProductsContext } from "../../contexts/ProductsContext";
 
 export const Success = () => {
+  const { shoppingCart, newOrder } = useContext(ProductsContext);
   return (
     <SuccessContainer>
       <BannerContainer>
@@ -32,8 +35,11 @@ export const Success = () => {
                 <MapPin weight="fill" />
               </div>
               <span>
-                Entrega em <strong>Rua João Daniel Martinelli, 102 </strong>
-                Farrapos - Porto Alegre, RS
+                Entrega em{" "}
+                <strong>
+                  {newOrder?.street}, {newOrder?.number}{" "}
+                </strong>
+                {newOrder?.neighborhood} - {newOrder?.city}, {newOrder?.uf}
               </span>
             </OderDetails>
             <OderDetails iconsColor="yellow">

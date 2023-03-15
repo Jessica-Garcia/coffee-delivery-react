@@ -9,8 +9,10 @@ import {
   Trash,
 } from "phosphor-react";
 import { useContext, useState } from "react";
-
 import { ProductsContext } from "../../contexts/ProductsContext";
+import { priceFormatter } from "../../utils/formatter";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
   CheckoutContainer,
@@ -42,17 +44,61 @@ import {
   Type,
   Values,
 } from "./styles";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+const checkoutFormSchema = z.object({
+  cep: z.string(),
+  street: z.string(),
+  number: z.number(),
+  complement: z.string(),
+  neighborhood: z.string(),
+  city: z.string(),
+  uf: z.string(),
+});
+
+type CheckoutFormInputs = z.infer<typeof checkoutFormSchema>;
 
 export const Checkout = () => {
+  const navigate = useNavigate();
+
   const {
     shoppingCart,
+    setShoppingCart,
     addToShoppingCart,
     removeItemFromShoppingCart,
     removeAllItemsFromShoppingCart,
     getSubTotal,
+    createNewOrder,
   } = useContext(ProductsContext);
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<CheckoutFormInputs>({
+    resolver: zodResolver(checkoutFormSchema),
+  });
+
   const deliveryValue = 10;
+
+  const handleCreateNewOrder = (data: CheckoutFormInputs) => {
+    const { cep, street, number, complement, neighborhood, city, uf } = data;
+
+    createNewOrder({
+      cep,
+      street,
+      number,
+      complement,
+      neighborhood,
+      city,
+      uf,
+    });
+    reset();
+    setShoppingCart([]);
+    navigate("/success");
+  };
 
   return (
     <CheckoutContainer>
@@ -69,7 +115,11 @@ export const Checkout = () => {
                 Informe o endereço onde deseja receber seu pedido
               </SubTitle>
             </TitleContainer>
-            <FormContainer autoComplete="off">
+            <FormContainer
+              id="checkout"
+              autoComplete="off"
+              onSubmit={handleSubmit(handleCreateNewOrder)}
+            >
               <FormInput
                 inputSize="defaultWidth"
                 inputMaxSize="defaultMaxWidth"
@@ -77,6 +127,7 @@ export const Checkout = () => {
                 required
                 type="text"
                 autoComplete="off"
+                {...register("cep")}
               />
               <FormInput
                 inputSize="largeWidth"
@@ -85,6 +136,7 @@ export const Checkout = () => {
                 required
                 placeholder="Rua"
                 autoComplete="off"
+                {...register("street")}
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -93,6 +145,7 @@ export const Checkout = () => {
                 placeholder="Número"
                 required
                 autoComplete="off"
+                {...register("number", { valueAsNumber: true })}
               />
               <FormInput
                 inputSize="largeWidth"
@@ -101,6 +154,7 @@ export const Checkout = () => {
                 placeholder="complemento (opcional)"
                 required={false}
                 autoComplete="off"
+                {...register("complement")}
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -109,6 +163,7 @@ export const Checkout = () => {
                 placeholder="Bairro"
                 required
                 autoComplete="off"
+                {...register("neighborhood")}
               />
               <FormInput
                 inputSize="defaultWidth"
@@ -117,6 +172,7 @@ export const Checkout = () => {
                 placeholder="Cidade"
                 required
                 autoComplete="off"
+                {...register("city")}
               />
               <FormInput
                 inputSize="smallestWidth"
@@ -125,6 +181,7 @@ export const Checkout = () => {
                 placeholder="UF"
                 required
                 autoComplete="off"
+                {...register("uf")}
               />
             </FormContainer>
             <PaymentTypeContainer>
@@ -140,10 +197,12 @@ export const Checkout = () => {
               </TitleContainer>
               <PaymentTypes>
                 <Type>
-                  <CreditCard size={16} color="#8047F8" /> CARTÃO CRÉDITO
+                  <CreditCard size={16} color="#8047F8" />
+                  CARTÃO CRÉDITO
                 </Type>
                 <Type>
-                  <Bank size={16} color="#8047F8" /> CARTÃO DÉBITO
+                  <Bank size={16} color="#8047F8" />
+                  CARTÃO DÉBITO
                 </Type>
                 <Type>
                   <Money size={16} color="#8047F8" /> DINHEIRO
@@ -195,7 +254,11 @@ export const Checkout = () => {
                       </ProductInfo>
 
                       <ProductPrice>
-                        <span>R$ {item.product.price * item.quantity}</span>
+                        <span>
+                          {priceFormatter.format(
+                            item.product.price * item.quantity
+                          )}
+                        </span>
                       </ProductPrice>
                     </Product>
                   );
@@ -205,19 +268,23 @@ export const Checkout = () => {
             <TotalContainer>
               <Values>
                 <span>Subtotal</span>
-                <span>{getSubTotal()}</span>
+                <span>{priceFormatter.format(getSubTotal())}</span>
               </Values>
               <Values>
                 <span>Entrega</span>
-                <span>{deliveryValue}</span>
+                <span>{priceFormatter.format(deliveryValue)}</span>
               </Values>
 
               <Values>
                 <strong>Total</strong>
-                <strong>{getSubTotal() + deliveryValue}</strong>
+                <strong>
+                  {priceFormatter.format(getSubTotal() + deliveryValue)}
+                </strong>
               </Values>
             </TotalContainer>
-            <Totalbutton href="/success">Confirmar Pedido</Totalbutton>
+            <Totalbutton type="submit" form="checkout">
+              Confirmar Pedido
+            </Totalbutton>
           </SelectedProductsContent>
         </SelectedProductsContainer>
       </CheckoutContent>

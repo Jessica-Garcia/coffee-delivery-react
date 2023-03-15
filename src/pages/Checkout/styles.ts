@@ -420,7 +420,7 @@ export const Values = styled.div`
   font-size: clamp(10px, 1.2vw, 14px);
 `;
 
-export const Totalbutton = styled.a`
+export const Totalbutton = styled.button`
   border: 0;
   display: flex;
   justify-content: center;

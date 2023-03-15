@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { Product } from "../@types/Product";
 import { api } from "../lib/axios";
-
 interface ShoppingCartItem {
   id: number;
   product: Product;
@@ -17,16 +16,34 @@ interface ProductsProviderProps {
   children: ReactNode;
 }
 
+interface OrderCheckout {
+  cep: string;
+  street: string;
+  number: number;
+  complement: string;
+  neighborhood: string;
+  city: string;
+  uf: string;
+}
+
+interface PaymentOptions {
+  debit: string;
+  credit: string;
+  money: string;
+}
 interface ProductsContextType {
   products: Product[];
   shoppingCart: ShoppingCartItem[];
   itemQuantity: number;
+  newOrder: OrderCheckout | undefined;
+  setShoppingCart: React.Dispatch<React.SetStateAction<ShoppingCartItem[]>>;
   addToShoppingCart: (id: number) => void;
   removeItemFromShoppingCart: (id: number) => void;
   amountItemsInHeaderCart: () => number;
   removeAllItemsFromShoppingCart: (item: ShoppingCartItem) => void;
   getSubTotal: () => number;
   setItemQuantity: React.Dispatch<React.SetStateAction<number>>;
+  createNewOrder: (data: OrderCheckout) => void;
 }
 
 export const ProductsContext = createContext({} as ProductsContextType);
@@ -35,6 +52,22 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [itemQuantity, setItemQuantity] = useState<number>(0);
+  const [newOrder, setNewOrder] = useState<OrderCheckout>();
+  const [paymentOptions, setPaymentOptions] = useState<PaymentOptions>();
+
+  const createNewOrder = (data: OrderCheckout) => {
+    const { cep, street, number, complement, neighborhood, city, uf } = data;
+
+    setNewOrder({
+      cep,
+      street,
+      number,
+      complement,
+      neighborhood,
+      city,
+      uf,
+    });
+  };
 
   const addToShoppingCart = async (id: number) => {
     const productItem = products.find((item) => item.id === id);
@@ -118,12 +151,15 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         shoppingCart,
         itemQuantity,
         products,
+        newOrder,
+        setShoppingCart,
+        setItemQuantity,
         addToShoppingCart,
         removeItemFromShoppingCart,
         removeAllItemsFromShoppingCart,
         amountItemsInHeaderCart,
-        setItemQuantity,
         getSubTotal,
+        createNewOrder,
       }}
     >
       {children}

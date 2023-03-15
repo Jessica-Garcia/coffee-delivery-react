@@ -16,6 +16,7 @@ import {
   ProductQuantity,
 } from "./styles";
 import { Product, Type } from "../../@types/Product";
+import { priceFormatter } from "../../utils/formatter";
 // import { ProductQuantityContainer } from "../ProductQuantity/styles";
 
 interface ProductsInfoProps {
@@ -36,13 +37,8 @@ export const ProductInfos = ({
   price,
   id,
 }: ProductsInfoProps) => {
-  const {
-    shoppingCart,
-    itemQuantity,
-    setItemQuantity,
-    addToShoppingCart,
-    removeItemFromShoppingCart,
-  } = useContext(ProductsContext);
+  const { shoppingCart, addToShoppingCart, removeItemFromShoppingCart } =
+    useContext(ProductsContext);
 
   const handleAddToShoppingCart = () => {
     addToShoppingCart(id);
@@ -71,7 +67,7 @@ export const ProductInfos = ({
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <PurchaseInfo>
-        <ProductPrice>{price}</ProductPrice>
+        <ProductPrice>{priceFormatter.format(price)}</ProductPrice>
 
         <ProductQuantity>
           <button onClick={handleRemoveItemFromShoppingCart}>
