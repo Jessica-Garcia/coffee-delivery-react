@@ -22,17 +22,18 @@ export const CheckoutContent = styled.section`
   width: 85%;
   height: 100%;
   display: flex;
-  // border: solid blue 5px;
+  //border: solid blue 5px;
   //justify-content: space-between;
   gap: 32px;
+  margin-top: 50px;
   /* position: absolute;
   top: 0;
   bottom: 0; */
+  height: max-content;
 `;
 
 export const CompleteOrderContainer = styled.section`
-  // border: solid lightblue 5px;
-
+  //border: solid lightblue 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,7 +42,7 @@ export const CompleteOrderContainer = styled.section`
   width: 90%;
 
   max-width: 640px;
-  height: 100%;
+  min-height: 100%;
   span {
     font-family: "Baloo 2", cursive;
     width: 170px;
@@ -61,7 +62,7 @@ export const CompleteOrderContainer = styled.section`
 `;
 
 export const CompleteOrderContent = styled.article`
-  // border: solid yellow 5px;
+  //border: solid yellow 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -70,8 +71,8 @@ export const CompleteOrderContent = styled.article`
   gap: 12px;
   width: 100%;
   max-width: 640px;
-  height: max-content;
-  border-radius: 6px;
+  border-radius: 10px;
+  margin-bottom: 40px;
 `;
 
 export const TitleContainer = styled.div`
@@ -182,15 +183,14 @@ export const FormInput = styled.input<
 `;
 
 export const PaymentTypeContainer = styled.div`
-  // border: solid blue 5px;
+  //border: solid blue 5px;
   padding-top: 30px;
   height: max-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  //gap: 32px;
   max-width: 640px;
-  min-height: 207px;
+  min-height: 110px;
   width: 100%;
   background: #f3f2f2;
   border-radius: 6px;
@@ -202,12 +202,59 @@ export const PaymentTypes = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   height: max-content;
+
+  input:checked + label {
+    background: #ebe5f9;
+    border: 1px solid #8047f8;
+  }
+
+  label {
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    gap: 5px;
+    max-width: 178.67px;
+    width: 30%;
+    flex-grow: 1;
+    max-height: 51px;
+    height: 40px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(9px, 0.57vw, 10px);
+    line-height: 160%;
+    text-transform: uppercase;
+    color: #574f4d;
+    background: #e6e5e5;
+    border-radius: 6px;
+
+    &:hover {
+      background: #d7d5d5;
+      transition: background 0.3s;
+    }
+  }
+
+  input[type="radio"] {
+    visibility: hidden;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+  }
 `;
 
-export const Type = styled.button`
+export const Type = styled.input`
+  &:focus {
+    background: #ebe5f9;
+    border: 1px solid #8047f8;
+  }
+`;
+
+/* export const RadioLabel = styled.label`
   border: 0;
   display: flex;
   align-items: center;
@@ -233,13 +280,8 @@ export const Type = styled.button`
     background: #d7d5d5;
     transition: background 0.3s;
   }
-
-  &:focus {
-    background: #ebe5f9;
-    border: 1px solid #8047f8;
-  }
 `;
-
+ */
 export const SelectedProductsContainer = styled.section`
   //border: solid pink 5px;
   max-width: 448px;

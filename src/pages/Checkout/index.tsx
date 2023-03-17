@@ -41,7 +41,6 @@ import {
   TitleContainer,
   Totalbutton,
   TotalContainer,
-  Type,
   Values,
 } from "./styles";
 import { useForm } from "react-hook-form";
@@ -55,6 +54,7 @@ const checkoutFormSchema = z.object({
   neighborhood: z.string(),
   city: z.string(),
   uf: z.string(),
+  paymentType: z.string(),
 });
 
 type CheckoutFormInputs = z.infer<typeof checkoutFormSchema>;
@@ -64,12 +64,13 @@ export const Checkout = () => {
 
   const {
     shoppingCart,
-    setShoppingCart,
+    clearShoppingCart,
     addToShoppingCart,
     removeItemFromShoppingCart,
     removeAllItemsFromShoppingCart,
     getSubTotal,
     createNewOrder,
+    setItemQuantity,
   } = useContext(ProductsContext);
 
   const {
@@ -84,7 +85,16 @@ export const Checkout = () => {
   const deliveryValue = 10;
 
   const handleCreateNewOrder = (data: CheckoutFormInputs) => {
-    const { cep, street, number, complement, neighborhood, city, uf } = data;
+    const {
+      cep,
+      street,
+      number,
+      complement,
+      neighborhood,
+      city,
+      uf,
+      paymentType,
+    } = data;
 
     createNewOrder({
       cep,
@@ -94,9 +104,11 @@ export const Checkout = () => {
       neighborhood,
       city,
       uf,
+      paymentType,
     });
     reset();
-    setShoppingCart([]);
+    clearShoppingCart();
+    setItemQuantity(0);
     navigate("/success");
   };
 
@@ -196,17 +208,41 @@ export const Checkout = () => {
                 </SubTitle>
               </TitleContainer>
               <PaymentTypes>
-                <Type>
+                <input
+                  form="checkout"
+                  type="radio"
+                  id="credit"
+                  value="Cartão de crédito"
+                  {...register("paymentType")}
+                  defaultChecked
+                />
+                <label htmlFor="credit">
                   <CreditCard size={16} color="#8047F8" />
-                  CARTÃO CRÉDITO
-                </Type>
-                <Type>
+                  Cartão de crédito
+                </label>
+
+                <input
+                  form="checkout"
+                  type="radio"
+                  id="debit"
+                  value="Cartão de débito"
+                  {...register("paymentType")}
+                />
+                <label htmlFor="debit">
                   <Bank size={16} color="#8047F8" />
-                  CARTÃO DÉBITO
-                </Type>
-                <Type>
-                  <Money size={16} color="#8047F8" /> DINHEIRO
-                </Type>
+                  Cartão de Dédito
+                </label>
+                <input
+                  form="checkout"
+                  type="radio"
+                  id="money"
+                  value="Dinheiro"
+                  {...register("paymentType")}
+                />
+                <label htmlFor="money">
+                  <Money size={16} color="#8047F8" />
+                  Dinheiro
+                </label>
               </PaymentTypes>
             </PaymentTypeContainer>
           </CompleteOrderContent>

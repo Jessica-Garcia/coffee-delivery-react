@@ -16,7 +16,7 @@ import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 
 export const Success = () => {
-  const { shoppingCart, newOrder } = useContext(ProductsContext);
+  const { newOrder } = useContext(ProductsContext);
   return (
     <SuccessContainer>
       <BannerContainer>
@@ -55,7 +55,7 @@ export const Success = () => {
                 <CurrencyDollar weight="fill" />
               </div>
               <span>
-                Pagamento na entrega <strong>Cartão de Crédito</strong>
+                Pagamento na entrega <strong>{newOrder?.paymentType}</strong>
               </span>
             </OderDetails>
           </OrderInfoContent>
