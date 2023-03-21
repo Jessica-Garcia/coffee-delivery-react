@@ -271,6 +271,7 @@ export const SelectedProductsContent = styled.article`
 
 export const ProductsContainer = styled.div`
   width: 100%;
+  border: solid red 2px;
 `;
 
 export const Product = styled.div`
@@ -430,4 +431,15 @@ export const Totalbutton = styled.button`
   &:hover {
     background: #c47f17;
   }
+`;
+
+export const EmptyShoppingCart = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  color: #dbac2c;
+  font-size: 30px;
+  font-family: "Baloo 2", cursive;
 `;

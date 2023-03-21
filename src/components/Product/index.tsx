@@ -14,6 +14,7 @@ import {
 } from "./styles";
 import { Type } from "../../@types/Product";
 import { priceFormatter } from "../../utils/formatter";
+import { useNavigate } from "react-router-dom";
 
 interface ProductsInfoProps {
   image: string;
@@ -32,6 +33,8 @@ export const ProductInfos = ({
   price,
   id,
 }: ProductsInfoProps) => {
+  const navigate = useNavigate();
+
   const { shoppingCart, addToShoppingCart, removeItemFromShoppingCart } =
     useContext(ProductsContext);
 
@@ -74,7 +77,12 @@ export const ProductInfos = ({
           </button>
         </ProductQuantity>
 
-        <ShoppingCartButton href="/checkout">
+        <ShoppingCartButton
+          onClick={() => {
+            navigate("/checkout");
+          }}
+          disabled={!loadItemQuantityInShoppingCart(id)}
+        >
           <ShoppingCart weight="fill" size={20} />
         </ShoppingCartButton>
       </PurchaseInfo>

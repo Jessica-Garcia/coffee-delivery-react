@@ -19,6 +19,7 @@ import {
   CheckoutContent,
   CompleteOrderContainer,
   CompleteOrderContent,
+  EmptyShoppingCart,
   FormContainer,
   FormInput,
   PaymentTypeContainer,
@@ -250,77 +251,81 @@ export const Checkout = () => {
         <SelectedProductsContainer>
           <SectionType>Cafés selecionados</SectionType>
           <SelectedProductsContent>
-            <ProductsContainer>
-              {shoppingCart.length < 1 ? (
-                <h1>Carrinho Vazio</h1>
-              ) : (
-                shoppingCart.map((item) => {
-                  return (
-                    <Product key={item.id}>
-                      <ProductInfo>
-                        <ProductImg src={item.product.image} />
-                        <ProductOptionsContainer>
-                          <ProductName>{item.product.name}</ProductName>
-                          <ProductOptions>
-                            <ProductQuantity>
-                              <button
+            {shoppingCart.length >= 1 ? (
+              <>
+                <ProductsContainer>
+                  {shoppingCart.map((item) => {
+                    return (
+                      <Product key={item.id}>
+                        <ProductInfo>
+                          <ProductImg src={item.product.image} />
+                          <ProductOptionsContainer>
+                            <ProductName>{item.product.name}</ProductName>
+                            <ProductOptions>
+                              <ProductQuantity>
+                                <button
+                                  onClick={() =>
+                                    removeItemFromShoppingCart(item.id)
+                                  }
+                                >
+                                  <Minus size={10} weight="bold" />
+                                </button>
+                                <span>{item.quantity}</span>
+                                <button
+                                  onClick={() => addToShoppingCart(item.id)}
+                                >
+                                  <Plus size={10} weight="bold" />
+                                </button>
+                              </ProductQuantity>
+                              <RemoveButton
                                 onClick={() =>
-                                  removeItemFromShoppingCart(item.id)
+                                  removeAllItemsFromShoppingCart(item)
                                 }
                               >
-                                <Minus size={10} weight="bold" />
-                              </button>
-                              <span>{item.quantity}</span>
-                              <button
-                                onClick={() => addToShoppingCart(item.id)}
-                              >
-                                <Plus size={10} weight="bold" />
-                              </button>
-                            </ProductQuantity>
-                            <RemoveButton
-                              onClick={() =>
-                                removeAllItemsFromShoppingCart(item)
-                              }
-                            >
-                              <Trash size={16} color="#8047f8" />
-                              REMOVER
-                            </RemoveButton>
-                          </ProductOptions>
-                        </ProductOptionsContainer>
-                      </ProductInfo>
+                                <Trash size={16} color="#8047f8" />
+                                REMOVER
+                              </RemoveButton>
+                            </ProductOptions>
+                          </ProductOptionsContainer>
+                        </ProductInfo>
 
-                      <ProductPrice>
-                        <span>
-                          {priceFormatter.format(
-                            item.product.price * item.quantity
-                          )}
-                        </span>
-                      </ProductPrice>
-                    </Product>
-                  );
-                })
-              )}
-            </ProductsContainer>
-            <TotalContainer>
-              <Values>
-                <span>Subtotal</span>
-                <span>{priceFormatter.format(getSubTotal())}</span>
-              </Values>
-              <Values>
-                <span>Entrega</span>
-                <span>{priceFormatter.format(deliveryValue)}</span>
-              </Values>
+                        <ProductPrice>
+                          <span>
+                            {priceFormatter.format(
+                              item.product.price * item.quantity
+                            )}
+                          </span>
+                        </ProductPrice>
+                      </Product>
+                    );
+                  })}
+                </ProductsContainer>
+                <TotalContainer>
+                  <Values>
+                    <span>Subtotal</span>
+                    <span>{priceFormatter.format(getSubTotal())}</span>
+                  </Values>
+                  <Values>
+                    <span>Entrega</span>
+                    <span>{priceFormatter.format(deliveryValue)}</span>
+                  </Values>
 
-              <Values>
-                <strong>Total</strong>
-                <strong>
-                  {priceFormatter.format(getSubTotal() + deliveryValue)}
-                </strong>
-              </Values>
-            </TotalContainer>
-            <Totalbutton type="submit" form="checkout">
-              Confirmar Pedido
-            </Totalbutton>
+                  <Values>
+                    <strong>Total</strong>
+                    <strong>
+                      {priceFormatter.format(getSubTotal() + deliveryValue)}
+                    </strong>
+                  </Values>
+                </TotalContainer>
+                <Totalbutton type="submit" form="checkout">
+                  Confirmar Pedido
+                </Totalbutton>
+              </>
+            ) : (
+              <EmptyShoppingCart>
+                <h1>Nenhum produto selecionado</h1>
+              </EmptyShoppingCart>
+            )}
           </SelectedProductsContent>
         </SelectedProductsContainer>
       </CheckoutContent>
