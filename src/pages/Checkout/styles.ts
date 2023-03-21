@@ -15,25 +15,18 @@ export const CheckoutContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
-  //border: solid red 5px;
 `;
 
 export const CheckoutContent = styled.section`
   width: 85%;
   height: 100%;
   display: flex;
-  //border: solid blue 5px;
-  //justify-content: space-between;
   gap: 32px;
   margin-top: 50px;
-  /* position: absolute;
-  top: 0;
-  bottom: 0; */
   height: max-content;
 `;
 
 export const CompleteOrderContainer = styled.section`
-  //border: solid lightblue 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,7 +55,6 @@ export const CompleteOrderContainer = styled.section`
 `;
 
 export const CompleteOrderContent = styled.article`
-  //border: solid yellow 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -76,7 +68,6 @@ export const CompleteOrderContent = styled.article`
 `;
 
 export const TitleContainer = styled.div`
-  // border: solid black 5px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -84,7 +75,6 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  // border: solid darkgreen 5px;
   max-width: 530px;
   width: 100%;
   height: max-content;
@@ -104,8 +94,6 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  // border: solid darkgoldenrod 5px;
-
   max-width: 530px;
   height: max-content;
   margin-bottom: 32px;
@@ -121,7 +109,6 @@ export const SubTitle = styled.div`
 `;
 
 export const FormContainer = styled.form`
-  //border: solid blueviolet 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -155,8 +142,6 @@ interface FormInputMaxSizeProps {
 export const FormInput = styled.input<
   FormInputSizeProps & FormInputMaxSizeProps
 >`
-  //border: solid red 2px;
-
   width: ${(props) => props.theme[INPUT_SIZE[props.inputSize]]}%;
   max-width: ${(props) => props.theme[INPUT_SIZE[props.inputMaxSize]]}px;
   height: 42px;
@@ -183,7 +168,6 @@ export const FormInput = styled.input<
 `;
 
 export const PaymentTypeContainer = styled.div`
-  //border: solid blue 5px;
   padding-top: 30px;
   height: max-content;
   display: flex;
@@ -197,7 +181,6 @@ export const PaymentTypeContainer = styled.div`
 `;
 
 export const PaymentTypes = styled.div`
-  // border: solid yellowgreen 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -254,36 +237,7 @@ export const Type = styled.input`
   }
 `;
 
-/* export const RadioLabel = styled.label`
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  gap: 5px;
-  max-width: 178.67px;
-  width: 30%;
-  flex-grow: 1;
-  max-height: 51px;
-  height: 40px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: clamp(9px, 0.57vw, 10px);
-  line-height: 160%;
-  text-transform: uppercase;
-  color: #574f4d;
-  background: #e6e5e5;
-  border-radius: 6px;
-
-  &:hover {
-    background: #d7d5d5;
-    transition: background 0.3s;
-  }
-`;
- */
 export const SelectedProductsContainer = styled.section`
-  //border: solid pink 5px;
   max-width: 448px;
   width: 80%;
   height: 100%;
@@ -302,7 +256,6 @@ export const SectionType = styled.span`
 `;
 
 export const SelectedProductsContent = styled.article`
-  // border: solid green 5px;
   display: flex;
   margin-top: 12px;
   flex-direction: column;
@@ -317,12 +270,10 @@ export const SelectedProductsContent = styled.article`
 `;
 
 export const ProductsContainer = styled.div`
-  //border: solid blueviolet 5px;
   width: 100%;
 `;
 
 export const Product = styled.div`
-  // border: solid pink 5px;
   display: flex;
   width: 100%;
   border-bottom: 1px solid #e6e5e5;
@@ -331,14 +282,12 @@ export const Product = styled.div`
 `;
 
 export const ProductInfo = styled.div`
-  // border: solid black 5px;
   width: 80%;
   display: flex;
   gap: 20px;
 `;
 
 export const ProductPrice = styled.div`
-  //border: solid red 5px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -357,7 +306,6 @@ export const ProductPrice = styled.div`
 `;
 
 export const ProductImg = styled.img`
-  // border: solid darkorange 5px;
   display: flex;
   align-self: flex-start;
   max-width: 64px;
@@ -365,7 +313,6 @@ export const ProductImg = styled.img`
 `;
 
 export const ProductOptionsContainer = styled.div`
-  //border: solid darkmagenta 5px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -373,13 +320,11 @@ export const ProductOptionsContainer = styled.div`
 `;
 
 export const ProductOptions = styled.div`
-  //border: solid yellowgreen 5px;
   display: flex;
   gap: 8px;
 `;
 
 export const ProductName = styled.div`
-  //border: solid darkblue 5px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -391,7 +336,6 @@ export const ProductName = styled.div`
 `;
 
 export const ProductQuantity = styled.div`
-  //border: solid yellow 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,7 +388,6 @@ export const RemoveButton = styled.button`
   }
 `;
 export const TotalContainer = styled.div`
-  //  border: solid yellowgreen 5px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -455,7 +398,6 @@ export const TotalContainer = styled.div`
 `;
 
 export const Values = styled.div`
-  // border: solid darkcyan 5px;
   width: 100%;
   display: flex;
   justify-content: space-between;

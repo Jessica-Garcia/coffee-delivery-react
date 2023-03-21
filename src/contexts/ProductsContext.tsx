@@ -25,16 +25,8 @@ interface OrderCheckout {
   city: string;
   uf: string;
   paymentType: string;
-  /* paymentType: {
-    debit: string;
-    credit: string;
-    money: string;
-  }; */
 }
 
-/* interface PaymentOptions {
-  option: string | undefined;
-} */
 interface ProductsContextType {
   products: Product[];
   shoppingCart: ShoppingCartItem[];

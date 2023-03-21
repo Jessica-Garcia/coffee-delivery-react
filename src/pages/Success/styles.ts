@@ -18,26 +18,22 @@ export const SuccessContainer = styled.main`
 `;
 
 export const BannerContainer = styled.section`
-  //  border: solid blue 5px;
   display: flex;
   gap: 100px;
   margin-top: 60px;
 `;
 
 export const OrderInfoContainer = styled.article`
-  //border: solid red 5px;
   width: 60%;
 `;
 
 export const TitleAndSubtitleContainer = styled.div`
-  //border: solid yellow 5px;
   display: flex;
   gap: 4px;
   flex-direction: column;
 `;
 
 export const Title = styled.div`
-  //border: solid darkblue 5px;
   font-family: "Baloo 2";
   font-style: normal;
   font-weight: 800;
@@ -47,7 +43,6 @@ export const Title = styled.div`
 `;
 
 export const Subtitle = styled.div`
-  //border: solid darkmagenta 5px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -83,7 +78,6 @@ interface IconsProps {
   iconsColor: keyof typeof ICONS_COLORS;
 }
 export const OderDetails = styled.div<IconsProps>`
-  //border: solid blueviolet 5px;
   display: flex;
   align-items: center;
   padding: 0px;
@@ -119,9 +113,6 @@ export const OderDetails = styled.div<IconsProps>`
   }
 `;
 export const ImgContainer = styled.article`
-  //border: solid orange 5px;
-
-  //height: max-content;
   width: 50%;
   display: flex;
   align-items: flex-end;

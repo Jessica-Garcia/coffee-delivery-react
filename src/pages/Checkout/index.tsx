@@ -8,7 +8,7 @@ import {
   Plus,
   Trash,
 } from "phosphor-react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { priceFormatter } from "../../utils/formatter";
 import * as z from "zod";

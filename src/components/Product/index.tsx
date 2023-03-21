@@ -1,9 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { ReactNode, useCallback, useContext, useState } from "react";
-import {
-  ProductsContext,
-  ProductsProvider,
-} from "../../contexts/ProductsContext";
+import { useContext } from "react";
+import { ProductsContext } from "../../contexts/ProductsContext";
 import {
   ProductDescription,
   ProductImg,
@@ -15,9 +12,8 @@ import {
   ProductType,
   ProductQuantity,
 } from "./styles";
-import { Product, Type } from "../../@types/Product";
+import { Type } from "../../@types/Product";
 import { priceFormatter } from "../../utils/formatter";
-// import { ProductQuantityContainer } from "../ProductQuantity/styles";
 
 interface ProductsInfoProps {
   image: string;
@@ -26,7 +22,6 @@ interface ProductsInfoProps {
   description: string;
   price: number;
   id: number;
-  // quantity: number;
 }
 
 export const ProductInfos = ({

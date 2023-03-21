@@ -9,5 +9,4 @@ export interface Product {
   productTypes: Type[];
   description: string;
   price: number;
-  // quantity?: number;
 }
