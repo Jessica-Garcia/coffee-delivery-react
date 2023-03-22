@@ -5,26 +5,13 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { OrderCheckout } from "../@types/OrderCheckout";
 import { Product } from "../@types/Product";
+import { ShoppingCartItem } from "../@types/ShoppingCartItem";
 import { api } from "../lib/axios";
-interface ShoppingCartItem {
-  id: number;
-  product: Product;
-  quantity: number;
-}
+
 interface ProductsProviderProps {
   children: ReactNode;
-}
-
-interface OrderCheckout {
-  cep: string;
-  street: string;
-  number: number;
-  complement: string;
-  neighborhood: string;
-  city: string;
-  uf: string;
-  paymentType: string;
 }
 
 interface ProductsContextType {

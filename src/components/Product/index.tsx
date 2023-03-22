@@ -12,18 +12,9 @@ import {
   ProductType,
   ProductQuantity,
 } from "./styles";
-import { Type } from "../../@types/Product";
 import { priceFormatter } from "../../utils/formatter";
 import { useNavigate } from "react-router-dom";
-
-interface ProductsInfoProps {
-  image: string;
-  name: string;
-  productTypes: Type[];
-  description: string;
-  price: number;
-  id: number;
-}
+import { ProductsInfoProps } from "../../@types/ProductsInfoProps";
 
 export const ProductInfos = ({
   image,

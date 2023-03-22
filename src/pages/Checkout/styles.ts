@@ -126,7 +126,6 @@ const INPUT_SIZE = {
   diffMaxWidth: "diff-Max-Width",
   smallestMaxWidth: "smallest-Max-Width",
   largeWidth: "large-Width",
-  // mediumWidth: "medium-Width",
   diffWidth: "diff-Width",
   smallestWidth: "smallest-Width",
 } as const;
