@@ -271,7 +271,6 @@ export const SelectedProductsContent = styled.article`
 
 export const ProductsContainer = styled.div`
   width: 100%;
-  border: solid red 2px;
 `;
 
 export const Product = styled.div`

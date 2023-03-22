@@ -1,4 +1,5 @@
 import {
+  ArrowFatLeft,
   Bank,
   CreditCard,
   CurrencyDollar,
@@ -45,7 +46,7 @@ import {
   Values,
 } from "./styles";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const checkoutFormSchema = z.object({
   cep: z.string(),
@@ -74,12 +75,7 @@ export const Checkout = () => {
     setItemQuantity,
   } = useContext(ProductsContext);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { isSubmitting },
-  } = useForm<CheckoutFormInputs>({
+  const { register, handleSubmit, reset } = useForm<CheckoutFormInputs>({
     resolver: zodResolver(checkoutFormSchema),
   });
 
@@ -116,143 +112,146 @@ export const Checkout = () => {
   return (
     <CheckoutContainer>
       <CheckoutContent>
-        <CompleteOrderContainer>
-          <SectionType>Complete seu pedido</SectionType>
-          <CompleteOrderContent>
-            <TitleContainer>
-              <Title>
-                <MapPinLine color="#C47F17" />
-                Endereço de Entrega
-              </Title>
-              <SubTitle>
-                Informe o endereço onde deseja receber seu pedido
-              </SubTitle>
-            </TitleContainer>
-            <FormContainer
-              id="checkout"
-              autoComplete="off"
-              onSubmit={handleSubmit(handleCreateNewOrder)}
-            >
-              <FormInput
-                inputSize="defaultWidth"
-                inputMaxSize="defaultMaxWidth"
-                placeholder="CEP"
-                required
-                type="text"
-                autoComplete="off"
-                {...register("cep")}
-              />
-              <FormInput
-                inputSize="largeWidth"
-                inputMaxSize="largeMaxWidth"
-                type="text"
-                required
-                placeholder="Rua"
-                autoComplete="off"
-                {...register("street")}
-              />
-              <FormInput
-                inputSize="defaultWidth"
-                inputMaxSize="defaultMaxWidth"
-                type="number"
-                placeholder="Número"
-                required
-                autoComplete="off"
-                {...register("number", { valueAsNumber: true })}
-              />
-              <FormInput
-                inputSize="largeWidth"
-                inputMaxSize="mediumMaxWidth"
-                type="text"
-                placeholder="complemento (opcional)"
-                required={false}
-                autoComplete="off"
-                {...register("complement")}
-              />
-              <FormInput
-                inputSize="defaultWidth"
-                inputMaxSize="defaultMaxWidth"
-                type="text"
-                placeholder="Bairro"
-                required
-                autoComplete="off"
-                {...register("neighborhood")}
-              />
-              <FormInput
-                inputSize="defaultWidth"
-                inputMaxSize="diffMaxWidth"
-                type="text"
-                placeholder="Cidade"
-                required
-                autoComplete="off"
-                {...register("city")}
-              />
-              <FormInput
-                inputSize="smallestWidth"
-                inputMaxSize="smallestMaxWidth"
-                type="text"
-                placeholder="UF"
-                required
-                autoComplete="off"
-                {...register("uf")}
-              />
-            </FormContainer>
-            <PaymentTypeContainer>
-              <TitleContainer>
-                <Title>
-                  <CurrencyDollar color="#8047F8" />
-                  Pagamento
-                </Title>
-                <SubTitle>
-                  O pagamento é feito na entrega. Escolha a forma que deseja
-                  pagar
-                </SubTitle>
-              </TitleContainer>
-              <PaymentTypes>
-                <input
-                  form="checkout"
-                  type="radio"
-                  id="credit"
-                  value="Cartão de crédito"
-                  {...register("paymentType")}
-                  defaultChecked
-                />
-                <label htmlFor="credit">
-                  <CreditCard size={16} color="#8047F8" />
-                  Cartão de crédito
-                </label>
+        {shoppingCart.length >= 1 ? (
+          <>
+            <CompleteOrderContainer>
+              <SectionType>Complete seu pedido</SectionType>
+              <CompleteOrderContent>
+                <TitleContainer>
+                  <Title>
+                    <MapPinLine color="#C47F17" />
+                    Endereço de Entrega
+                  </Title>
+                  <SubTitle>
+                    Informe o endereço onde deseja receber seu pedido
+                  </SubTitle>
+                </TitleContainer>
 
-                <input
-                  form="checkout"
-                  type="radio"
-                  id="debit"
-                  value="Cartão de débito"
-                  {...register("paymentType")}
-                />
-                <label htmlFor="debit">
-                  <Bank size={16} color="#8047F8" />
-                  Cartão de Dédito
-                </label>
-                <input
-                  form="checkout"
-                  type="radio"
-                  id="money"
-                  value="Dinheiro"
-                  {...register("paymentType")}
-                />
-                <label htmlFor="money">
-                  <Money size={16} color="#8047F8" />
-                  Dinheiro
-                </label>
-              </PaymentTypes>
-            </PaymentTypeContainer>
-          </CompleteOrderContent>
-        </CompleteOrderContainer>
-        <SelectedProductsContainer>
-          <SectionType>Cafés selecionados</SectionType>
-          <SelectedProductsContent>
-            {shoppingCart.length >= 1 ? (
-              <>
+                <FormContainer
+                  id="checkout"
+                  autoComplete="off"
+                  onSubmit={handleSubmit(handleCreateNewOrder)}
+                >
+                  <FormInput
+                    inputSize="defaultWidth"
+                    inputMaxSize="defaultMaxWidth"
+                    placeholder="CEP"
+                    required
+                    type="text"
+                    autoComplete="off"
+                    {...register("cep")}
+                  />
+                  <FormInput
+                    inputSize="largeWidth"
+                    inputMaxSize="largeMaxWidth"
+                    type="text"
+                    required
+                    placeholder="Rua"
+                    autoComplete="off"
+                    {...register("street")}
+                  />
+                  <FormInput
+                    inputSize="defaultWidth"
+                    inputMaxSize="defaultMaxWidth"
+                    type="number"
+                    placeholder="Número"
+                    required
+                    autoComplete="off"
+                    {...register("number", { valueAsNumber: true })}
+                  />
+                  <FormInput
+                    inputSize="largeWidth"
+                    inputMaxSize="mediumMaxWidth"
+                    type="text"
+                    placeholder="complemento (opcional)"
+                    required={false}
+                    autoComplete="off"
+                    {...register("complement")}
+                  />
+                  <FormInput
+                    inputSize="defaultWidth"
+                    inputMaxSize="defaultMaxWidth"
+                    type="text"
+                    placeholder="Bairro"
+                    required
+                    autoComplete="off"
+                    {...register("neighborhood")}
+                  />
+                  <FormInput
+                    inputSize="defaultWidth"
+                    inputMaxSize="diffMaxWidth"
+                    type="text"
+                    placeholder="Cidade"
+                    required
+                    autoComplete="off"
+                    {...register("city")}
+                  />
+                  <FormInput
+                    inputSize="smallestWidth"
+                    inputMaxSize="smallestMaxWidth"
+                    type="text"
+                    placeholder="UF"
+                    required
+                    autoComplete="off"
+                    {...register("uf")}
+                  />
+                </FormContainer>
+
+                <PaymentTypeContainer>
+                  <TitleContainer>
+                    <Title>
+                      <CurrencyDollar color="#8047F8" />
+                      Pagamento
+                    </Title>
+                    <SubTitle>
+                      O pagamento é feito na entrega. Escolha a forma que deseja
+                      pagar
+                    </SubTitle>
+                  </TitleContainer>
+                  <PaymentTypes>
+                    <input
+                      form="checkout"
+                      type="radio"
+                      id="credit"
+                      value="Cartão de crédito"
+                      {...register("paymentType")}
+                      defaultChecked
+                    />
+                    <label htmlFor="credit">
+                      <CreditCard size={16} color="#8047F8" />
+                      Cartão de crédito
+                    </label>
+
+                    <input
+                      form="checkout"
+                      type="radio"
+                      id="debit"
+                      value="Cartão de débito"
+                      {...register("paymentType")}
+                    />
+                    <label htmlFor="debit">
+                      <Bank size={16} color="#8047F8" />
+                      Cartão de Dédito
+                    </label>
+                    <input
+                      form="checkout"
+                      type="radio"
+                      id="money"
+                      value="Dinheiro"
+                      {...register("paymentType")}
+                    />
+                    <label htmlFor="money">
+                      <Money size={16} color="#8047F8" />
+                      Dinheiro
+                    </label>
+                  </PaymentTypes>
+                </PaymentTypeContainer>
+              </CompleteOrderContent>
+            </CompleteOrderContainer>
+            <SelectedProductsContainer>
+              <SectionType>Cafés selecionados</SectionType>
+
+              <SelectedProductsContent>
                 <ProductsContainer>
                   {shoppingCart.map((item) => {
                     return (
@@ -320,14 +319,19 @@ export const Checkout = () => {
                 <Totalbutton type="submit" form="checkout">
                   Confirmar Pedido
                 </Totalbutton>
-              </>
-            ) : (
-              <EmptyShoppingCart>
-                <h1>Nenhum produto selecionado</h1>
-              </EmptyShoppingCart>
-            )}
-          </SelectedProductsContent>
-        </SelectedProductsContainer>
+              </SelectedProductsContent>
+            </SelectedProductsContainer>
+          </>
+        ) : (
+          <div>
+            <EmptyShoppingCart>
+              <p>Nenhum produto selecionado</p>
+            </EmptyShoppingCart>
+            <NavLink to="/">
+              <ArrowFatLeft /> voltar
+            </NavLink>
+          </div>
+        )}
       </CheckoutContent>
     </CheckoutContainer>
   );

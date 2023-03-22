@@ -81,7 +81,6 @@ export const ProductInfos = ({
           onClick={() => {
             navigate("/checkout");
           }}
-          disabled={!loadItemQuantityInShoppingCart(id)}
         >
           <ShoppingCart weight="fill" size={20} />
         </ShoppingCartButton>
