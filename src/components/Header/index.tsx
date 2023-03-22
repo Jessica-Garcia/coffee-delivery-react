@@ -2,10 +2,7 @@ import { ShoppingCart, MapPin } from "phosphor-react";
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-import {
-  ProductsContext,
-  ProductsProvider,
-} from "../../contexts/ProductsContext";
+import { ProductsContext } from "../../contexts/ProductsContext";
 import { defaultTheme } from "../../styles/theme/default";
 import {
   ButtonCartContainer,

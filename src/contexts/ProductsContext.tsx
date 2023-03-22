@@ -5,14 +5,11 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { OrderCheckout } from "../@types/OrderCheckout";
 import { Product } from "../@types/Product";
+import { ShoppingCartItem } from "../@types/ShoppingCartItem";
 import { api } from "../lib/axios";
 
-interface ShoppingCartItem {
-  id: number;
-  product: Product;
-  quantity: number;
-}
 interface ProductsProviderProps {
   children: ReactNode;
 }
@@ -21,12 +18,16 @@ interface ProductsContextType {
   products: Product[];
   shoppingCart: ShoppingCartItem[];
   itemQuantity: number;
+  newOrder: OrderCheckout | undefined;
+  setShoppingCart: React.Dispatch<React.SetStateAction<ShoppingCartItem[]>>;
   addToShoppingCart: (id: number) => void;
   removeItemFromShoppingCart: (id: number) => void;
   amountItemsInHeaderCart: () => number;
   removeAllItemsFromShoppingCart: (item: ShoppingCartItem) => void;
   getSubTotal: () => number;
   setItemQuantity: React.Dispatch<React.SetStateAction<number>>;
+  createNewOrder: (data: OrderCheckout) => void;
+  clearShoppingCart: () => void;
 }
 
 export const ProductsContext = createContext({} as ProductsContextType);
@@ -35,6 +36,41 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [itemQuantity, setItemQuantity] = useState<number>(0);
+  const [newOrder, setNewOrder] = useState<OrderCheckout>();
+
+  const loadProducts = useCallback(async () => {
+    const { data } = await api.get<Product[]>("products");
+    data && setProducts(data);
+  }, [setProducts]);
+
+  const loadCartProducts = useCallback(async () => {
+    const { data } = await api.get<ShoppingCartItem[]>("cart");
+    data && setShoppingCart(data);
+  }, [setShoppingCart]);
+
+  const createNewOrder = (data: OrderCheckout) => {
+    const {
+      cep,
+      street,
+      number,
+      complement,
+      neighborhood,
+      city,
+      uf,
+      paymentType,
+    } = data;
+
+    setNewOrder({
+      cep,
+      street,
+      number,
+      complement,
+      neighborhood,
+      city,
+      uf,
+      paymentType,
+    });
+  };
 
   const addToShoppingCart = async (id: number) => {
     const productItem = products.find((item) => item.id === id);
@@ -94,19 +130,17 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     return subTotal;
   };
 
-  const loadProducts = useCallback(async () => {
-    const { data } = await api.get<Product[]>("products");
-    data && setProducts(data);
-  }, [setProducts]);
+  const clearShoppingCart = async () => {
+    await shoppingCart.forEach((item) => {
+      api.delete<ShoppingCartItem>(`cart/${item.id}`);
+    });
+    amountItemsInHeaderCart();
+    loadCartProducts();
+  };
 
   useEffect(() => {
     loadProducts();
   }, [loadProducts]);
-
-  const loadCartProducts = useCallback(async () => {
-    const { data } = await api.get<ShoppingCartItem[]>("cart");
-    data && setShoppingCart(data);
-  }, [setShoppingCart]);
 
   useEffect(() => {
     loadCartProducts();
@@ -118,12 +152,16 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         shoppingCart,
         itemQuantity,
         products,
+        newOrder,
+        setShoppingCart,
+        setItemQuantity,
         addToShoppingCart,
         removeItemFromShoppingCart,
         removeAllItemsFromShoppingCart,
         amountItemsInHeaderCart,
-        setItemQuantity,
         getSubTotal,
+        createNewOrder,
+        clearShoppingCart,
       }}
     >
       {children}

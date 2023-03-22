@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ProductInfo = styled.div`
   display: flex;
-  //border: solid green 5px;
   background: ${(props) => props.theme["base-card"]};
   max-width: 16rem;
   width: 25vw;
@@ -11,7 +10,6 @@ export const ProductInfo = styled.div`
   align-items: center;
   border-radius: 6px 36px;
   gap: 1rem;
-
   div {
     display: flex;
     gap: 0.3rem;
@@ -19,13 +17,12 @@ export const ProductInfo = styled.div`
 `;
 export const PurchaseInfo = styled.div`
   border-top: solid transparent 10px;
-
   max-width: 208px;
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 0.3rem;
 `;
 
 export const ProductImg = styled.img`
@@ -33,10 +30,8 @@ export const ProductImg = styled.img`
   max-width: 7.5rem;
   max-height: 7.5rem;
   width: 40%;
-  //border: solid magenta 5px;
 `;
 export const ProductType = styled.span`
-  //border: solid darkgoldenrod 5px;
   background: ${(props) => props.theme["yellow-light"]};
   padding: 0.25rem 0.5rem;
   border-radius: 8px;
@@ -50,13 +45,11 @@ export const ProductType = styled.span`
   color: ${(props) => props.theme["yellow-dark"]};
 `;
 export const ProductName = styled.span`
-  //border: solid brown 5px;
   font-size: clamp(0.95rem, 1.3vw, 1.25rem);
   font-family: "Baloo 2", cursive;
   font-weight: 700;
 `;
 export const ProductDescription = styled.span`
-  //border: solid yellow 5px;
   text-align: center;
   font-size: clamp(0.78rem, 1.2vw, 0.975rem);
   line-height: 130%;
@@ -71,7 +64,7 @@ export const ProductPrice = styled.span`
   font-family: "Baloo 2";
   font-style: normal;
   font-weight: 800;
-  font-size: clamp(1.2rem, 1.2vw, 1.35rem);
+  font-size: clamp(1.1rem, 1.15vw, 1.3rem);
   line-height: 130%;
   max-width: 67px;
   text-align: right;
@@ -104,7 +97,7 @@ export const ProductQuantity = styled.span`
     }
   }
 `;
-export const ShoppingCartButton = styled.a`
+export const ShoppingCartButton = styled.button`
   background: ${(props) => props.theme["purple-dark"]};
   color: ${(props) => props.theme.white};
   border: 0;
@@ -115,7 +108,8 @@ export const ShoppingCartButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover {
+
+  &:not(:disabled):hover {
     background: ${(props) => props.theme.purple};
     transition: background 0.5s;
     cursor: pointer;

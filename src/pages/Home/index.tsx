@@ -1,19 +1,9 @@
-import {
-  Coffee,
-  Key,
-  Minus,
-  Package,
-  Plus,
-  ShoppingCart,
-  Timer,
-} from "phosphor-react";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { Product } from "../../@types/Product";
+import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import { useContext } from "react";
 import bannerImage from "../../assets/section-image.svg";
 import { ProductInfos } from "../../components/Product";
 import { ProductsContext } from "../../contexts/ProductsContext";
-import { api } from "../../lib/axios";
-import expresso from "../../assets/products/expresso.svg";
+
 import {
   BannerContent,
   HomeContainer,
@@ -27,18 +17,7 @@ import {
 } from "./styles";
 
 export const Home = () => {
-  const { products, itemQuantity } = useContext(ProductsContext);
-
-  /* const [products, setProducts] = useState<Product[]>([]);
-
-  const loadProducts = useCallback(async () => {
-    const { data } = await api.get<Product[]>("products");
-    data && setProducts(data);
-  }, [setProducts]);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]); */
+  const { products } = useContext(ProductsContext);
 
   return (
     <HomeContainer>

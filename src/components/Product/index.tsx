@@ -1,9 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { ReactNode, useCallback, useContext, useState } from "react";
-import {
-  ProductsContext,
-  ProductsProvider,
-} from "../../contexts/ProductsContext";
+import { useContext } from "react";
+import { ProductsContext } from "../../contexts/ProductsContext";
 import {
   ProductDescription,
   ProductImg,
@@ -15,18 +12,9 @@ import {
   ProductType,
   ProductQuantity,
 } from "./styles";
-import { Product, Type } from "../../@types/Product";
-// import { ProductQuantityContainer } from "../ProductQuantity/styles";
-
-interface ProductsInfoProps {
-  image: string;
-  name: string;
-  productTypes: Type[];
-  description: string;
-  price: number;
-  id: number;
-  // quantity: number;
-}
+import { priceFormatter } from "../../utils/formatter";
+import { useNavigate } from "react-router-dom";
+import { ProductsInfoProps } from "../../@types/ProductsInfoProps";
 
 export const ProductInfos = ({
   image,
@@ -36,13 +24,10 @@ export const ProductInfos = ({
   price,
   id,
 }: ProductsInfoProps) => {
-  const {
-    shoppingCart,
-    itemQuantity,
-    setItemQuantity,
-    addToShoppingCart,
-    removeItemFromShoppingCart,
-  } = useContext(ProductsContext);
+  const navigate = useNavigate();
+
+  const { shoppingCart, addToShoppingCart, removeItemFromShoppingCart } =
+    useContext(ProductsContext);
 
   const handleAddToShoppingCart = () => {
     addToShoppingCart(id);
@@ -71,7 +56,7 @@ export const ProductInfos = ({
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <PurchaseInfo>
-        <ProductPrice>{price}</ProductPrice>
+        <ProductPrice>{priceFormatter.format(price)}</ProductPrice>
 
         <ProductQuantity>
           <button onClick={handleRemoveItemFromShoppingCart}>
@@ -83,7 +68,11 @@ export const ProductInfos = ({
           </button>
         </ProductQuantity>
 
-        <ShoppingCartButton href="/checkout">
+        <ShoppingCartButton
+          onClick={() => {
+            navigate("/checkout");
+          }}
+        >
           <ShoppingCart weight="fill" size={20} />
         </ShoppingCartButton>
       </PurchaseInfo>
