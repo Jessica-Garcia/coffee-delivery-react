@@ -1,6 +1,6 @@
-import { ShoppingCart, MapPin } from "phosphor-react";
+import { ShoppingCart, MapPin, Cursor } from "phosphor-react";
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { defaultTheme } from "../../styles/theme/default";
@@ -13,7 +13,7 @@ import {
 } from "./styles";
 export const Header = () => {
   const { amountItemsInHeaderCart } = useContext(ProductsContext);
-
+  const navigate = useNavigate();
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -27,14 +27,12 @@ export const Header = () => {
             <MapPin weight="fill" color={defaultTheme.purple} />
             Porto Alegre, RS
           </ButtonLocationContainer>
-          <ButtonCartContainer>
+          <ButtonCartContainer
+            disabled={!amountItemsInHeaderCart()}
+            onClick={() => navigate("/checkout")}
+          >
             <div>
-              <NavLink to="/checkout">
-                <ShoppingCart
-                  weight="fill"
-                  color={defaultTheme["yellow-dark"]}
-                />
-              </NavLink>
+              <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
             </div>
           </ButtonCartContainer>
         </LocationAndCartContainer>
