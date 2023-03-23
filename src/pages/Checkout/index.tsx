@@ -1,12 +1,15 @@
 import {
   ArrowFatLeft,
   Bank,
+  Coffee,
   CreditCard,
   CurrencyDollar,
   MapPinLine,
   Minus,
   Money,
   Plus,
+  ShoppingCartSimple,
+  Star,
   Trash,
 } from "phosphor-react";
 import { useContext } from "react";
@@ -18,9 +21,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   CheckoutContainer,
   CheckoutContent,
+  Coffee1,
+  Coffee2,
+  Coffee3,
+  Coffee4,
+  Coffee5,
   CompleteOrderContainer,
   CompleteOrderContent,
+  ConfirmButton,
   EmptyShoppingCart,
+  EmptyShoppingCartContainer,
   FormContainer,
   FormInput,
   PaymentTypeContainer,
@@ -38,10 +48,13 @@ import {
   SectionType,
   SelectedProductsContainer,
   SelectedProductsContent,
+  Star1,
+  Star2,
+  Star3,
+  Star4,
   SubTitle,
   Title,
   TitleContainer,
-  Totalbutton,
   TotalContainer,
   Values,
 } from "./styles";
@@ -316,21 +329,51 @@ export const Checkout = () => {
                     </strong>
                   </Values>
                 </TotalContainer>
-                <Totalbutton type="submit" form="checkout">
+                <ConfirmButton type="submit" form="checkout">
                   Confirmar Pedido
-                </Totalbutton>
+                </ConfirmButton>
               </SelectedProductsContent>
             </SelectedProductsContainer>
           </>
         ) : (
-          <div>
-            <EmptyShoppingCart>
-              <p>Nenhum produto selecionado</p>
-            </EmptyShoppingCart>
-            <NavLink to="/">
-              <ArrowFatLeft /> voltar
-            </NavLink>
-          </div>
+          <CheckoutContainer>
+            <EmptyShoppingCartContainer>
+              <Coffee2>
+                <Coffee size={12} color={"#8047F8"} />
+              </Coffee2>
+              <Star1>
+                <Star size={12} color={"#8047F8"} />
+              </Star1>
+              <Coffee3>
+                <Coffee size={12} color={"#8047F8"} />
+              </Coffee3>
+              <Star3>
+                <Star size={12} color={"#8047F8"} />
+              </Star3>
+              <ShoppingCartSimple size={150} />
+              <Star2>
+                <Star size={12} color={"#8047F8"} />
+              </Star2>
+              <Coffee1>
+                <Coffee size={12} color={"#8047F8"} />
+              </Coffee1>
+              <Coffee5>
+                <Coffee size={12} color={"#8047F8"} />
+              </Coffee5>
+              <Star4>
+                <Star size={12} color={"#8047F8"} />
+              </Star4>
+              <Coffee4>
+                <Coffee size={12} color={"#8047F8"} />
+              </Coffee4>
+              <EmptyShoppingCart>
+                <p>Seu carrinho está vazio!</p>
+              </EmptyShoppingCart>
+              <NavLink to="/">
+                <ArrowFatLeft /> Ir para página de produtos
+              </NavLink>
+            </EmptyShoppingCartContainer>
+          </CheckoutContainer>
         )}
       </CheckoutContent>
     </CheckoutContainer>

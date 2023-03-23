@@ -75,16 +75,13 @@ export const ButtonLocationContainer = styled.button`
   background-color: ${(props) => props.theme["purple-light"]};
   color: ${(props) => props.theme["purple-dark"]};
   font-size: clamp(0.7rem, 1.1vw, 0.875rem);
+  cursor: pointer;
 `;
 
 export const ButtonCartContainer = styled.button`
   border: none;
   border-radius: 6px;
   background: ${(props) => props.theme["yellow-light"]};
-
-  a {
-    text-decoration: none;
-  }
 
   div {
     width: 20vw;
@@ -97,7 +94,12 @@ export const ButtonCartContainer = styled.button`
     font-size: clamp(0.9rem, 2vw, 1.2rem);
   }
 
-  &:hover {
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
     cursor: pointer;
   }
 `;

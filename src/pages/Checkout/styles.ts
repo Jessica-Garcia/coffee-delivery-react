@@ -218,6 +218,7 @@ export const PaymentTypes = styled.div`
     &:hover {
       background: #d7d5d5;
       transition: background 0.3s;
+      cursor: pointer;
     }
   }
 
@@ -369,7 +370,6 @@ export const ProductQuantity = styled.div`
 export const RemoveButton = styled.button`
   border: 0;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0px 8px;
@@ -403,7 +403,7 @@ export const Values = styled.div`
   font-size: clamp(10px, 1.2vw, 14px);
 `;
 
-export const Totalbutton = styled.button`
+export const ConfirmButton = styled.button`
   border: 0;
   display: flex;
   justify-content: center;
@@ -428,6 +428,7 @@ export const Totalbutton = styled.button`
 
   &:hover {
     background: #c47f17;
+    cursor: pointer;
   }
 `;
 
@@ -436,8 +437,82 @@ export const EmptyShoppingCart = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 300px;
   color: #dbac2c;
   font-size: 30px;
+  margin-top: 20px;
   font-family: "Baloo 2", cursive;
+`;
+
+export const EmptyShoppingCartContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  margin: 13vh auto;
+  width: max-content;
+  //height: 60vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #dbac2c;
+  font-size: 30px;
+  position: relative;
+  padding-top: 50px;
+  //background: ${(props) => props.theme["base-card"]};
+
+  font-family: "Baloo 2", cursive;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    gap: 6px;
+    color: #dbac2c;
+
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    font-size: 20px;
+  }
+`;
+export const Coffee1 = styled.div`
+  position: absolute;
+  right: 45px;
+`;
+export const Coffee2 = styled.div`
+  position: absolute;
+
+  top: 0;
+`;
+export const Star1 = styled.div`
+  position: absolute;
+  right: 50px;
+  top: 50px;
+`;
+export const Star2 = styled.div`
+  position: absolute;
+  right: 60px;
+  top: 100px;
+`;
+export const Coffee3 = styled.div`
+  position: absolute;
+  bottom: 150px;
+  left: 30px;
+`;
+export const Coffee4 = styled.div`
+  position: absolute;
+  bottom: 100px;
+`;
+export const Star3 = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 30px;
+`;
+export const Star4 = styled.div`
+  position: absolute;
+  left: 60px;
+  bottom: 120px;
+`;
+export const Coffee5 = styled.div`
+  position: absolute;
+  left: 50px;
+  top: 80px;
 `;
