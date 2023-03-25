@@ -15,6 +15,25 @@ export const HomeContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
+
+  //border: solid red 2px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    top: 70px;
+    max-width: 280px;
+    padding: 10px;
+  }
 `;
 
 export const BannerContent = styled.section`
@@ -23,16 +42,65 @@ export const BannerContent = styled.section`
   max-height: 34rem;
   gap: 3.5rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  //border: solid black 2px;
+  position: relative;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    padding: 0 5px;
+    //margin: 0;
+  }
 `;
 
 export const ImgContent = styled.article`
   margin-top: 5.75rem;
   max-height: 22.5rem;
   height: max-content;
-
+  //border: solid blue 2px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   img {
     max-width: 29.75rem;
     width: 100%;
+  }
+
+  @media (min-width: 1428px) {
+    img {
+      width: 100%;
+    }
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    top: 100px;
+    margin: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+    }
   }
 `;
 
@@ -60,6 +128,32 @@ export const TitleAndSubtitleContent = styled.article`
     height: 100%;
     font-size: clamp(0.85rem, 1.4vw, 1.25rem);
   }
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    div {
+      // border: solid green 2px;
+      font-size: 17px;
+      position: relative;
+      top: -90px;
+      //position: absolute;
+    }
+    span {
+      //border: solid green 2px;
+      font-size: 13px;
+      position: relative;
+      top: -90px;
+    }
+  }
 `;
 
 export const InfoContent = styled.article`
@@ -81,6 +175,39 @@ export const InfoContent = styled.article`
       gap: 0.75rem;
       justify-content: flex-start;
       font-size: clamp(0.73rem, 1.2vw, 0.9rem);
+    }
+  }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    //border: solid greenyellow 2px;
+    margin-top: 3rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      //gap: 0.5rem;
+      margin-bottom: 1.05rem;
+      span {
+        display: flex;
+        //max-width: 18.375rem;
+        width: 100%;
+        //min-height: 2rem;
+        align-items: center;
+        //gap: 0.5rem;
+        justify-content: flex-start;
+        font-size: 13px;
+        //border: solid red 2px;
+      }
     }
   }
 `;
@@ -117,12 +244,46 @@ export const ProductsContainer = styled.section`
   div {
     margin: 0 auto;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    //border: solid red 2px;
+    margin: 1rem 0;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 70px;
+  }
 `;
 
 export const Title = styled.span`
   font-family: "Baloo 2", cursive;
   font-weight: 800;
   font-size: clamp(1rem, 2.3vw, 2rem);
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 17px;
+  }
 `;
 export const ProductsContent = styled.div`
   width: 100%;
@@ -131,4 +292,21 @@ export const ProductsContent = styled.div`
   grid-auto-rows: 310px;
   gap: 1.5rem;
   padding-top: 2rem;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;

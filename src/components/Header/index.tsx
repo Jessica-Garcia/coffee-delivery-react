@@ -28,12 +28,10 @@ export const Header = () => {
             Porto Alegre, RS
           </ButtonLocationContainer>
           <ButtonCartContainer
-            disabled={!amountItemsInHeaderCart()}
+            // disabled={!amountItemsInHeaderCart()}
             onClick={() => navigate("/checkout")}
           >
-            <div>
-              <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
-            </div>
+            <ShoppingCart weight="fill" color={defaultTheme["yellow-dark"]} />
           </ButtonCartContainer>
         </LocationAndCartContainer>
         <span>{amountItemsInHeaderCart()}</span>

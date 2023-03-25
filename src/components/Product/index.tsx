@@ -29,6 +29,8 @@ export const ProductInfos = ({
   const { shoppingCart, addToShoppingCart, removeItemFromShoppingCart } =
     useContext(ProductsContext);
 
+  const shoppingCartIsEmpty = shoppingCart.length === 0;
+
   const handleAddToShoppingCart = () => {
     addToShoppingCart(id);
   };
@@ -69,11 +71,13 @@ export const ProductInfos = ({
         </ProductQuantity>
 
         <ShoppingCartButton
+          disabled={shoppingCartIsEmpty}
+          title={shoppingCartIsEmpty ? "Adicione um produto no carrinho" : ""}
           onClick={() => {
             navigate("/checkout");
           }}
         >
-          <ShoppingCart weight="fill" size={20} />
+          <ShoppingCart weight="fill" />
         </ShoppingCartButton>
       </PurchaseInfo>
     </ProductInfo>

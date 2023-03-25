@@ -14,6 +14,24 @@ export const ProductInfo = styled.div`
     display: flex;
     gap: 0.3rem;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 90%;
+    height: max-content;
+    //border: solid green 2px;
+    padding-bottom: 10px;
+  }
 `;
 export const PurchaseInfo = styled.div`
   border-top: solid transparent 10px;
@@ -23,6 +41,21 @@ export const PurchaseInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.3rem;
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    //    border: solid red 2px;
+    font-size: 14px;
+  }
 `;
 
 export const ProductImg = styled.img`
@@ -30,6 +63,21 @@ export const ProductImg = styled.img`
   max-width: 7.5rem;
   max-height: 7.5rem;
   width: 40%;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 30%;
+  }
 `;
 export const ProductType = styled.span`
   background: ${(props) => props.theme["yellow-light"]};
@@ -43,11 +91,39 @@ export const ProductType = styled.span`
   align-items: center;
   justify-content: center;
   color: ${(props) => props.theme["yellow-dark"]};
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 export const ProductName = styled.span`
   font-size: clamp(0.95rem, 1.3vw, 1.25rem);
   font-family: "Baloo 2", cursive;
   font-weight: 700;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 export const ProductDescription = styled.span`
   text-align: center;
@@ -55,6 +131,20 @@ export const ProductDescription = styled.span`
   line-height: 130%;
   margin: 0 1.25rem;
   color: ${(props) => props.theme["base-label"]};
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const ProductPrice = styled.span`
@@ -70,6 +160,21 @@ export const ProductPrice = styled.span`
   text-align: right;
 
   color: ${(props) => props.theme["base-text"]};
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 15px;
+  }
 `;
 export const ProductQuantity = styled.span`
   background: ${(props) => props.theme["base-button"]};
@@ -96,6 +201,22 @@ export const ProductQuantity = styled.span`
       cursor: pointer;
     }
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    max-height: 28px;
+    //border: solid red 2px;
+  }
 `;
 export const ShoppingCartButton = styled.button`
   background: ${(props) => props.theme["purple-dark"]};
@@ -109,9 +230,31 @@ export const ShoppingCartButton = styled.button`
   align-items: center;
   justify-content: center;
 
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
   &:not(:disabled):hover {
     background: ${(props) => props.theme.purple};
     transition: background 0.5s;
     cursor: pointer;
+  }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    height: 26px;
+    width: 26px;
+    font-size: 14px;
   }
 `;
