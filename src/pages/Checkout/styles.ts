@@ -105,7 +105,7 @@ export const CompleteOrderContainer = styled.section`
 
   @media (max-width: 320px) {
     width: 100%;
-    order: 2;
+    //order: 1;
   }
 `;
 
@@ -135,7 +135,7 @@ export const CompleteOrderContent = styled.article`
 
   @media (max-width: 320px) {
     padding: 0;
-    margin-bottom: 70px;
+    margin-bottom: 3px;
   }
 `;
 
@@ -343,6 +343,7 @@ export const PaymentTypeContainer = styled.div`
 
   @media (max-width: 320px) {
     padding-top: 10px;
+    padding-bottom: 20px;
     gap: 20px;
   }
 `;
@@ -464,6 +465,8 @@ export const SelectedProductsContainer = styled.section`
 
   @media (max-width: 320px) {
     width: 100%;
+    border: solid red 2px;
+    margin-bottom: 70px;
   }
 `;
 export const SectionType = styled.span`

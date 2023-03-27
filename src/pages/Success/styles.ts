@@ -15,7 +15,7 @@ export const SuccessContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
-
+  //border: solid red 2px;
   @media (min-width: 1201px) {
   }
   @media (min-width: 1025px) {
@@ -27,7 +27,11 @@ export const SuccessContainer = styled.main`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    top: 35px;
+    padding: 10px;
+    max-width: 280px;
+    height: max-content;
   }
 `;
 
@@ -47,7 +51,10 @@ export const BannerContainer = styled.section`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
   }
 `;
 
@@ -65,7 +72,8 @@ export const OrderInfoContainer = styled.article`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    width: 100%;
   }
 `;
 
@@ -161,7 +169,9 @@ export const OrderInfoContent = styled.div`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    padding: 20px;
+    min-height: max-content;
   }
 `;
 
@@ -221,7 +231,12 @@ export const OderDetails = styled.div<IconsProps>`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    span {
+      strong {
+        display: inline;
+      }
+    }
   }
 `;
 export const ImgContainer = styled.article`
@@ -245,6 +260,7 @@ export const ImgContainer = styled.article`
   @media (min-width: 401px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 320px) {
+    margin-bottom: 20px;
   }
 `;

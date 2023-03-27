@@ -13,17 +13,20 @@ export const HeaderContainer = styled.header`
   top: 0;
   right: 0;
   left: 0;
-  //border: solid green 2px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    padding: 10px;
+    height: 80px;
+    max-width: 390px;
+    margin: 0 auto;
   }
 
   @media (max-width: 320px) {
@@ -39,7 +42,7 @@ export const HeaderContent = styled.div`
   width: 85%;
   position: relative;
   justify-content: space-between;
-  //border: solid yellow 2px;
+
   div {
     height: 3rem;
     display: flex;
@@ -71,35 +74,51 @@ export const HeaderContent = styled.div`
     z-index: 10;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    width: 100%;
+    padding: 0 5px;
+    div {
+      width: 40%;
+      margin-top: 10px;
+      gap: 2px;
+      a {
+        width: 80%;
+      }
+
+      img {
+        width: 60%;
+      }
+    }
+
+    span {
+      width: 10px;
+      height: 10px;
+      top: 6px;
+      right: 5px;
+    }
   }
 
   @media (max-width: 320px) {
     width: 100%;
     padding: 0 5px;
-    //border: solid darkblue 2px;
     div {
-      //border: solid 6px blue;
-
       width: 40%;
       margin-top: 10px;
       gap: 2px;
       a {
-        //border: solid green 2px;
         width: 80%;
       }
 
       img {
         width: 100%;
-        //border: solid red 2px;
       }
     }
 
@@ -115,28 +134,28 @@ export const HeaderContent = styled.div`
 export const LocationAndCartContainer = styled.article`
   display: flex;
   max-width: 12.0625rem;
-  //position: relative;
   gap: 0.75rem;
   align-items: center;
   overflow: hidden;
-
-  @media (min-width: 1201px) {
+  //border: solid red 3px;
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (max-width: 320px) {
-    //border: solid red 2px;
+  @media (max-width: 401px) {
     margin: 10px 0;
     width: 100%;
     position: relative;
-    //border: solid red 2px;
+  }
+
+  @media (max-width: 320px) {
+    margin: 10px 0;
+    width: 100%;
+    position: relative;
   }
 `;
 
@@ -156,19 +175,26 @@ export const ButtonLocationContainer = styled.button`
   font-size: clamp(0.7rem, 1.1vw, 0.875rem);
   cursor: pointer;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    width: 60%;
+    padding: 0;
+    margin-top: 0;
+    height: 30px;
+    position: relative;
+    top: -6px;
+    left: 30px;
+    font-size: 10px;
   }
 
   @media (max-width: 320px) {
-    //right: 80px;
     width: 60%;
     padding: 0;
     margin-top: 0;
@@ -177,7 +203,6 @@ export const ButtonLocationContainer = styled.button`
     top: -4px;
     left: 45px;
     font-size: 10px;
-    //border: 5px solid red;
   }
 `;
 
@@ -187,7 +212,6 @@ export const ButtonCartContainer = styled.button`
   background: ${(props) => props.theme["yellow-light"]};
 
   width: 20vw;
-  // height: 2vh;
   max-width: 2.375rem;
   min-height: 2.375rem;
   display: flex;
@@ -204,19 +228,25 @@ export const ButtonCartContainer = styled.button`
     cursor: pointer;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    position: relative;
+    //background: transparent;
+    top: -6px;
+    left: 30px;
+    width: 30px;
+    min-height: 10px;
+    height: 30px;
   }
 
   @media (max-width: 320px) {
-    //border: solid blue 2px;
     position: relative;
     background: transparent;
     top: -3px;

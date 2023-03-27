@@ -15,21 +15,25 @@ export const ProductInfo = styled.div`
     gap: 0.3rem;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    width: 85%;
+    max-width: 100%;
+    height: max-content;
+    padding-bottom: 30px;
+    //border: solid red 2px;
   }
 
   @media (max-width: 320px) {
     width: 90%;
     height: max-content;
-    //border: solid green 2px;
     padding-bottom: 10px;
   }
 `;
@@ -41,15 +45,17 @@ export const PurchaseInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.3rem;
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    font-size: 18px;
+    //border: solid red 3px;
   }
 
   @media (max-width: 320px) {
@@ -64,15 +70,16 @@ export const ProductImg = styled.img`
   max-height: 7.5rem;
   width: 40%;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    width: 28%;
   }
 
   @media (max-width: 320px) {
@@ -92,15 +99,16 @@ export const ProductType = styled.span`
   justify-content: center;
   color: ${(props) => props.theme["yellow-dark"]};
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    font-size: 13px;
   }
 
   @media (min-width: 320px) {
@@ -111,18 +119,19 @@ export const ProductName = styled.span`
   font-family: "Baloo 2", cursive;
   font-weight: 700;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 401px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 export const ProductDescription = styled.span`
@@ -132,18 +141,19 @@ export const ProductDescription = styled.span`
   margin: 0 1.25rem;
   color: ${(props) => props.theme["base-label"]};
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 401px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -161,15 +171,16 @@ export const ProductPrice = styled.span`
 
   color: ${(props) => props.theme["base-text"]};
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    font-size: 18px;
   }
 
   @media (max-width: 320px) {
@@ -202,20 +213,20 @@ export const ProductQuantity = styled.span`
     }
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    max-height: 31px;
   }
 
   @media (max-width: 320px) {
     max-height: 28px;
-    //border: solid red 2px;
   }
 `;
 export const ShoppingCartButton = styled.button`
@@ -241,15 +252,17 @@ export const ShoppingCartButton = styled.button`
     cursor: pointer;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 401px) {
+    width: 37px;
+    font-size: 18px;
   }
 
   @media (max-width: 320px) {
