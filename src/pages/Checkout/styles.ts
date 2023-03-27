@@ -15,6 +15,25 @@ export const CheckoutContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
+  //border: solid red 2px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    top: 35px;
+    padding: 10px;
+    max-width: 280px;
+    height: max-content;
+  }
 `;
 
 export const CheckoutContent = styled.section`
@@ -24,6 +43,26 @@ export const CheckoutContent = styled.section`
   gap: 32px;
   margin-top: 50px;
   height: max-content;
+  //border: solid green 3px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    align-items: center;
+  }
 `;
 
 export const CompleteOrderContainer = styled.section`
@@ -33,7 +72,7 @@ export const CompleteOrderContainer = styled.section`
   padding: 0px;
   gap: 12px;
   width: 90%;
-
+  //border: solid brown 3px;
   max-width: 640px;
   min-height: 100%;
   span {
@@ -52,6 +91,22 @@ export const CompleteOrderContainer = styled.section`
 
     color: ${(props) => props.theme["base-subtitle"]};
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    //order: 1;
+  }
 `;
 
 export const CompleteOrderContent = styled.article`
@@ -65,6 +120,23 @@ export const CompleteOrderContent = styled.article`
   max-width: 640px;
   border-radius: 10px;
   margin-bottom: 40px;
+  //border: solid yellow 3px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    padding: 0;
+    margin-bottom: 3px;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -72,6 +144,20 @@ export const TitleContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 8px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+  }
 `;
 
 export const Title = styled.div`
@@ -91,6 +177,22 @@ export const Title = styled.div`
   align-items: center;
 
   color: #403937;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 `;
 
 export const SubTitle = styled.div`
@@ -106,6 +208,22 @@ export const SubTitle = styled.div`
   align-items: center;
   color: #574f4d;
   padding-left: 24px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -116,6 +234,21 @@ export const FormContainer = styled.form`
   max-width: 560px;
   padding-bottom: 30px;
   border-bottom: solid 5px ${(props) => props.theme.background};
+  //border: solid black 5px;
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    padding: 15px;
+  }
 `;
 
 const INPUT_SIZE = {
@@ -164,6 +297,25 @@ export const FormInput = styled.input<
   &::placeholder {
     font-size: clamp(10px, 1.1vw, 14px);
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    min-width: 100%;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const PaymentTypeContainer = styled.div`
@@ -177,6 +329,23 @@ export const PaymentTypeContainer = styled.div`
   width: 100%;
   background: #f3f2f2;
   border-radius: 6px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    gap: 20px;
+  }
 `;
 
 export const PaymentTypes = styled.div`
@@ -225,8 +394,35 @@ export const PaymentTypes = styled.div`
   input[type="radio"] {
     visibility: hidden;
     opacity: 0;
-    width: 0.1px;
-    height: 0.1px;
+    width: 0.01px;
+    height: 0.01px;
+  }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    //border: solid red 2px;
+
+    label {
+      padding: 10px;
+
+      max-width: 40%;
+      width: 30%;
+    }
+
+    label:nth-of-type(3) {
+      //border: solid red 2px;
+      margin-left: 10px;
+    }
   }
 `;
 
@@ -235,12 +431,43 @@ export const Type = styled.input`
     background: #ebe5f9;
     border: 1px solid #8047f8;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const SelectedProductsContainer = styled.section`
   max-width: 448px;
   width: 80%;
   height: 100%;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    border: solid red 2px;
+    margin-bottom: 70px;
+  }
 `;
 export const SectionType = styled.span`
   font-family: "Baloo 2", cursive;
@@ -253,6 +480,20 @@ export const SectionType = styled.span`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme["base-subtitle"]};
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const SelectedProductsContent = styled.article`
@@ -267,10 +508,41 @@ export const SelectedProductsContent = styled.article`
   border-radius: 6px 44px;
   padding: 40px;
   padding-top: 28px;
+
+  // border: solid red 2px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    padding: 20px;
+  }
 `;
 
 export const ProductsContainer = styled.div`
   width: 100%;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+  }
 `;
 
 export const Product = styled.div`
@@ -279,12 +551,41 @@ export const Product = styled.div`
   border-bottom: 1px solid #e6e5e5;
   padding-bottom: 16px;
   margin-top: 16px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const ProductInfo = styled.div`
   width: 80%;
   display: flex;
   gap: 20px;
+  //border: solid blue 2px;
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    gap: 8px;
+  }
 `;
 
 export const ProductPrice = styled.div`
@@ -303,6 +604,20 @@ export const ProductPrice = styled.div`
     text-align: right;
     color: #574f4d;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const ProductImg = styled.img`
@@ -310,18 +625,62 @@ export const ProductImg = styled.img`
   align-self: flex-start;
   max-width: 64px;
   width: 30%;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 25%;
+    //border: solid green 2px;
+  }
 `;
 
 export const ProductOptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 8px;
+  gap: 6px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const ProductOptions = styled.div`
   display: flex;
   gap: 8px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (min-width: 320px) {
+  }
 `;
 
 export const ProductName = styled.div`
@@ -333,6 +692,21 @@ export const ProductName = styled.div`
   display: flex;
   align-items: center;
   color: #403937;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 
 export const ProductQuantity = styled.div`
@@ -365,6 +739,22 @@ export const ProductQuantity = styled.div`
     text-align: center;
     color: #272221;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    padding: 2px;
+    height: 20px;
+  }
 `;
 
 export const RemoveButton = styled.button`
@@ -385,6 +775,21 @@ export const RemoveButton = styled.button`
     background: #d7d5d5;
     cursor: pointer;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 8px;
+  }
 `;
 export const TotalContainer = styled.div`
   width: 100%;
@@ -394,6 +799,20 @@ export const TotalContainer = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 12px;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+  }
 `;
 
 export const Values = styled.div`
@@ -401,6 +820,21 @@ export const Values = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: clamp(10px, 1.2vw, 14px);
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 
 export const ConfirmButton = styled.button`
@@ -430,6 +864,20 @@ export const ConfirmButton = styled.button`
     background: #c47f17;
     cursor: pointer;
   }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+  }
 `;
 
 export const EmptyShoppingCart = styled.div`
@@ -441,6 +889,21 @@ export const EmptyShoppingCart = styled.div`
   font-size: 30px;
   margin-top: 20px;
   font-family: "Baloo 2", cursive;
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 20px;
+  }
 `;
 
 export const EmptyShoppingCartContainer = styled.div`
@@ -460,7 +923,7 @@ export const EmptyShoppingCartContainer = styled.div`
   //background: ${(props) => props.theme["base-card"]};
 
   font-family: "Baloo 2", cursive;
-
+  // border: solid red 3px;
   a {
     text-decoration: none;
     display: flex;
@@ -471,6 +934,24 @@ export const EmptyShoppingCartContainer = styled.div`
     justify-content: center;
     width: max-content;
     font-size: 20px;
+  }
+
+  @media (min-width: 1201px) {
+  }
+  @media (min-width: 1025px) {
+  }
+
+  @media (min-width: 769px) {
+  }
+
+  @media (min-width: 401px) {
+  }
+
+  @media (max-width: 320px) {
+    width: 260px;
+    a {
+      font-size: 15px;
+    }
   }
 `;
 export const Coffee1 = styled.div`
