@@ -28,7 +28,6 @@ export const HomeContainer = styled.main`
     top: 80px;
     max-width: 390px;
     padding: 10px;
-    //border: solid red 2px;
     margin-bottom: 100px;
     padding-bottom: 200px;
     min-height: max-content;
@@ -61,7 +60,6 @@ export const BannerContent = styled.section`
   @media (max-width: 401px) {
     width: 100%;
     padding: 0 5px;
-    //border: solid yellow 2px;
   }
 
   @media (max-width: 320px) {
@@ -183,7 +181,6 @@ export const InfoContent = styled.article`
   font-weight: 400;
   max-width: 36rem;
   min-height: 5.25rem;
-  // border: solid green 2px;
   div {
     display: flex;
     gap: 1rem;
@@ -271,12 +268,9 @@ export const Icons = styled.h6<IconsProps>`
   }
 
   @media (max-width: 401px) {
-    /*  max-width: 5rem;
-    max-height: 5rem; */
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.8rem;
-    //padding: 0.6rem;
   }
 
   @media (max-width: 320px) {
