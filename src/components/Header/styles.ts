@@ -19,20 +19,25 @@ export const HeaderContainer = styled.header`
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 770px) {
+    padding: 10px;
+    height: 120px;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: center;
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     padding: 10px;
     height: 80px;
-    max-width: 390px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
   @media (max-width: 320px) {
     padding: 10px;
     height: 70px;
-    max-width: 280px;
+    max-width: 100%;
     margin: 0 auto;
   }
 `;
@@ -80,13 +85,12 @@ export const HeaderContent = styled.div`
   }
 
   @media (max-width: 769px) {
-  }
-
-  @media (max-width: 401px) {
-    width: 100%;
+    width: 90%;
     padding: 0 5px;
+    //border: solid red 3px;
+
     div {
-      width: 40%;
+      width: 60%;
       margin-top: 10px;
       gap: 2px;
       a {
@@ -94,15 +98,42 @@ export const HeaderContent = styled.div`
       }
 
       img {
-        width: 60%;
+        width: 40%;
+        //border: solid red 2px;
+      }
+    }
+
+    span {
+      width: 12px;
+      height: 12px;
+      top: 8px;
+      right: 4px;
+    }
+  }
+
+  @media (max-width: 415px) {
+    width: 100%;
+    padding: 0 5px;
+    div {
+      width: 60%;
+      margin-top: 10px;
+      gap: 2px;
+      //border: solid red 2px;
+      a {
+        width: 80%;
+      }
+
+      img {
+        width: 70%;
+        max-width: 70px;
       }
     }
 
     span {
       width: 10px;
       height: 10px;
-      top: 6px;
-      right: 5px;
+      top: 8px;
+      right: 3px;
     }
   }
 
@@ -110,7 +141,7 @@ export const HeaderContent = styled.div`
     width: 100%;
     padding: 0 5px;
     div {
-      width: 40%;
+      width: 50%;
       margin-top: 10px;
       gap: 2px;
       a {
@@ -144,9 +175,11 @@ export const LocationAndCartContainer = styled.article`
   }
 
   @media (max-width: 769px) {
+    width: 100%;
+    position: relative;
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     margin: 10px 0;
     width: 100%;
     position: relative;
@@ -174,22 +207,30 @@ export const ButtonLocationContainer = styled.button`
   color: ${(props) => props.theme["purple-dark"]};
   font-size: clamp(0.7rem, 1.1vw, 0.875rem);
   cursor: pointer;
-
+  //border: solid red 2px;
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
   }
 
   @media (max-width: 769px) {
+    width: 70%;
+    padding: 0;
+    margin-top: 0;
+    height: 30px;
+    /*  position: relative;
+    top: -6px;
+    left: 30px; */
+    font-size: 10px;
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 60%;
     padding: 0;
     margin-top: 0;
     height: 30px;
     position: relative;
-    top: -6px;
+    top: 0;
     left: 30px;
     font-size: 10px;
   }
@@ -198,9 +239,9 @@ export const ButtonLocationContainer = styled.button`
     width: 60%;
     padding: 0;
     margin-top: 0;
-    height: 20px;
+    height: 30px;
     position: relative;
-    top: -4px;
+    top: 0;
     left: 45px;
     font-size: 10px;
   }
@@ -236,10 +277,10 @@ export const ButtonCartContainer = styled.button`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     position: relative;
     //background: transparent;
-    top: -6px;
+    top: 0;
     left: 30px;
     width: 30px;
     min-height: 10px;
@@ -249,10 +290,11 @@ export const ButtonCartContainer = styled.button`
   @media (max-width: 320px) {
     position: relative;
     background: transparent;
-    top: -3px;
-    left: 36px;
+    top: 0;
+    left: 30px;
     width: 30px;
     min-height: 25px;
     height: 30px;
+    font-size: 20px;
   }
 `;

@@ -24,9 +24,9 @@ export const HomeContainer = styled.main`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 80px;
-    max-width: 390px;
+    max-width: 400px;
     padding: 10px;
     margin-bottom: 100px;
     padding-bottom: 200px;
@@ -57,7 +57,7 @@ export const BannerContent = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 100%;
     padding: 0 5px;
   }
@@ -91,7 +91,7 @@ export const ImgContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 130px;
     margin: 10px 5px;
     display: flex;
@@ -148,7 +148,7 @@ export const TitleAndSubtitleContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     div {
       font-size: 24px;
       position: relative;
@@ -205,7 +205,7 @@ export const InfoContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     margin-top: 11rem;
     div {
       span {
@@ -267,7 +267,7 @@ export const Icons = styled.h6<IconsProps>`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.8rem;
@@ -293,7 +293,7 @@ export const ProductsContainer = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     margin: 1rem 0;
     width: 100%;
     padding: 5px;
@@ -322,7 +322,7 @@ export const Title = styled.span`
   @media (min-width: 769px) {
   }
 
-  @media (min-width: 401px) {
+  @media (min-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -345,7 +345,7 @@ export const ProductsContent = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     display: flex;
     flex-direction: column;
     gap: 4rem;

@@ -24,10 +24,10 @@ export const CheckoutContainer = styled.main`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 40px;
     padding: 10px;
-    max-width: 390px;
+    max-width: 400px;
     height: max-content;
     background: ${(props) => props.theme.background};
   }
@@ -57,7 +57,7 @@ export const CheckoutContent = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -109,7 +109,7 @@ export const CompleteOrderContainer = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 100%;
     margin-top: 30px;
     span {
@@ -144,7 +144,7 @@ export const CompleteOrderContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     padding: 20px;
     margin-bottom: 3px;
   }
@@ -169,7 +169,7 @@ export const TitleContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -202,7 +202,7 @@ export const Title = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 14px;
     margin-top: 10px;
   }
@@ -235,7 +235,7 @@ export const SubTitle = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 12px;
     margin-bottom: 5px;
   }
@@ -263,7 +263,7 @@ export const FormContainer = styled.form`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     padding: 15px;
   }
 
@@ -327,7 +327,7 @@ export const FormInput = styled.input<
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     min-width: 100%;
 
     &::placeholder {
@@ -364,7 +364,7 @@ export const PaymentTypeContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     padding-top: 10px;
     padding-bottom: 20px;
     gap: 20px;
@@ -435,7 +435,7 @@ export const PaymentTypes = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     label {
       padding: 10px;
 
@@ -480,7 +480,7 @@ export const Type = styled.input`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -500,7 +500,7 @@ export const SelectedProductsContainer = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 100%;
     margin-bottom: 70px;
   }
@@ -531,7 +531,7 @@ export const SectionType = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 17px;
   }
 
@@ -562,7 +562,7 @@ export const SelectedProductsContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     padding: 20px;
   }
 
@@ -582,7 +582,7 @@ export const ProductsContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -604,7 +604,7 @@ export const Product = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -624,7 +624,7 @@ export const ProductInfo = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -657,7 +657,7 @@ export const ProductPrice = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -678,7 +678,7 @@ export const ProductImg = styled.img`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -701,7 +701,7 @@ export const ProductOptionsContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -720,7 +720,7 @@ export const ProductOptions = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -745,7 +745,7 @@ export const ProductName = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 13px;
   }
 
@@ -793,7 +793,7 @@ export const ProductQuantity = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     span {
       font-size: 12px;
     }
@@ -831,7 +831,7 @@ export const RemoveButton = styled.button`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 9px;
   }
 
@@ -856,7 +856,7 @@ export const TotalContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -877,7 +877,7 @@ export const Values = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 13px;
   }
 
@@ -922,7 +922,7 @@ export const ConfirmButton = styled.button`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 13px;
   }
 
@@ -948,7 +948,7 @@ export const EmptyShoppingCart = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 20px;
   }
 
@@ -995,7 +995,7 @@ export const EmptyShoppingCartContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {

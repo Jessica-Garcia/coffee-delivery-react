@@ -23,7 +23,7 @@ export const ProductInfo = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 85%;
     max-width: 100%;
     height: max-content;
@@ -53,7 +53,7 @@ export const PurchaseInfo = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 18px;
     //border: solid red 3px;
   }
@@ -78,7 +78,7 @@ export const ProductImg = styled.img`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 28%;
   }
 
@@ -107,7 +107,7 @@ export const ProductType = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 13px;
   }
 
@@ -127,7 +127,7 @@ export const ProductName = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 16px;
   }
 
@@ -149,7 +149,7 @@ export const ProductDescription = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 14px;
   }
 
@@ -179,7 +179,7 @@ export const ProductPrice = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 18px;
   }
 
@@ -221,7 +221,7 @@ export const ProductQuantity = styled.span`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     max-height: 31px;
   }
 
@@ -260,7 +260,7 @@ export const ShoppingCartButton = styled.button`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 37px;
     font-size: 18px;
   }

@@ -24,18 +24,18 @@ export const SuccessContainer = styled.main`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 35px;
     padding: 10px;
-    max-width: 390px;
-    min-height: 60vh;
+    max-width: 400px;
+    max-height: 1000px;
   }
 
   @media (max-width: 320px) {
     top: 35px;
     padding: 10px;
     max-width: 280px;
-    min-height: 60vh;
+    max-height: 1000px;
   }
 `;
 
@@ -52,7 +52,7 @@ export const BannerContainer = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     flex-direction: column;
     gap: 20px;
     align-items: center;
@@ -76,7 +76,7 @@ export const OrderInfoContainer = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 90%;
   }
 
@@ -98,7 +98,7 @@ export const TitleAndSubtitleContainer = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     //border: solid red 2px;
     margin-top: 20px;
   }
@@ -123,7 +123,7 @@ export const Title = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     font-size: 22px;
   }
 
@@ -150,7 +150,7 @@ export const Subtitle = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -180,7 +180,7 @@ export const OrderInfoContent = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -242,7 +242,7 @@ export const OderDetails = styled.div<IconsProps>`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     span {
       font-size: 13px;
     }
@@ -274,7 +274,7 @@ export const ImgContainer = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     align-items: center;
     justify-content: center;
     img {
