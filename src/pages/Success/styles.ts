@@ -16,22 +16,26 @@ export const SuccessContainer = styled.main`
   bottom: 0;
   z-index: 1;
   //border: solid red 2px;
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    top: 35px;
+    padding: 10px;
+    max-width: 400px;
+    max-height: 1000px;
   }
 
   @media (max-width: 320px) {
     top: 35px;
     padding: 10px;
     max-width: 280px;
-    height: max-content;
+    max-height: 1000px;
   }
 `;
 
@@ -40,20 +44,23 @@ export const BannerContainer = styled.section`
   gap: 100px;
   margin-top: 60px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   @media (max-width: 320px) {
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
     align-items: center;
   }
 `;
@@ -61,19 +68,20 @@ export const BannerContainer = styled.section`
 export const OrderInfoContainer = styled.article`
   width: 60%;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    width: 90%;
   }
 
   @media (max-width: 320px) {
-    width: 100%;
+    width: 95%;
   }
 `;
 
@@ -82,18 +90,20 @@ export const TitleAndSubtitleContainer = styled.div`
   gap: 4px;
   flex-direction: column;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+    //border: solid red 2px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -105,18 +115,20 @@ export const Title = styled.div`
   line-height: 130%;
   color: #c47f17;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 20px;
   }
 `;
 
@@ -130,18 +142,20 @@ export const Subtitle = styled.div`
   color: #403937;
   font-stretch: 100;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
+    font-size: 13.5px;
+    margin-top: 5px;
   }
 `;
 
@@ -158,15 +172,15 @@ export const OrderInfoContent = styled.div`
   min-height: 270px;
   border-radius: 6px 36px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -220,15 +234,18 @@ export const OderDetails = styled.div<IconsProps>`
     border-radius: 1000px;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    span {
+      font-size: 13px;
+    }
   }
 
   @media (max-width: 320px) {
@@ -249,18 +266,30 @@ export const ImgContainer = styled.article`
     width: 100%;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-top: 15px;
+      //width: 200px;
+    }
   }
 
   @media (max-width: 320px) {
     margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 200px;
+    }
   }
 `;

@@ -24,11 +24,10 @@ export const HomeContainer = styled.main`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 80px;
-    max-width: 390px;
+    max-width: 400px;
     padding: 10px;
-    //border: solid red 2px;
     margin-bottom: 100px;
     padding-bottom: 200px;
     min-height: max-content;
@@ -58,10 +57,9 @@ export const BannerContent = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     width: 100%;
     padding: 0 5px;
-    //border: solid yellow 2px;
   }
 
   @media (max-width: 320px) {
@@ -93,7 +91,7 @@ export const ImgContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     top: 130px;
     margin: 10px 5px;
     display: flex;
@@ -150,7 +148,7 @@ export const TitleAndSubtitleContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     div {
       font-size: 24px;
       position: relative;
@@ -183,7 +181,6 @@ export const InfoContent = styled.article`
   font-weight: 400;
   max-width: 36rem;
   min-height: 5.25rem;
-  // border: solid green 2px;
   div {
     display: flex;
     gap: 1rem;
@@ -208,7 +205,7 @@ export const InfoContent = styled.article`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     margin-top: 11rem;
     div {
       span {
@@ -270,13 +267,10 @@ export const Icons = styled.h6<IconsProps>`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
-    /*  max-width: 5rem;
-    max-height: 5rem; */
+  @media (max-width: 415px) {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.8rem;
-    //padding: 0.6rem;
   }
 
   @media (max-width: 320px) {
@@ -299,7 +293,7 @@ export const ProductsContainer = styled.section`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     margin: 1rem 0;
     width: 100%;
     padding: 5px;
@@ -328,7 +322,7 @@ export const Title = styled.span`
   @media (min-width: 769px) {
   }
 
-  @media (min-width: 401px) {
+  @media (min-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -351,7 +345,7 @@ export const ProductsContent = styled.div`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 401px) {
+  @media (max-width: 415px) {
     display: flex;
     flex-direction: column;
     gap: 4rem;

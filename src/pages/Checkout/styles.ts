@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const CheckoutContainer = styled.main`
   background: ${(props) => props.theme.background};
   max-width: 90rem;
-
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -15,17 +14,22 @@ export const CheckoutContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
-  //border: solid red 2px;
-
-  @media (min-width: 1201px) {
+  // border: solid red 2px;
+  min-height: 100vh;
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    top: 40px;
+    padding: 10px;
+    max-width: 400px;
+    height: max-content;
+    background: ${(props) => props.theme.background};
   }
 
   @media (max-width: 320px) {
@@ -45,15 +49,20 @@ export const CheckoutContent = styled.section`
   height: max-content;
   //border: solid green 3px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    align-items: center;
   }
 
   @media (max-width: 320px) {
@@ -92,20 +101,25 @@ export const CompleteOrderContainer = styled.section`
     color: ${(props) => props.theme["base-subtitle"]};
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    width: 100%;
+    margin-top: 30px;
+    span {
+      font-size: 17px;
+    }
   }
 
   @media (max-width: 320px) {
     width: 100%;
-    //order: 1;
+    margin-top: 30px;
   }
 `;
 
@@ -122,15 +136,17 @@ export const CompleteOrderContent = styled.article`
   margin-bottom: 40px;
   //border: solid yellow 3px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    padding: 20px;
+    margin-bottom: 3px;
   }
 
   @media (max-width: 320px) {
@@ -145,15 +161,15 @@ export const TitleContainer = styled.div`
   width: 100%;
   gap: 8px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -178,15 +194,17 @@ export const Title = styled.div`
 
   color: #403937;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 14px;
+    margin-top: 10px;
   }
 
   @media (max-width: 320px) {
@@ -209,15 +227,17 @@ export const SubTitle = styled.div`
   color: #574f4d;
   padding-left: 24px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 12px;
+    margin-bottom: 5px;
   }
 
   @media (max-width: 320px) {
@@ -235,15 +255,16 @@ export const FormContainer = styled.form`
   padding-bottom: 30px;
   border-bottom: solid 5px ${(props) => props.theme.background};
   //border: solid black 5px;
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    padding: 15px;
   }
 
   @media (max-width: 320px) {
@@ -298,15 +319,20 @@ export const FormInput = styled.input<
     font-size: clamp(10px, 1.1vw, 14px);
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    min-width: 100%;
+
+    &::placeholder {
+      font-size: 12px;
+    }
   }
 
   @media (max-width: 320px) {
@@ -330,15 +356,18 @@ export const PaymentTypeContainer = styled.div`
   background: #f3f2f2;
   border-radius: 6px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    gap: 20px;
   }
 
   @media (max-width: 320px) {
@@ -398,15 +427,26 @@ export const PaymentTypes = styled.div`
     height: 0.01px;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    label {
+      padding: 10px;
+
+      max-width: 40%;
+      width: 30%;
+    }
+
+    label:nth-of-type(3) {
+      //border: solid red 2px;
+      margin-left: 10px;
+    }
   }
 
   @media (max-width: 320px) {
@@ -432,18 +472,18 @@ export const Type = styled.input`
     border: 1px solid #8047f8;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -451,21 +491,22 @@ export const SelectedProductsContainer = styled.section`
   max-width: 448px;
   width: 80%;
   height: 100%;
-
-  @media (min-width: 1201px) {
+  //border: solid red 2px;
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    width: 100%;
+    margin-bottom: 70px;
   }
 
   @media (max-width: 320px) {
     width: 100%;
-    border: solid red 2px;
     margin-bottom: 70px;
   }
 `;
@@ -481,18 +522,20 @@ export const SectionType = styled.span`
   align-items: center;
   color: ${(props) => props.theme["base-subtitle"]};
 
-  @media (min-width: 1201px) {
+  //border: solid 2px blue;
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+    font-size: 17px;
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -511,15 +554,16 @@ export const SelectedProductsContent = styled.article`
 
   // border: solid red 2px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    padding: 20px;
   }
 
   @media (max-width: 320px) {
@@ -530,15 +574,15 @@ export const SelectedProductsContent = styled.article`
 export const ProductsContainer = styled.div`
   width: 100%;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -552,18 +596,18 @@ export const Product = styled.div`
   padding-bottom: 16px;
   margin-top: 16px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -572,15 +616,15 @@ export const ProductInfo = styled.div`
   display: flex;
   gap: 20px;
   //border: solid blue 2px;
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -605,18 +649,18 @@ export const ProductPrice = styled.div`
     color: #574f4d;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -626,15 +670,15 @@ export const ProductImg = styled.img`
   max-width: 64px;
   width: 30%;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -649,18 +693,18 @@ export const ProductOptionsContainer = styled.div`
   width: 100%;
   gap: 6px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -668,18 +712,18 @@ export const ProductOptions = styled.div`
   display: flex;
   gap: 8px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
-  @media (min-width: 320px) {
+  @media (max-width: 415px) {
+  }
+
+  @media (max-width: 320px) {
   }
 `;
 
@@ -693,15 +737,16 @@ export const ProductName = styled.div`
   align-items: center;
   color: #403937;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 13px;
   }
 
   @media (max-width: 320px) {
@@ -740,17 +785,19 @@ export const ProductQuantity = styled.div`
     color: #272221;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
   }
 
+  @media (max-width: 415px) {
+    span {
+      font-size: 12px;
+    }
+  }
   @media (max-width: 320px) {
     padding: 2px;
     height: 20px;
@@ -776,15 +823,16 @@ export const RemoveButton = styled.button`
     cursor: pointer;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 9px;
   }
 
   @media (max-width: 320px) {
@@ -800,15 +848,15 @@ export const TotalContainer = styled.div`
   padding: 0px;
   gap: 12px;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
@@ -821,15 +869,16 @@ export const Values = styled.div`
   justify-content: space-between;
   font-size: clamp(10px, 1.2vw, 14px);
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 13px;
   }
 
   @media (max-width: 320px) {
@@ -865,15 +914,16 @@ export const ConfirmButton = styled.button`
     cursor: pointer;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 13px;
   }
 
   @media (max-width: 320px) {
@@ -890,15 +940,16 @@ export const EmptyShoppingCart = styled.div`
   margin-top: 20px;
   font-family: "Baloo 2", cursive;
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    font-size: 20px;
   }
 
   @media (max-width: 320px) {
@@ -923,7 +974,7 @@ export const EmptyShoppingCartContainer = styled.div`
   //background: ${(props) => props.theme["base-card"]};
 
   font-family: "Baloo 2", cursive;
-  // border: solid red 3px;
+  //border: solid red 3px;
   a {
     text-decoration: none;
     display: flex;
@@ -936,15 +987,15 @@ export const EmptyShoppingCartContainer = styled.div`
     font-size: 20px;
   }
 
-  @media (min-width: 1201px) {
+  @media (max-width: 1201px) {
   }
-  @media (min-width: 1025px) {
-  }
-
-  @media (min-width: 769px) {
+  @media (max-width: 1025px) {
   }
 
-  @media (min-width: 401px) {
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
   }
 
   @media (max-width: 320px) {
