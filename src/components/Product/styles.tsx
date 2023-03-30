@@ -18,9 +18,26 @@ export const ProductInfo = styled.div`
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
+    flex-basis: 320px;
+    //flex-shrink: 2;
+    height: 19rem;
+    max-height: 21rem;
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 700px) {
+    border: solid violet 2px;
+    flex-basis: 240px;
+    //flex-shrink: 2;
+    max-width: 25rem;
+    height: 19rem;
+    max-height: 21rem;
+  }
+
+  @media (max-width: 605px) {
+    border: solid red 2px;
+    flex-basis: 320px;
+    height: 20rem;
+    max-height: 22rem;
   }
 
   @media (max-width: 415px) {
@@ -28,12 +45,15 @@ export const ProductInfo = styled.div`
     max-width: 100%;
     height: max-content;
     padding-bottom: 30px;
+    max-height: 19rem;
+
     //border: solid red 2px;
   }
 
   @media (max-width: 320px) {
     width: 90%;
     height: max-content;
+    max-height: 18rem;
     padding-bottom: 10px;
   }
 `;
@@ -45,6 +65,7 @@ export const PurchaseInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.3rem;
+  border: solid blue 3px;
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
