@@ -20,8 +20,8 @@ export const HeaderContainer = styled.header`
   }
 
   @media (max-width: 770px) {
-    padding: 10px;
-    height: 120px;
+    padding: 30px;
+    height: 90px;
     max-width: 100%;
     margin: 0 auto;
     align-items: center;
@@ -36,7 +36,7 @@ export const HeaderContainer = styled.header`
 
   @media (max-width: 320px) {
     padding: 10px;
-    height: 70px;
+    height: 80px;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -47,7 +47,9 @@ export const HeaderContent = styled.div`
   width: 85%;
   position: relative;
   justify-content: space-between;
-
+  align-items: flex-start;
+  gap: 5px;
+  //border: solid red 2px;
   div {
     height: 3rem;
     display: flex;
@@ -85,29 +87,28 @@ export const HeaderContent = styled.div`
   }
 
   @media (max-width: 769px) {
-    width: 90%;
+    width: 100%;
     padding: 0 5px;
-    //border: solid red 3px;
-
     div {
       width: 60%;
       margin-top: 10px;
-      gap: 2px;
+      height: 35px;
+      //border: solid blue 2px;
       a {
         width: 80%;
       }
 
       img {
-        width: 40%;
-        //border: solid red 2px;
+        width: 70%;
+        max-width: 70px;
       }
     }
 
     span {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       top: 8px;
-      right: 4px;
+      right: 3px;
     }
   }
 
@@ -117,8 +118,8 @@ export const HeaderContent = styled.div`
     div {
       width: 60%;
       margin-top: 10px;
-      gap: 2px;
-      //border: solid red 2px;
+      height: 35px;
+      //border: solid blue 2px;
       a {
         width: 80%;
       }
@@ -166,8 +167,9 @@ export const LocationAndCartContainer = styled.article`
   display: flex;
   max-width: 12.0625rem;
   gap: 0.75rem;
+  justify-content: flex-end;
   align-items: center;
-  overflow: hidden;
+  //overflow: hidden;
   //border: solid red 3px;
   @media (max-width: 1201px) {
   }
@@ -175,20 +177,20 @@ export const LocationAndCartContainer = styled.article`
   }
 
   @media (max-width: 769px) {
-    width: 100%;
-    position: relative;
+    width: 70%;
+    margin-top: 10px;
   }
 
   @media (max-width: 415px) {
-    margin: 10px 0;
-    width: 100%;
-    position: relative;
+    width: 70%;
+    margin-top: 10px;
+    //border: solid blue 2px;
   }
 
   @media (max-width: 320px) {
-    margin: 10px 0;
-    width: 100%;
-    position: relative;
+    width: 70%;
+    margin-top: 10px;
+    //border: solid blue 2px;
   }
 `;
 
@@ -218,32 +220,32 @@ export const ButtonLocationContainer = styled.button`
     padding: 0;
     margin-top: 0;
     height: 30px;
-    /*  position: relative;
-    top: -6px;
-    left: 30px; */
+    position: relative;
+    top: 0;
+    //left: 30px;
     font-size: 10px;
   }
 
   @media (max-width: 415px) {
-    width: 60%;
+    width: 70%;
     padding: 0;
     margin-top: 0;
     height: 30px;
     position: relative;
     top: 0;
-    left: 30px;
+    //left: 30px;
     font-size: 10px;
   }
 
   @media (max-width: 320px) {
-    width: 60%;
-    padding: 0;
+    width: 70%;
+    padding: 3px;
     margin-top: 0;
     height: 30px;
     position: relative;
     top: 0;
-    left: 45px;
-    font-size: 10px;
+    //left: 30px;
+    font-size: 9px;
   }
 `;
 
@@ -275,13 +277,20 @@ export const ButtonCartContainer = styled.button`
   }
 
   @media (max-width: 769px) {
+    position: relative;
+    //background: transparent;
+    top: 0;
+    // left: 30px;
+    width: 30px;
+    min-height: 10px;
+    height: 30px;
   }
 
   @media (max-width: 415px) {
     position: relative;
     //background: transparent;
     top: 0;
-    left: 30px;
+    // left: 30px;
     width: 30px;
     min-height: 10px;
     height: 30px;
@@ -289,12 +298,12 @@ export const ButtonCartContainer = styled.button`
 
   @media (max-width: 320px) {
     position: relative;
-    background: transparent;
+    //background: transparent;
     top: 0;
-    left: 30px;
+    // left: 30px;
     width: 30px;
-    min-height: 25px;
+    min-height: 10px;
     height: 30px;
-    font-size: 20px;
+    font-size: 15px;
   }
 `;
