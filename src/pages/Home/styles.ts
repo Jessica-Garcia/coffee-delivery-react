@@ -478,27 +478,15 @@ export const ProductsContent = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-  grid-auto-rows: 310px;
   gap: 1.8rem;
   padding-top: 2rem;
   margin-bottom: 2rem;
-  //border: solid red 2px;
   padding-bottom: 5rem;
 
-  /* div:last-child {
-    margin-bottom: 3rem;
-  } */
-
-  /* @media (min-width: 1098px) {
-    gap: 3rem;
-  } */
-
   @media (max-width: 1400px) {
-    column-gap: 2rem;
   }
 
   @media (max-width: 914px) {
-    //border: solid blueviolet 2px;
     display: flex;
     flex-wrap: wrap;
     row-gap: 3rem;
@@ -506,7 +494,8 @@ export const ProductsContent = styled.div`
   }
 
   @media (max-width: 645px) {
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 
   @media (max-width: 415px) {

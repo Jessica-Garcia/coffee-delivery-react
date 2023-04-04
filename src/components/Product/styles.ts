@@ -3,14 +3,12 @@ import styled from "styled-components";
 export const ProductInfo = styled.div`
   display: flex;
   background: ${(props) => props.theme["base-card"]};
-  max-width: 16rem;
-  width: 25vw;
-  max-height: 18.375rem;
+  height: 330px;
+  max-height: 24.375rem;
   flex-direction: column;
   align-items: center;
   border-radius: 6px 36px;
   gap: 1rem;
-  //border: solid green 2px;
 
   div {
     display: flex;
@@ -18,37 +16,31 @@ export const ProductInfo = styled.div`
   }
 
   @media (max-width: 1201px) {
+    max-height: 22rem;
   }
   @media (max-width: 1025px) {
-    flex-basis: 320px;
-    //flex-shrink: 2;
-    height: 19rem;
-    max-height: 21rem;
+    flex-basis: 300px;
+    height: 20rem;
+    max-height: 22rem;
   }
 
   @media (max-width: 700px) {
-    //border: solid violet 2px;
-    flex-basis: 240px;
-    //flex-shrink: 2;
+    flex-basis: 277px;
     max-width: 25rem;
     height: 19rem;
     max-height: 21rem;
   }
 
-  @media (max-width: 605px) {
-    //border: solid red 2px;
-    flex-basis: 320px;
-    height: 20rem;
-    max-height: 22rem;
+  @media (max-width: 645px) {
+    width: 60%;
+    min-width: 225px;
   }
 
   @media (max-width: 415px) {
     width: 85%;
-    max-width: 100%;
-    height: max-content;
+    height: 18rem;
     padding-bottom: 30px;
     max-height: 19rem;
-    //border: solid red 2px;
   }
 
   @media (max-width: 320px) {
@@ -66,7 +58,6 @@ export const PurchaseInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.3rem;
-  //border: solid blue 3px;
 
   @media (max-width: 1201px) {
   }
@@ -99,7 +90,7 @@ export const ProductImg = styled.img`
   }
 
   @media (max-width: 769px) {
-    width: 30%;
+    width: 26%;
   }
 
   @media (max-width: 415px) {
