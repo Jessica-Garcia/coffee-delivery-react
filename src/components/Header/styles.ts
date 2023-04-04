@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header`
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
-    border: solid red 1px;
+    //border: solid red 1px;
 
     padding: 5px;
     //height: 90px;
@@ -56,7 +56,7 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   gap: 5px;
-  border: solid yellow 2px;
+  //border: solid yellow 2px;
   div {
     height: 3rem;
     display: flex;
@@ -95,7 +95,7 @@ export const HeaderContent = styled.div`
     padding: 0 5px;
     div {
       width: 100%;
-      border: solid blue 2px;
+      // border: solid blue 2px;
       a {
         width: 100%;
       }
@@ -191,7 +191,7 @@ export const LocationAndCartContainer = styled.article`
   justify-content: flex-end;
   align-items: center;
   //overflow: hidden;
-  border: solid red 3px;
+  //border: solid red 3px;
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {

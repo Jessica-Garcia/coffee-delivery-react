@@ -10,6 +10,8 @@ export const ProductInfo = styled.div`
   align-items: center;
   border-radius: 6px 36px;
   gap: 1rem;
+  //border: solid green 2px;
+
   div {
     display: flex;
     gap: 0.3rem;
@@ -25,7 +27,7 @@ export const ProductInfo = styled.div`
   }
 
   @media (max-width: 700px) {
-    border: solid violet 2px;
+    //border: solid violet 2px;
     flex-basis: 240px;
     //flex-shrink: 2;
     max-width: 25rem;
@@ -34,7 +36,7 @@ export const ProductInfo = styled.div`
   }
 
   @media (max-width: 605px) {
-    border: solid red 2px;
+    //border: solid red 2px;
     flex-basis: 320px;
     height: 20rem;
     max-height: 22rem;
@@ -46,7 +48,6 @@ export const ProductInfo = styled.div`
     height: max-content;
     padding-bottom: 30px;
     max-height: 19rem;
-
     //border: solid red 2px;
   }
 
@@ -65,7 +66,8 @@ export const PurchaseInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.3rem;
-  border: solid blue 3px;
+  //border: solid blue 3px;
+
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
