@@ -79,7 +79,7 @@ export const BannerContent = styled.section`
     width: 100%;
     padding: 0 15px;
     //border: solid red 2px;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
     //align-items: center;
     //justify-content: center;
   }
@@ -136,11 +136,11 @@ export const ImgContent = styled.article`
     // border: sandybrown solid 2px;
     height: max-content;
     //flex-basis: 400px;
-    width: 50%;
-    max-width: 298px;
+    width: 60%;
+    max-width: 248px;
     min-width: 180px;
     position: relative;
-    top: 25px;
+    top: 10px;
 
     img {
       width: 100%;
@@ -152,7 +152,7 @@ export const ImgContent = styled.article`
 
   @media (max-width: 550px) {
     top: -10px;
-    bottom: 0;
+    bottom: 28px;
     position: absolute;
     margin: auto auto;
     display: flex;
@@ -161,7 +161,8 @@ export const ImgContent = styled.article`
     width: 100%;
     max-width: 100%;
     img {
-      width: 62%;
+      width: 65%;
+      max-width: 280px;
     }
   }
 
@@ -225,17 +226,17 @@ export const TitleAndSubtitleContent = styled.article`
     }
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 759px) {
     width: 100%;
-    max-width: 375px;
+    max-width: 395px;
     min-width: 320px;
     div {
-      font-size: 24px;
+      font-size: 25px;
       position: relative;
       top: -75px;
     }
     span {
-      font-size: 15px;
+      font-size: 16px;
       position: relative;
       top: -75px;
     }
@@ -427,11 +428,15 @@ export const ProductsContainer = styled.section`
   @media (max-width: 769px) {
     //border: solid blue 2px;
     width: 100%;
-    padding: 0 25px;
-    margin-top: 1rem;
+    padding: 3px 25px;
+    margin-top: 5rem;
   }
 
-  @media (max-width: 415px) {
+  @media (max-width: 610px) {
+    margin-top: 6.5rem;
+  }
+
+  @media (max-width: 550px) {
     margin: 1rem 0;
     width: 100%;
     padding: 5px;
@@ -459,6 +464,7 @@ export const Title = styled.span`
 
   @media (max-width: 769px) {
     font-size: 20px;
+    margin-left: 20px;
   }
 
   @media (max-width: 415px) {

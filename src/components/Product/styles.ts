@@ -99,6 +99,7 @@ export const ProductImg = styled.img`
   }
 
   @media (max-width: 769px) {
+    width: 30%;
   }
 
   @media (max-width: 415px) {
