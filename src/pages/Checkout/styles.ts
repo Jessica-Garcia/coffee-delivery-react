@@ -8,13 +8,14 @@ export const CheckoutContainer = styled.main`
   flex-direction: column;
   align-items: center;
   padding: 0 1.8rem;
-  position: absolute;
+  position: relative;
   top: 6.5rem;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  // border: solid red 2px;
+  border: solid red 2px;
+  height: auto;
   min-height: 100vh;
   @media (max-width: 1201px) {
   }
@@ -29,7 +30,6 @@ export const CheckoutContainer = styled.main`
     padding: 10px;
     max-width: 400px;
     height: max-content;
-    background: ${(props) => props.theme.background};
   }
 
   @media (max-width: 320px) {
@@ -42,12 +42,11 @@ export const CheckoutContainer = styled.main`
 
 export const CheckoutContent = styled.section`
   width: 85%;
-  height: 100%;
   display: flex;
   gap: 32px;
   margin-top: 50px;
   height: max-content;
-  //border: solid green 3px;
+  border: solid green 3px;
 
   @media (max-width: 1201px) {
   }
@@ -252,11 +251,17 @@ export const FormContainer = styled.form`
   gap: 16px;
   width: 100%;
   max-width: 560px;
-  padding-bottom: 30px;
+  padding: 0 0 30px 0;
   border-bottom: solid 5px ${(props) => props.theme.background};
-  //border: solid black 5px;
+  border: solid black 5px;
+
+  @media (max-width: 1385px) {
+    display: inline;
+  }
+
   @media (max-width: 1201px) {
   }
+
   @media (max-width: 1025px) {
   }
 
@@ -291,7 +296,7 @@ interface FormInputSizeProps {
 interface FormInputMaxSizeProps {
   inputMaxSize: keyof typeof INPUT_SIZE;
 }
-
+/* 
 export const FormInput = styled.input<
   FormInputSizeProps & FormInputMaxSizeProps
 >`
@@ -319,8 +324,90 @@ export const FormInput = styled.input<
     font-size: clamp(10px, 1.1vw, 14px);
   }
 
+  @media (max-width: 1385px) {
+
+    
+    
+  }
+
   @media (max-width: 1201px) {
   }
+  @media (max-width: 1025px) {
+  }
+
+  @media (max-width: 769px) {
+  }
+
+  @media (max-width: 415px) {
+    min-width: 100%;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    min-width: 100%;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+`; */
+
+export const FormInput = styled.input`
+  height: 42px;
+
+  // display: flex;
+  //flex-direction: row;
+  //align-items: center;
+  padding: 12px;
+  //gap: 4px;
+  background: #eeeded;
+
+  border: 1px solid #e6e5e5;
+  border-radius: 4px;
+  font-size: clamp(10px, 1.2vw, 14px);
+
+  &:focus {
+    background: #eeeded;
+    border: 1px solid #c47f17;
+  }
+
+  &::placeholder {
+    font-size: clamp(10px, 1.1vw, 14px);
+  }
+
+  @media (max-width: 1385px) {
+    margin-bottom: 16px;
+    :first-child {
+      width: calc(40% - 10px);
+    }
+    :nth-child(2) {
+      width: 100%;
+    }
+    :nth-child(3) {
+      width: calc(40% - 10px);
+      margin-right: 10px;
+    }
+
+    :nth-child(4) {
+      width: 60%;
+    }
+
+    :nth-child(5) {
+      margin-right: 10px;
+      width: calc(40% - 10px);
+    }
+    :nth-child(6) {
+      margin-right: 10px;
+      width: calc(45% - 10px);
+    }
+    :nth-child(7) {
+      width: 15%;
+    }
+  }
+
   @media (max-width: 1025px) {
   }
 
