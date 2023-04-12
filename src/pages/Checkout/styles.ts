@@ -14,7 +14,7 @@ export const CheckoutContainer = styled.main`
   right: 0;
   bottom: 0;
   z-index: 1;
-  border: solid red 2px;
+  //border: solid red 2px;
   height: auto;
   min-height: 100vh;
   @media (max-width: 1201px) {
@@ -23,6 +23,9 @@ export const CheckoutContainer = styled.main`
   }
 
   @media (max-width: 769px) {
+    top: 90px;
+    padding: 5px;
+    max-width: 100%;
   }
 
   @media (max-width: 415px) {
@@ -33,10 +36,6 @@ export const CheckoutContainer = styled.main`
   }
 
   @media (max-width: 320px) {
-    top: 35px;
-    padding: 10px;
-    max-width: 280px;
-    height: max-content;
   }
 `;
 
@@ -46,9 +45,14 @@ export const CheckoutContent = styled.section`
   gap: 32px;
   margin-top: 50px;
   height: max-content;
-  border: solid green 3px;
+  //border: solid green 3px;
 
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    align-items: center;
   }
   @media (max-width: 1025px) {
   }
@@ -65,11 +69,11 @@ export const CheckoutContent = styled.section`
   }
 
   @media (max-width: 320px) {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 5px;
-    align-items: center;
+    align-items: center; */
   }
 `;
 
@@ -90,7 +94,7 @@ export const CompleteOrderContainer = styled.section`
 
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: 18px;
 
     line-height: 130%;
 
@@ -184,7 +188,6 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  font-size: clamp(12px, 1.3vw, 16px);
 
   line-height: 130%;
   gap: 8px;
@@ -207,7 +210,6 @@ export const Title = styled.div`
   }
 
   @media (max-width: 320px) {
-    font-size: 14px;
     margin-top: 10px;
   }
 `;
@@ -219,7 +221,7 @@ export const SubTitle = styled.div`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: 14px;
   line-height: 130%;
   display: flex;
   align-items: center;
@@ -240,7 +242,6 @@ export const SubTitle = styled.div`
   }
 
   @media (max-width: 320px) {
-    font-size: 12px;
     margin-bottom: 5px;
   }
 `;
@@ -248,17 +249,16 @@ export const SubTitle = styled.div`
 export const FormContainer = styled.form`
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  row-gap: 16px;
   width: 100%;
   max-width: 560px;
   padding: 0 0 30px 0;
   border-bottom: solid 5px ${(props) => props.theme.background};
-  border: solid black 5px;
 
-  @media (max-width: 1385px) {
+  /*  @media (max-width: 1385px) {
     display: inline;
   }
-
+ */
   @media (max-width: 1201px) {
   }
 
@@ -276,7 +276,7 @@ export const FormContainer = styled.form`
     padding: 15px;
   }
 `;
-
+/* 
 const INPUT_SIZE = {
   defaultWidth: "default-Width",
   defaultMaxWidth: "default-Max-Width",
@@ -296,7 +296,7 @@ interface FormInputSizeProps {
 interface FormInputMaxSizeProps {
   inputMaxSize: keyof typeof INPUT_SIZE;
 }
-/* 
+ 
 export const FormInput = styled.input<
   FormInputSizeProps & FormInputMaxSizeProps
 >`
@@ -357,17 +357,40 @@ export const FormInput = styled.input<
 
 export const FormInput = styled.input`
   height: 42px;
-
-  // display: flex;
-  //flex-direction: row;
-  //align-items: center;
   padding: 12px;
-  //gap: 4px;
   background: #eeeded;
 
   border: 1px solid #e6e5e5;
   border-radius: 4px;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: 14px;
+
+  margin-bottom: 16px;
+  :first-child {
+    width: calc(40% - 10px);
+  }
+  :nth-child(2) {
+    width: 100%;
+  }
+  :nth-child(3) {
+    margin-right: 10px;
+    width: calc(40% - 10px);
+  }
+
+  :nth-child(4) {
+    width: calc(60%);
+  }
+
+  :nth-child(5) {
+    margin-right: 10px;
+    width: calc(40% - 10px);
+  }
+  :nth-child(6) {
+    margin-right: 10px;
+    width: calc(45% - 10px);
+  }
+  :nth-child(7) {
+    width: 15%;
+  }
 
   &:focus {
     background: #eeeded;
@@ -375,37 +398,7 @@ export const FormInput = styled.input`
   }
 
   &::placeholder {
-    font-size: clamp(10px, 1.1vw, 14px);
-  }
-
-  @media (max-width: 1385px) {
-    margin-bottom: 16px;
-    :first-child {
-      width: calc(40% - 10px);
-    }
-    :nth-child(2) {
-      width: 100%;
-    }
-    :nth-child(3) {
-      width: calc(40% - 10px);
-      margin-right: 10px;
-    }
-
-    :nth-child(4) {
-      width: 60%;
-    }
-
-    :nth-child(5) {
-      margin-right: 10px;
-      width: calc(40% - 10px);
-    }
-    :nth-child(6) {
-      margin-right: 10px;
-      width: calc(45% - 10px);
-    }
-    :nth-child(7) {
-      width: 15%;
-    }
+    font-size: 14px;
   }
 
   @media (max-width: 1025px) {
@@ -414,9 +407,15 @@ export const FormInput = styled.input`
   @media (max-width: 769px) {
   }
 
-  @media (max-width: 415px) {
+  @media (max-width: 514px) {
     min-width: 100%;
-
+    :nth-child(6) {
+      margin-right: 10px;
+      min-width: calc(80% - 10px);
+    }
+    :nth-child(7) {
+      min-width: 20%;
+    }
     &::placeholder {
       font-size: 12px;
     }
@@ -442,6 +441,7 @@ export const PaymentTypeContainer = styled.div`
   width: 100%;
   background: #f3f2f2;
   border-radius: 6px;
+  //border: solid red 2px;
 
   @media (max-width: 1201px) {
   }
@@ -472,6 +472,9 @@ export const PaymentTypes = styled.div`
   gap: 10px;
   width: 100%;
   height: max-content;
+  padding-right: 10px;
+
+  //border: solid 2px blue;
 
   input:checked + label {
     background: #ebe5f9;
@@ -493,7 +496,7 @@ export const PaymentTypes = styled.div`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(9px, 0.57vw, 10px);
+    font-size: 10px;
     line-height: 160%;
     text-transform: uppercase;
     color: #574f4d;
@@ -514,42 +517,77 @@ export const PaymentTypes = styled.div`
     height: 0.01px;
   }
 
-  @media (max-width: 1201px) {
-  }
-  @media (max-width: 1025px) {
-  }
-
-  @media (max-width: 769px) {
-  }
-
-  @media (max-width: 415px) {
-    label {
+  @media (max-width: 1320px) {
+    /* label {
       padding: 10px;
 
-      max-width: 40%;
+      max-width: 35%;
       width: 30%;
     }
 
     label:nth-of-type(3) {
-      //border: solid red 2px;
       margin-left: 10px;
+    } */
+  }
+  @media (max-width: 1118px) {
+    /* label {
+      div:nth-of-type(1) {
+        display: none;
+      }
+    } */
+  }
+
+  @media (max-width: 986px) {
+    /* flex-direction: column;
+    label {
+      min-width: 178.67px;
+      div:nth-of-type(1) {
+        display: contents;
+      }
+    }
+    label:nth-of-type(3) {
+      margin-left: 0px;
+    } */
+  }
+
+  @media (max-width: 721px) {
+    justify-content: space-between;
+
+    label {
+      padding: 5px;
+      max-width: 160px;
+      width: 25%;
+      min-width: 120px;
+      font-size: 8.5px;
+    }
+  }
+
+  @media (max-width: 578px) {
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 0;
+
+    label:nth-of-type(3) {
+      /* margin-left: 10px;
+      max-width: 133.05px; */
+    }
+  }
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    label {
+      min-width: 178.67px;
+      div:nth-of-type(1) {
+        display: contents;
+      }
+    }
+    label:nth-of-type(3) {
+      margin-left: 0px;
     }
   }
 
   @media (max-width: 320px) {
     //border: solid red 2px;
-
-    label {
-      padding: 10px;
-
-      max-width: 40%;
-      width: 30%;
-    }
-
-    label:nth-of-type(3) {
-      //border: solid red 2px;
-      margin-left: 10px;
-    }
   }
 `;
 
@@ -579,7 +617,9 @@ export const SelectedProductsContainer = styled.section`
   width: 80%;
   height: 100%;
   //border: solid red 2px;
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    max-width: 640px;
+    width: 90%;
   }
   @media (max-width: 1025px) {
   }
@@ -603,7 +643,7 @@ export const SectionType = styled.span`
   height: 23px;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: 18px;
   line-height: 130%;
   display: flex;
   align-items: center;
@@ -639,9 +679,10 @@ export const SelectedProductsContent = styled.article`
   padding: 40px;
   padding-top: 28px;
 
-  // border: solid red 2px;
+  //border: solid red 2px;
 
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    margin-bottom: 30px;
   }
   @media (max-width: 1025px) {
   }
@@ -653,15 +694,15 @@ export const SelectedProductsContent = styled.article`
     padding: 20px;
   }
 
-  @media (max-width: 320px) {
-    padding: 20px;
+  @media (max-width: 349px) {
+    padding: 10px;
   }
 `;
 
 export const ProductsContainer = styled.div`
   width: 100%;
-
-  @media (max-width: 1201px) {
+  //border: solid green 2px;
+  @media (max-width: 1324px) {
   }
   @media (max-width: 1025px) {
   }
@@ -682,6 +723,7 @@ export const Product = styled.div`
   border-bottom: 1px solid #e6e5e5;
   padding-bottom: 16px;
   margin-top: 16px;
+  //border: solid purple 2px;
 
   @media (max-width: 1201px) {
   }
@@ -703,7 +745,7 @@ export const ProductInfo = styled.div`
   display: flex;
   gap: 20px;
   //border: solid blue 2px;
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
   }
   @media (max-width: 1025px) {
   }
@@ -715,7 +757,7 @@ export const ProductInfo = styled.div`
   }
 
   @media (max-width: 320px) {
-    gap: 8px;
+    gap: 5px;
   }
 `;
 
@@ -724,11 +766,12 @@ export const ProductPrice = styled.div`
   align-items: flex-start;
   justify-content: flex-end;
   width: 20%;
+  //border: solid pink 2px;
   span {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(12px, 1.3vw, 16px);
+    font-size: 16px;
     line-height: 130%;
     display: flex;
     align-items: center;
@@ -741,13 +784,19 @@ export const ProductPrice = styled.div`
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 629px) {
+    span {
+      font-size: 13px;
+    }
   }
 
   @media (max-width: 415px) {
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 349px) {
+    span {
+      font-size: 11px;
+    }
   }
 `;
 
@@ -757,19 +806,23 @@ export const ProductImg = styled.img`
   max-width: 64px;
   width: 30%;
 
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    width: 40%;
+    max-width: 90px;
   }
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 629px) {
+    max-width: 60px;
+    width: 30%;
   }
 
   @media (max-width: 415px) {
   }
 
-  @media (max-width: 320px) {
-    width: 25%;
+  @media (max-width: 349px) {
+    width: 20%;
     //border: solid green 2px;
   }
 `;
@@ -779,19 +832,26 @@ export const ProductOptionsContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 6px;
+  // border: solid red 3px;
 
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
   }
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: 629px) {
+    padding: 0;
+    //align-items: flex-start;
   }
 
   @media (max-width: 415px) {
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 349px) {
   }
 `;
 
@@ -818,7 +878,7 @@ export const ProductName = styled.div`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(10px, 1.2vw, 16px);
+  font-size: 16px;
   line-height: 130%;
   display: flex;
   align-items: center;
@@ -829,15 +889,12 @@ export const ProductName = styled.div`
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
-  }
-
-  @media (max-width: 415px) {
+  @media (max-width: 629px) {
     font-size: 13px;
   }
 
-  @media (max-width: 320px) {
-    font-size: 12px;
+  @media (max-width: 349px) {
+    font-size: 11px;
   }
 `;
 
@@ -866,7 +923,7 @@ export const ProductQuantity = styled.div`
   span {
     font-family: "Roboto";
     font-weight: 400;
-    font-size: clamp(10px, 1.05vw, 14px);
+    font-size: 14px;
     line-height: 130%;
     text-align: center;
     color: #272221;
@@ -877,17 +934,18 @@ export const ProductQuantity = styled.div`
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
-  }
-
-  @media (max-width: 415px) {
+  @media (max-width: 629px) {
     span {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
-  @media (max-width: 320px) {
+
+  @media (max-width: 349px) {
     padding: 2px;
     height: 20px;
+    span {
+      font-size: 11px;
+    }
   }
 `;
 
@@ -898,7 +956,7 @@ export const RemoveButton = styled.button`
   align-items: center;
   padding: 0px 8px;
   gap: 4px;
-  font-size: clamp(8px, 1vw, 10px);
+  font-size: 10px;
   max-width: 91px;
   max-height: 32px;
   background: #e6e5e5;
@@ -915,14 +973,7 @@ export const RemoveButton = styled.button`
   @media (max-width: 1025px) {
   }
 
-  @media (max-width: 769px) {
-  }
-
-  @media (max-width: 415px) {
-    font-size: 9px;
-  }
-
-  @media (max-width: 320px) {
+  @media (max-width: 629px) {
     font-size: 8px;
   }
 `;
@@ -954,7 +1005,7 @@ export const Values = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: 14px;
 
   @media (max-width: 1201px) {
   }
@@ -962,10 +1013,10 @@ export const Values = styled.div`
   }
 
   @media (max-width: 769px) {
+    font-size: 13px;
   }
 
   @media (max-width: 415px) {
-    font-size: 13px;
   }
 
   @media (max-width: 320px) {
@@ -988,7 +1039,7 @@ export const ConfirmButton = styled.button`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: 14px;
   line-height: 160%;
   text-transform: uppercase;
   color: #ffffff;
@@ -1001,16 +1052,17 @@ export const ConfirmButton = styled.button`
     cursor: pointer;
   }
 
-  @media (max-width: 1201px) {
+  @media (max-width: 1324px) {
+    align-self: center;
   }
   @media (max-width: 1025px) {
   }
 
   @media (max-width: 769px) {
+    font-size: 13px;
   }
 
   @media (max-width: 415px) {
-    font-size: 13px;
   }
 
   @media (max-width: 320px) {
@@ -1027,6 +1079,7 @@ export const EmptyShoppingCart = styled.div`
   margin-top: 20px;
   font-family: "Baloo 2", cursive;
 
+  //border: solid 2px purple;
   @media (max-width: 1201px) {
   }
   @media (max-width: 1025px) {
@@ -1049,7 +1102,6 @@ export const EmptyShoppingCartContainer = styled.div`
   gap: 20px;
   margin: 13vh auto;
   width: max-content;
-  //height: 60vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1058,10 +1110,8 @@ export const EmptyShoppingCartContainer = styled.div`
   font-size: 30px;
   position: relative;
   padding-top: 50px;
-  //background: ${(props) => props.theme["base-card"]};
-
   font-family: "Baloo 2", cursive;
-  //border: solid red 3px;
+  //border: solid blue 3px;
   a {
     text-decoration: none;
     display: flex;

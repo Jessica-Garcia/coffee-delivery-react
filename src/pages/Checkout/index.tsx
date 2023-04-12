@@ -146,8 +146,8 @@ export const Checkout = () => {
                   onSubmit={handleSubmit(handleCreateNewOrder)}
                 >
                   <FormInput
-                    inputSize="defaultWidth"
-                    inputMaxSize="defaultMaxWidth"
+                    // inputSize="defaultWidth"
+                    // inputMaxSize="defaultMaxWidth"
                     placeholder="CEP"
                     required
                     type="text"
@@ -155,8 +155,8 @@ export const Checkout = () => {
                     {...register("cep")}
                   />
                   <FormInput
-                    inputSize="largeWidth"
-                    inputMaxSize="largeMaxWidth"
+                    // inputSize="largeWidth"
+                    // inputMaxSize="largeMaxWidth"
                     type="text"
                     required
                     placeholder="Rua"
@@ -164,8 +164,8 @@ export const Checkout = () => {
                     {...register("street")}
                   />
                   <FormInput
-                    inputSize="defaultWidth"
-                    inputMaxSize="defaultMaxWidth"
+                    // inputSize="defaultWidth"
+                    // inputMaxSize="defaultMaxWidth"
                     type="number"
                     placeholder="Número"
                     required
@@ -173,8 +173,8 @@ export const Checkout = () => {
                     {...register("number", { valueAsNumber: true })}
                   />
                   <FormInput
-                    inputSize="largeWidth"
-                    inputMaxSize="mediumMaxWidth"
+                    // inputSize="largeWidth"
+                    // inputMaxSize="mediumMaxWidth"
                     type="text"
                     placeholder="complemento (opcional)"
                     required={false}
@@ -182,8 +182,8 @@ export const Checkout = () => {
                     {...register("complement")}
                   />
                   <FormInput
-                    inputSize="defaultWidth"
-                    inputMaxSize="defaultMaxWidth"
+                    // inputSize="defaultWidth"
+                    // inputMaxSize="defaultMaxWidth"
                     type="text"
                     placeholder="Bairro"
                     required
@@ -191,8 +191,8 @@ export const Checkout = () => {
                     {...register("neighborhood")}
                   />
                   <FormInput
-                    inputSize="defaultWidth"
-                    inputMaxSize="diffMaxWidth"
+                    // inputSize="defaultWidth"
+                    // inputMaxSize="diffMaxWidth"
                     type="text"
                     placeholder="Cidade"
                     required
@@ -200,8 +200,8 @@ export const Checkout = () => {
                     {...register("city")}
                   />
                   <FormInput
-                    inputSize="smallestWidth"
-                    inputMaxSize="smallestMaxWidth"
+                    // inputSize="smallestWidth"
+                    // inputMaxSize="smallestMaxWidth"
                     type="text"
                     placeholder="UF"
                     required
@@ -231,8 +231,10 @@ export const Checkout = () => {
                       defaultChecked
                     />
                     <label htmlFor="credit">
-                      <CreditCard size={16} color="#8047F8" />
-                      Cartão de crédito
+                      <div>
+                        <CreditCard size={16} color="#8047F8" />
+                      </div>
+                      <div>Cartão de crédito</div>
                     </label>
 
                     <input
@@ -243,8 +245,10 @@ export const Checkout = () => {
                       {...register("paymentType")}
                     />
                     <label htmlFor="debit">
-                      <Bank size={16} color="#8047F8" />
-                      Cartão de Dédito
+                      <div>
+                        <Bank size={16} color="#8047F8" />
+                      </div>
+                      <div>Cartão de Dédito</div>
                     </label>
                     <input
                       form="checkout"
@@ -254,8 +258,10 @@ export const Checkout = () => {
                       {...register("paymentType")}
                     />
                     <label htmlFor="money">
-                      <Money size={16} color="#8047F8" />
-                      Dinheiro
+                      <div>
+                        <Money size={16} color="#8047F8" />
+                      </div>
+                      <div>Dinheiro</div>
                     </label>
                   </PaymentTypes>
                 </PaymentTypeContainer>
@@ -336,44 +342,42 @@ export const Checkout = () => {
             </SelectedProductsContainer>
           </>
         ) : (
-          <CheckoutContainer>
-            <EmptyShoppingCartContainer>
-              <Coffee2>
-                <Coffee size={12} color={"#8047F8"} />
-              </Coffee2>
-              <Star1>
-                <Star size={12} color={"#8047F8"} />
-              </Star1>
-              <Coffee3>
-                <Coffee size={12} color={"#8047F8"} />
-              </Coffee3>
-              <Star3>
-                <Star size={12} color={"#8047F8"} />
-              </Star3>
-              <ShoppingCartSimple size={150} />
-              <Star2>
-                <Star size={12} color={"#8047F8"} />
-              </Star2>
-              <Coffee1>
-                <Coffee size={12} color={"#8047F8"} />
-              </Coffee1>
-              <Coffee5>
-                <Coffee size={12} color={"#8047F8"} />
-              </Coffee5>
-              <Star4>
-                <Star size={12} color={"#8047F8"} />
-              </Star4>
-              <Coffee4>
-                <Coffee size={12} color={"#8047F8"} />
-              </Coffee4>
-              <EmptyShoppingCart>
-                <p>Seu carrinho está vazio!</p>
-              </EmptyShoppingCart>
-              <NavLink to="/">
-                <ArrowFatLeft /> Ir para página de produtos
-              </NavLink>
-            </EmptyShoppingCartContainer>
-          </CheckoutContainer>
+          <EmptyShoppingCartContainer>
+            <Coffee2>
+              <Coffee size={12} color={"#8047F8"} />
+            </Coffee2>
+            <Star1>
+              <Star size={12} color={"#8047F8"} />
+            </Star1>
+            <Coffee3>
+              <Coffee size={12} color={"#8047F8"} />
+            </Coffee3>
+            <Star3>
+              <Star size={12} color={"#8047F8"} />
+            </Star3>
+            <ShoppingCartSimple size={150} />
+            <Star2>
+              <Star size={12} color={"#8047F8"} />
+            </Star2>
+            <Coffee1>
+              <Coffee size={12} color={"#8047F8"} />
+            </Coffee1>
+            <Coffee5>
+              <Coffee size={12} color={"#8047F8"} />
+            </Coffee5>
+            <Star4>
+              <Star size={12} color={"#8047F8"} />
+            </Star4>
+            <Coffee4>
+              <Coffee size={12} color={"#8047F8"} />
+            </Coffee4>
+            <EmptyShoppingCart>
+              <p>Seu carrinho está vazio!</p>
+            </EmptyShoppingCart>
+            <NavLink to="/">
+              <ArrowFatLeft /> Ir para página de produtos
+            </NavLink>
+          </EmptyShoppingCartContainer>
         )}
       </CheckoutContent>
     </CheckoutContainer>

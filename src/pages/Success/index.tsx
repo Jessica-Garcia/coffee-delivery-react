@@ -46,8 +46,9 @@ export const Success = () => {
                   <span>
                     Entrega em{" "}
                     <strong>
-                      {newOrder?.street}, {newOrder?.number}{" "}
-                    </strong>
+                      {newOrder?.street}, {newOrder?.number} /{" "}
+                      {newOrder?.complement},
+                    </strong>{" "}
                     {newOrder?.neighborhood} - {newOrder?.city}, {newOrder?.uf}
                   </span>
                 </OderDetails>
